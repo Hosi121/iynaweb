@@ -1,5 +1,4 @@
 import events from "../data/events-list.json";
-import posts from "../data/posts-list.json";
 import Parser from "rss-parser";
 import { load } from "cheerio";
 import {
