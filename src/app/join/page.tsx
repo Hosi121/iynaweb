@@ -62,7 +62,7 @@ export default function JoinPage() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Icons.link className="w-5 h-5 mr-2" />
+              <Share2 className="w-5 h-5 mr-2" />
               参加フォーム
             </Link>
           </CardContent>
