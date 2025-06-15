@@ -5,17 +5,19 @@ import Layout from "@/components/Layout";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
-// data/members-list.json をインポート
 import members from "../data/members-list.json";
 
 interface Member {
   name: string;
   role: string;
-  imageSrc: string;
-  description: string;
+  imageSrc?: string;
+  description?: string;
 }
 
 export default function AboutPage() {
+  const alumniMembers = members.filter((member: Member) => member.role === "alumni");
+  const activeMembers = members.filter((member: Member) => member.role !== "alumni");
+
   return (
     <Layout>
       <Header />
@@ -66,7 +68,7 @@ export default function AboutPage() {
           <h2 className="text-2xl font-semibold">運営メンバー紹介</h2>
           <p>IYNA Japan コミュニティーの運営として活動しているメンバーを紹介します！</p>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-            {members.map((member: Member) => (
+            {activeMembers.map((member: Member) => (
               <Card key={member.name} className="cursor-pointer">
                 <CardContent>
                   {member.imageSrc && (
@@ -89,6 +91,19 @@ export default function AboutPage() {
                       </AccordionContent>
                     </AccordionItem>
                   </Accordion>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </section>
+
+        <section className="space-y-4">
+          <h2 className="text-2xl font-semibold">Alumni</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+            {alumniMembers.map((member: Member) => (
+              <Card key={member.name} className="cursor-pointer">
+                <CardContent>
+                  <h3 className="text-lg font-medium">{member.name}</h3>
                 </CardContent>
               </Card>
             ))}

@@ -1,75 +1,86 @@
 [
-    {
-      "name": "Misaki Ozawa",
-      "role": "代表 / 創設者",
-      "imageSrc": "/member/misaki.png",
-      "description": "代表 / 創設者"
-    },
-    {
-      "name": "Ryota Kamikura",
-      "role": "副代表",
-      "imageSrc": "/member/ryota.png",
-      "description": "副代表"
-    },
-    {
-      "name": "Ayaka Ohara",
-      "role": "イラストレーター",
-      "imageSrc": "/member/ayaka.png",
-      "description": "イラストレーター"
-    },
-    {
-      "name": "Yuma Kai",
-      "role": "クリエイター",
-      "imageSrc": "/member/kai.png",
-      "description": "クリエイター"
-    },
-    {
-      "name": "Masaki Hoshino",
-      "role": "広報戦略・クリエイター",
-      "imageSrc": "/member/hoshino.png",
-      "description": "広報戦略・クリエイター"
-    },
-    {
-      "name": "Linna Sato",
-      "role": "SNS統括・クリエイター",
-      "imageSrc": "",
-      "description": "SNS統括・クリエイター"
-    },
-    {
-      "name": "Wakana Kiuchi",
-      "role": "NRIリーダー・クリエイター",
-      "imageSrc": "",
-      "description": "NRIリーダー・クリエイター"
-    },
-    {
-      "name": "Rikuto Egawa",
-      "role": "クリエイター",
-      "imageSrc": "",
-      "description": "クリエイター"
-    },
-    {
-      "name": "Rinako Oya",
-      "role": "クリエイター",
-      "imageSrc": "",
-      "description": "クリエイター"
-    },
-    {
-      "name": "Rino Kim",
-      "role": "クリエイター",
-      "imageSrc": "",
-      "description": "クリエイター"
-    },
-    {
-      "name": "Riki Nakano",
-      "role": "クリエイター",
-      "imageSrc": "",
-      "description": "クリエイター"
-    },
-    {
-      "name": "Yuki Ueno",
-      "role": "クリエイター",
-      "imageSrc": "",
-      "description": "クリエイター"
-    }
-  ]
-  
+  {
+    "name": "Misaki Ozawa",
+    "role": "代表 / 創設者",
+    "imageSrc": "/member/misaki.png",
+    "description": "代表 / 創設者"
+  },
+  {
+    "name": "Ryota Kamikura",
+    "role": "副代表",
+    "imageSrc": "/member/ryota.png",
+    "description": "副代表"
+  },
+  {
+    "name": "Ayaka Ohara",
+    "role": "イラストレーター",
+    "imageSrc": "/member/ayaka.png",
+    "description": "イラストレーター"
+  },
+  {
+    "name": "Yuma Kai",
+    "role": "クリエイター",
+    "imageSrc": "/member/kai.png",
+    "description": "クリエイター"
+  },
+  {
+    "name": "Masaki Hoshino",
+    "role": "広報戦略・クリエイター",
+    "imageSrc": "/member/hoshino.png",
+    "description": "広報戦略・クリエイター"
+  },
+  {
+    "name": "Linna Sato",
+    "role": "SNS統括・クリエイター",
+    "imageSrc": "",
+    "description": "SNS統括・クリエイター"
+  },
+  {
+    "name": "Wakana Kiuchi",
+    "role": "NRIリーダー・クリエイター",
+    "imageSrc": "",
+    "description": "NRIリーダー・クリエイター"
+  },
+  {
+    "name": "Rikuto Egawa",
+    "role": "クリエイター",
+    "imageSrc": "",
+    "description": "クリエイター"
+  },
+  {
+    "name": "Rinako Oya",
+    "role": "クリエイター",
+    "imageSrc": "",
+    "description": "クリエイター"
+  },
+  {
+    "name": "Rino Kim",
+    "role": "クリエイター",
+    "imageSrc": "",
+    "description": "クリエイター"
+  },
+  {
+    "name": "Riki Nakano",
+    "role": "クリエイター",
+    "imageSrc": "",
+    "description": "クリエイター"
+  },
+  {
+    "name": "Yuki Ueno",
+    "role": "クリエイター",
+    "imageSrc": "",
+    "description": "クリエイター"
+  },
+  {
+    "name": "Ryuzo Kijima",
+    "role": "alumni"
+  },
+  {
+    "name": "Nobuko Tsujimoto",
+    "role": "alumni"
+  },
+  {
+    "name": "Riki Miyoshi",
+    "role": "alumni"
+  }
+]
