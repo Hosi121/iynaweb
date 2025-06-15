@@ -1,7 +1,12 @@
+"use client";
+
+import { useState } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { Icons } from "@/components/icons";
 
 export default function Header() {
+  const [open, setOpen] = useState(false);
   const navItems = [
     { label: "Home", href: "/" },
     { label: "About", href: "/about" },
@@ -19,20 +24,51 @@ export default function Header() {
           IYNA Japan
         </Link>
 
-        <nav>
-          <ul className="flex space-x-4">
+        {/* PCナビゲーション */}
+        <nav className="hidden md:flex space-x-4">
+          {navItems.map((item) => (
+            <Button key={item.href} variant="ghost" size="sm" className="rounded-full hover:bg-gray-100">
+              <Link href={item.href} className="text-gray-700 hover:text-gray-900">
+                {item.label}
+              </Link>
+            </Button>
+          ))}
+        </nav>
+
+        {/* モバイルメニュー開閉ボタン */}
+        <Button
+          variant="ghost"
+          size="sm"
+          className="md:hidden p-2"
+          onClick={() => setOpen((prev) => !prev)}
+          aria-label="Toggle menu"
+        >
+          {open ? (
+            <Icons.x className="w-6 h-6 text-gray-700" />
+          ) : (
+            <Icons.menu className="w-6 h-6 text-gray-700" />
+          )}
+        </Button>
+      </div>
+
+      {/* モバイルナビゲーション */}
+      {open && (
+        <nav className="md:hidden bg-white border-t">
+          <ul className="flex flex-col space-y-2 px-6 py-4">
             {navItems.map((item) => (
               <li key={item.href}>
-                <Button variant="ghost" size="sm" className="rounded-full hover:bg-gray-100 transition">
-                  <Link href={item.href} className="text-gray-700 hover:text-gray-900">
-                    {item.label}
-                  </Link>
-                </Button>
+                <Link
+                  href={item.href}
+                  className="block text-gray-700 hover:text-gray-900 py-2"
+                  onClick={() => setOpen(false)}
+                >
+                  {item.label}
+                </Link>
               </li>
             ))}
           </ul>
         </nav>
-      </div>
+      )}
     </header>
-  );
+);
 }
