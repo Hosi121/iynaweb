@@ -75,11 +75,13 @@ export default async function EducationPage() {
                   <CardTitle>{e.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <img
-                    src={e.imageSrc}
-                    alt={e.title}
-                    className="w-full h-40 object-cover rounded mb-2"
-                  />
+                  {e.imageSrc && (
+                    <img
+                      src={e.imageSrc}
+                      alt={e.title}
+                      className="w-full h-40 object-cover rounded mb-2"
+                    />
+                  )}
                   <CardDescription>{e.description}</CardDescription>
                 </CardContent>
               </Card>
@@ -119,24 +121,6 @@ export default async function EducationPage() {
           </div>
         </section>
 
-        {/* ――― Short Posts ――― */}
-        <section>
-          <h2 className="text-2xl font-semibold mb-4">Short Posts</h2>
-          <ul className="space-y-2">
-            {posts.map((p, idx) => (
-              <li key={idx}>
-                <Link
-                  href={p.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-blue-600 hover:underline"
-                >
-                  {p.title}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </section>
       </main>
       <Footer />
     </>
