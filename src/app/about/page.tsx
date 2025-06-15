@@ -69,14 +69,16 @@ export default function AboutPage() {
             {members.map((member: Member) => (
               <Card key={member.name} className="cursor-pointer">
                 <CardContent>
-                  <div className="relative h-40 w-full mb-4">
-                    <Image
-                      src={member.imageSrc}
-                      alt={member.name}
-                      fill
-                      className="object-cover rounded"
-                    />
-                  </div>
+                  {member.imageSrc && (
+                    <div className="relative h-72 w-full mb-4">
+                      <Image
+                        src={member.imageSrc}
+                        alt={member.name}
+                        fill
+                        className="object-cover rounded"
+                      />
+                    </div>
+                  )}
                   <h3 className="text-lg font-medium">{member.name}</h3>
                   <p className="text-sm text-gray-500 mb-2">{member.role}</p>
                   <Accordion type="single" collapsible>
