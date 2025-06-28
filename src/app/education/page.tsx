@@ -11,6 +11,13 @@ import {
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Education | IYNA Japan",
+  description:
+    "IYNA Japanが主催するイベントや、神経科学に関する解説記事、学習リソースなどを紹介します。",
+};
 
 export const revalidate = 3600; // 1時間ごとに再検証
 

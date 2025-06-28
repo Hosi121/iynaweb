@@ -3,10 +3,17 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import Link from "next/link";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Competition | IYNA Japan",
+  description:
+    "Neuroinnovation Research Ideathon (NRI) は、中高生が神経科学の知識を活かして創造的なアイデアを競うコンテストです。",
+};
 
 export default function CompetitionPage() {
   return (
-    <Layout title="Competition | NRI Ideathon">
+    <Layout>
       <Header />
 
       <main className="container mx-auto px-6 py-12 space-y-12">

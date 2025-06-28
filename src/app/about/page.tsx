@@ -6,6 +6,13 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 import members from "../data/members-list.json";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "About | IYNA Japan",
+  description:
+    "IYNA Japanのビジョン、活動内容、そして私たちを支える運営メンバーを紹介します。日本の中高生と共に神経科学の未来を創造します。",
+};
 
 interface Member {
   name: string;
