@@ -4,6 +4,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import Layout from "@/components/Layout";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Link from "next/link";
 
 import members from "../data/members-list.json";
 import { Metadata } from "next";
@@ -38,8 +39,8 @@ export default function AboutPage() {
           <p>
             IYNA は2016年に国際脳科学オリンピックの経験者が立ち上げ、現在は4000人以上のメンバーと126国以上の支部があります。
           </p>
-          <p className="text-blue-600 hover:underline">
-            IYNAについての詳細はこちら
+          <p>
+            IYNAについての詳細は<Link href="https://www.youthneuro.org/" target="_blank" rel="noopener noreferrer">こちら</Link>
           </p>
           <p>
             IYNA Japanは中高生による中高生向けの団体です。神経科学への興味を共有するコミュニティーであると共に、
