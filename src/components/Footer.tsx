@@ -16,7 +16,7 @@ export default function Footer() {
           <Link href="https://twitter.com/iynajapan" aria-label="Twitter">
             <Icons.twitter className="w-5 h-5 text-gray-500 hover:text-gray-700" />
           </Link>
-          <Link href="https://instagram.com/iynajapan" aria-label="Instagram">
+          <Link href="https://www.instagram.com/iyna_japan/" aria-label="Instagram">
             <Icons.instagram className="w-5 h-5 text-gray-500 hover:text-gray-700" />
           </Link>
           <Link href="mailto:iynajapan2024@gmail.com" aria-label="Email IYNA Japan">
