@@ -1,12 +1,14 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Icons } from "@/components/icons";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
+
   const navItems = [
     { label: "Home", href: "/" },
     { label: "About", href: "/about" },
@@ -20,14 +22,30 @@ export default function Header() {
   return (
     <header className="bg-white shadow-sm">
       <div className="container mx-auto flex items-center justify-between py-4 px-6">
-        <Link href="/" className="text-2xl font-extrabold tracking-tight text-gray-900">
-          IYNA Japan
+        {/* Logo + Brand */}
+        <Link
+          href="/"
+          className="flex items-center space-x-2 text-2xl font-extrabold tracking-tight text-gray-900"
+        >
+          <Image
+            src="/favicon.png" /* located in /public */
+            alt="IYNA Japan logo"
+            width={32}
+            height={32}
+            priority
+          />
+          <span>IYNA&nbsp;Japan</span>
         </Link>
 
-        {/* PCナビゲーション */}
+        {/* Desktop Navigation */}
         <nav className="hidden md:flex space-x-4">
           {navItems.map((item) => (
-            <Button key={item.href} variant="ghost" size="sm" className="rounded-full hover:bg-gray-100">
+            <Button
+              key={item.href}
+              variant="ghost"
+              size="sm"
+              className="rounded-full hover:bg-gray-100"
+            >
               <Link href={item.href} className="text-gray-700 hover:text-gray-900">
                 {item.label}
               </Link>
@@ -35,7 +53,7 @@ export default function Header() {
           ))}
         </nav>
 
-        {/* モバイルメニュー開閉ボタン */}
+        {/* Mobile Menu Toggle */}
         <Button
           variant="ghost"
           size="sm"
@@ -51,7 +69,7 @@ export default function Header() {
         </Button>
       </div>
 
-      {/* モバイルナビゲーション */}
+      {/* Mobile Navigation */}
       {open && (
         <nav className="md:hidden bg-white border-t">
           <ul className="flex flex-col space-y-2 px-6 py-4">
@@ -70,5 +88,5 @@ export default function Header() {
         </nav>
       )}
     </header>
-);
+  );
 }

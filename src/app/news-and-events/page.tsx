@@ -32,6 +32,34 @@ export default function NewsAndEventsPage() {
           <h2 className="text-2xl font-semibold mb-6">イベント情報</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* イベント１ */}
+                        <Card className="overflow-hidden">
+              <CardHeader>
+                <CardTitle className="text-lg">
+                  Neuroscience 2025 市民公開講座 コラボブース
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <p>
+                  2025 年開催の日本神経科学大会
+                  “Neuroscience 2025” 市民公開講座にて、IYNA Japan
+                  が高校生向け体験ブースを出展します。脳科学を身近に感じられるワークショップを通じて、次世代のサイエンス教育を推進します！
+                </p>
+                <div className="flex gap-4">
+                  <Link
+                    href="https://neuroscience2025.jnss.org/open_lecture.html"
+                    className="inline-block text-blue-600 hover:underline"
+                  >
+                    公開講座の詳細はこちら
+                  </Link>
+                  <Link
+                    href="https://x.com/iynajapan/status/1940037675752595733"
+                    className="inline-block text-blue-600 hover:underline"
+                  >
+                    告知ポストを見る
+                  </Link>
+                </div>
+              </CardContent>
+              </Card>
             <Card>
               <CardHeader>
                 <CardTitle className="text-lg">
@@ -40,8 +68,8 @@ export default function NewsAndEventsPage() {
               </CardHeader>
               <CardContent className="space-y-4">
                 <p>
-                  池谷裕二先生と藤井直敬先生をお招きし、IYNA Japan の高校生 2 名と
-                  「脳と人工知能の融合がもたらす未来」をテーマに対談するイベントを開催いたします。
+                  池谷裕二先生と藤井直敬先生をお招きし、IYNA Japan
+                  の高校生 2 名と「脳と人工知能の融合がもたらす未来」をテーマに対談するイベントを開催いたします。
                 </p>
                 <ul className="list-none space-y-1">
                   <li>
@@ -51,12 +79,6 @@ export default function NewsAndEventsPage() {
                     <strong>日時：</strong>4/20 10:30～14:00
                   </li>
                 </ul>
-                <Link
-                  href="#"
-                  className="inline-block text-blue-600 hover:underline"
-                >
-                  申し込み、詳細はコチラ
-                </Link>
               </CardContent>
             </Card>
 
@@ -73,12 +95,6 @@ export default function NewsAndEventsPage() {
                   「高校生コラボ講座・生命知能と人工知能―脳をリバースエンジニアリングする―」に
                   IYNA Japan の運営メンバー 3 名が座談会・質問コーナーに招待され、参加いたします！
                 </p>
-                <Link
-                  href="#"
-                  className="inline-block text-blue-600 hover:underline"
-                >
-                  詳細・申し込みはコチラ
-                </Link>
               </CardContent>
             </Card>
           </div>
