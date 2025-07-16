@@ -1,6 +1,11 @@
 import Image from "next/image";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 import Layout from "@/components/Layout";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -8,6 +13,7 @@ import Link from "next/link";
 
 import members from "../data/members-list.json";
 import { Metadata } from "next";
+import { Twitter, Instagram, Linkedin } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "About | IYNA Japan",
@@ -18,13 +24,71 @@ export const metadata: Metadata = {
 interface Member {
   name: string;
   role: string;
+  tag?: string[]; // ex. ["運営", "デザイン"]
+  sns?: {
+    x?: string; // https://x.com/...
+    instagram?: string; // https://instagram.com/...
+    linkedin?: string; // https://linkedin.com/in/...
+    [key: string]: string | undefined; // future‑proof
+  };
   imageSrc?: string;
   description?: string;
 }
 
 export default function AboutPage() {
-  const alumniMembers = members.filter((member: Member) => member.role === "alumni");
-  const activeMembers = members.filter((member: Member) => member.role !== "alumni");
+  const alumniMembers = (members as Member[]).filter(
+    (member) => member.role === "alumni"
+  );
+  const activeMembers = (members as Member[]).filter(
+    (member) => member.role !== "alumni"
+  );
+
+  const SnsIcons = ({ sns }: { sns?: Member["sns"] }) => {
+    if (!sns) return null;
+    return (
+      <div className="flex gap-3 mt-2">
+        {sns.x && (
+          <Link href={sns.x} target="_blank" rel="noopener noreferrer">
+            <Twitter className="h-5 w-5" />
+          </Link>
+        )}
+        {sns.instagram && (
+          <Link
+            href={sns.instagram}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Instagram className="h-5 w-5" />
+          </Link>
+        )}
+        {sns.linkedin && (
+          <Link
+            href={sns.linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Linkedin className="h-5 w-5" />
+          </Link>
+        )}
+      </div>
+    );
+  };
+
+  const TagList = ({ tag }: { tag?: string[] }) => {
+    if (!tag || tag.length === 0) return null;
+    return (
+      <div className="flex flex-wrap gap-1 mb-2">
+        {tag.map((t) => (
+          <span
+            key={t}
+            className="text-xs bg-gray-200 dark:bg-gray-700 rounded px-2 py-0.5"
+          >
+            {t}
+          </span>
+        ))}
+      </div>
+    );
+  };
 
   return (
     <Layout>
@@ -40,7 +104,14 @@ export default function AboutPage() {
             IYNA は2016年に国際脳科学オリンピックの経験者が立ち上げ、現在は4000人以上のメンバーと126国以上の支部があります。
           </p>
           <p>
-            IYNAについての詳細は<Link href="https://www.youthneuro.org/" target="_blank" rel="noopener noreferrer">こちら</Link>
+            IYNAについての詳細は
+            <Link
+              href="https://www.youthneuro.org/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              こちら
+            </Link>
           </p>
           <p>
             IYNA Japanは中高生による中高生向けの団体です。神経科学への興味を共有するコミュニティーであると共に、
@@ -57,7 +128,7 @@ export default function AboutPage() {
               <p>
                 私たちIYNA Japanは、IYNA本部とは異なり、日本支部として活動する際に大切にしている理念があります。
               </p>
-              <ul className="space-y-2">
+              <ul className="space-y-2 list-disc list-inside">
                 <li>
                   <strong>Core Value (価値観):</strong> 神経科学の理解への扉を開く
                 </li>
@@ -76,27 +147,22 @@ export default function AboutPage() {
           <h2 className="text-2xl font-semibold">運営メンバー紹介</h2>
           <p>IYNA Japan コミュニティーの運営として活動しているメンバーを紹介します！</p>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-            {activeMembers.map((member: Member) => (
+            {activeMembers.map((member) => (
               <Card key={member.name} className="cursor-pointer">
                 <CardContent>
                   {member.imageSrc && (
                     <div className="relative h-72 w-full mb-4">
-                      <Image
-                        src={member.imageSrc}
-                        alt={member.name}
-                        fill
-                        className="object-cover rounded"
-                      />
+                      <Image src={member.imageSrc} alt={member.name} fill className="object-cover rounded" />
                     </div>
                   )}
                   <h3 className="text-lg font-medium">{member.name}</h3>
-                  <p className="text-sm text-gray-500 mb-2">{member.role}</p>
+                  <p className="text-sm text-gray-500 mb-1">{member.role}</p>
+                  <TagList tag={member.tag} />
+                  <SnsIcons sns={member.sns} />
                   <Accordion type="single" collapsible>
                     <AccordionItem value="desc">
                       <AccordionTrigger>詳細を見る</AccordionTrigger>
-                      <AccordionContent>
-                        {member.description}
-                      </AccordionContent>
+                      <AccordionContent>{member.description}</AccordionContent>
                     </AccordionItem>
                   </Accordion>
                 </CardContent>
@@ -108,10 +174,12 @@ export default function AboutPage() {
         <section className="space-y-4">
           <h2 className="text-2xl font-semibold">Alumni</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-            {alumniMembers.map((member: Member) => (
+            {alumniMembers.map((member) => (
               <Card key={member.name} className="cursor-pointer">
                 <CardContent>
                   <h3 className="text-lg font-medium">{member.name}</h3>
+                  <TagList tag={member.tag} />
+                  <SnsIcons sns={member.sns} />
                 </CardContent>
               </Card>
             ))}

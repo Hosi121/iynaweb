@@ -35,15 +35,12 @@ export default function NewsAndEventsPage() {
                         <Card className="overflow-hidden">
               <CardHeader>
                 <CardTitle className="text-lg">
-                  Neuroscience 2025 市民公開講座 コラボブース
+                  神経科学学会 脳科学の達人 コラボ企画
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
                 <p>
-                  2025 年開催の日本神経科学大会
-                  “Neuroscience 2025” 市民公開講座にて、IYNA Japan
-                  が高校生向け体験ブースを出展します。脳科学を身近に感じられるワークショップを通じて、次世代のサイエンス教育を推進します！
-                </p>
+                  2025 年開催の日本神経科学大会 市民公開講座「脳科学の達人」にて、IYNA Japan を運営メンバー4人が登壇します。脳科学の達人 x 高校生のディスカッションを行います！                </p>
                 <div className="flex gap-4">
                   <Link
                     href="https://neuroscience2025.jnss.org/open_lecture.html"
