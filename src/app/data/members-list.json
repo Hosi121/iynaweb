@@ -4,7 +4,8 @@
     "role": "代表 / 創設者",
     "tag": ["立ち上げ", "イベント企画", "コミュニティ企画", "財務"],
     "sns": {
-      "x": "https://x.com/Misaki__Ozawa"
+      "x": "https://x.com/Misaki__Ozawa",
+      "note": "https://note.com/iyna_japan/n/ndc9cd14702b0?magazine_key=m014c6f6d6935"
     },
     "imageSrc": "/member/misaki.png",
     "description": "代表 / 創設者"
@@ -14,7 +15,8 @@
     "role": "副代表",
     "tag": ["立ち上げ", "財務", "大会", "広報", "イベント企画"],
     "sns": {
-      "x": "https://x.com/ry_al_04"
+      "x": "https://x.com/ry_al_04",
+      "note": "https://note.com/iyna_japan/n/naa59f56001c3?magazine_key=m014c6f6d6935"
     },
     "imageSrc": "/member/ryota.png",
     "description": "副代表"
@@ -23,6 +25,9 @@
     "name": "Ayaka Ohara",
     "role": "イラストレーター",
     "tag": ["立ち上げ", "イラスト"],
+    "sns": {
+      "note": "https://note.com/iyna_japan/n/n4d317d2e0963?magazine_key=m014c6f6d6935"
+    },
     "imageSrc": "/member/ayaka.png",
     "description": "イラストレーター"
   },
@@ -30,6 +35,9 @@
     "name": "Yuma Kai",
     "role": "クリエイター",
     "tag": ["立ち上げ", "SNS(note)", "財務"],
+    "sns": {
+      "note": "https://note.com/iyna_japan/n/n60fac37a41cd?magazine_key=m014c6f6d6935"
+    },
     "imageSrc": "/member/kai.png",
     "description": "クリエイター"
   },
@@ -37,6 +45,9 @@
     "name": "Masaki Hoshino",
     "role": "広報戦略・クリエイター",
     "tag": ["立ち上げ", "広報", "イベント企画", "SNS(note)"],
+    "sns": {
+      "note": "https://note.com/iyna_japan/n/nc340559c55df?magazine_key=m014c6f6d6935"
+    },
     "imageSrc": "/member/hoshino.png",
     "description": "広報戦略・クリエイター"
   },
@@ -44,6 +55,10 @@
     "name": "Linna Sato",
     "role": "SNS統括・クリエイター",
     "tag": ["立ち上げ", "SNS(インスタグラム)", "大会", "コミュニティ企画"],
+    "sns": {
+      "x": "https://x.com/linnaa0o",
+      "note": "https://note.com/iyna_japan/n/nb0ba14468659?magazine_key=m014c6f6d6935"
+    },
     "imageSrc": "/member/linna.png",
     "description": "SNS統括・クリエイター"
   },
@@ -51,6 +66,9 @@
     "name": "Wakana Kiuchi",
     "role": "NRIリーダー・クリエイター",
     "tag": ["SNS(インスタグラム)", "大会"],
+    "sns": {
+      "note": "https://note.com/iyna_japan/n/na3d830aad2ad?magazine_key=m014c6f6d6935"
+    },
     "imageSrc": "",
     "description": "NRIリーダー・クリエイター"
   },
@@ -58,12 +76,19 @@
     "name": "Rikuto Egawa",
     "role": "クリエイター",
     "tag": ["SNS(note)", "大会"],
+    "sns": {
+      "note": "https://note.com/iyna_japan/n/nf667a9444a7c?magazine_key=m014c6f6d6935"
+    },
     "imageSrc": "",
     "description": "クリエイター"
   },
   {
     "name": "Rinako Oya",
     "role": "クリエイター",
+    "tag": ["コミュニティ企画"],
+    "sns": {
+      "note": "https://note.com/iyna_japan/n/n415f0dfa4d31?magazine_key=m014c6f6d6935"
+    },
     "imageSrc": "",
     "description": "クリエイター"
   },
@@ -78,6 +103,9 @@
     "name": "Riki Nakano",
     "role": "クリエイター",
     "tag": ["イベント企画", "コミュニティ企画"],
+    "sns": {
+      "note": "https://note.com/iyna_japan/n/n3f3b728c315e?magazine_key=m014c6f6d6935"
+    },
     "imageSrc": "",
     "description": "クリエイター"
   },
@@ -85,12 +113,16 @@
     "name": "Yuki Ueno",
     "role": "クリエイター",
     "tag": ["SNS(インスタグラム)"],
+    "sns": {
+      "note": "https://note.com/iyna_japan/n/nc323ddf27c11"
+    },
     "imageSrc": "",
     "description": "クリエイター"
   },
   {
     "name": "Nagomi Hiroki",
     "role": "クリエイター",
+    "tag": ["イベント企画", "コミュニティ企画"],
     "imageSrc": "",
     "description": "クリエイター"
   },
@@ -105,6 +137,9 @@
     "name": "Yuri Ide",
     "role": "クリエイター",
     "tag": ["イベント企画"],
+    "sns": {
+      "note": "https://note.com/iyna_japan/n/ndb1b945e92dd"
+    },
     "imageSrc": "",
     "description": "クリエイター"
   },

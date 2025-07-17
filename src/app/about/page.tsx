@@ -196,12 +196,6 @@ export default function AboutPage() {
                   <p className="text-sm text-gray-500 mb-1">{member.role}</p>
                   <TagList tag={member.tag} />
                   <SnsIcons sns={member.sns} />
-                  <Accordion type="single" collapsible>
-                    <AccordionItem value="desc">
-                      <AccordionTrigger>詳細を見る</AccordionTrigger>
-                      <AccordionContent>{member.description}</AccordionContent>
-                    </AccordionItem>
-                  </Accordion>
                 </CardContent>
               </Card>
             ))}
