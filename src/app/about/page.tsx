@@ -1,11 +1,6 @@
 import Image from "next/image";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import Layout from "@/components/Layout";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -14,6 +9,7 @@ import Link from "next/link";
 import members from "../data/members-list.json";
 import { Metadata } from "next";
 import { Twitter, Instagram, Linkedin } from "lucide-react";
+import * as React from "react";
 
 export const metadata: Metadata = {
   title: "About | IYNA Japan",
@@ -29,22 +25,61 @@ interface Member {
     x?: string; // https://x.com/...
     instagram?: string; // https://instagram.com/...
     linkedin?: string; // https://linkedin.com/in/...
+    note?: string; // https://note.com/... or @id (see below)
     [key: string]: string | undefined; // future‑proof
   };
   imageSrc?: string;
   description?: string;
 }
 
+/* -------------------------------------------------------------
+ * NoteIcon: lightweight inline SVG approximating note.com logo.
+ * Uses currentColor so you can recolor via Tailwind (e.g., text-emerald-500).
+ * Replace with an imported asset (/public/icons/note.svg) if you prefer the official brand mark.
+ * ----------------------------------------------------------- */
+const NoteIcon = ({ className }: { className?: string }) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    role="img"
+    aria-label="note"
+    className={className}
+  >
+    {/* outer page with folded corner */}
+    <path
+      d="M4 3h13l3 3v15H4Z"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={2}
+      strokeLinejoin="round"
+    />
+    <path
+      d="M17 3v3h3"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth={2}
+      strokeLinejoin="round"
+    />
+  </svg>
+);
+
+/* normalizeNoteUrl: accept either full URL or plain @id / id and normalize to https://note.com/<id> */
+function normalizeNoteUrl(raw?: string): string | undefined {
+  if (!raw) return undefined;
+  const trimmed = raw.trim();
+  if (trimmed.startsWith("http://") || trimmed.startsWith("https://")) return trimmed;
+  // accept leading @
+  const id = trimmed.startsWith("@") ? trimmed.slice(1) : trimmed;
+  return `https://note.com/${id}`;
+}
+
 export default function AboutPage() {
-  const alumniMembers = (members as Member[]).filter(
-    (member) => member.role === "alumni"
-  );
-  const activeMembers = (members as Member[]).filter(
-    (member) => member.role !== "alumni"
-  );
+  const alumniMembers = (members as Member[]).filter((member) => member.role === "alumni");
+  const activeMembers = (members as Member[]).filter((member) => member.role !== "alumni");
 
   const SnsIcons = ({ sns }: { sns?: Member["sns"] }) => {
     if (!sns) return null;
+    const noteUrl = normalizeNoteUrl(sns.note);
     return (
       <div className="flex gap-3 mt-2">
         {sns.x && (
@@ -53,21 +88,18 @@ export default function AboutPage() {
           </Link>
         )}
         {sns.instagram && (
-          <Link
-            href={sns.instagram}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <Link href={sns.instagram} target="_blank" rel="noopener noreferrer">
             <Instagram className="h-5 w-5" />
           </Link>
         )}
         {sns.linkedin && (
-          <Link
-            href={sns.linkedin}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <Link href={sns.linkedin} target="_blank" rel="noopener noreferrer">
             <Linkedin className="h-5 w-5" />
+          </Link>
+        )}
+        {noteUrl && (
+          <Link href={noteUrl} target="_blank" rel="noopener noreferrer">
+            <NoteIcon className="h-5 w-5" />
           </Link>
         )}
       </div>
@@ -152,7 +184,12 @@ export default function AboutPage() {
                 <CardContent>
                   {member.imageSrc && (
                     <div className="relative h-72 w-full mb-4">
-                      <Image src={member.imageSrc} alt={member.name} fill className="object-cover rounded" />
+                      <Image
+                        src={member.imageSrc}
+                        alt={member.name}
+                        fill
+                        className="object-cover rounded"
+                      />
                     </div>
                   )}
                   <h3 className="text-lg font-medium">{member.name}</h3>
