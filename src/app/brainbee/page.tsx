@@ -16,18 +16,6 @@ export const metadata = {
 };
 
 export default function BrainBeePage() {
-  const glossary = [
-    {
-      term: "Acetylcholine",
-      definition:
-        "神経伝達物質の一種で、特に中枢神経系および末梢神経系で多様な役割を果たす。記憶形成や筋収縮に関与する。",
-    },
-    {
-      term: "Action Potential",
-      definition:
-        "ニューロンの膜電位が閾値を超えることで発生する急峻な電位変動で、情報伝達の基本単位となる。",
-    },
-  ];
 
   return (
     <>
@@ -45,23 +33,6 @@ export default function BrainBeePage() {
             alt="Challenge"
             className="mt-6 mx-auto max-w-3xl h-auto rounded-lg shadow-lg"
           />
-        </section>
-
-        {/* Glossary */}
-        <section>
-          <h2 className="text-2xl font-semibold mb-4">Glossary</h2>
-          <div className="space-y-6">
-            {glossary.map((item) => (
-              <Card key={item.term}>
-                <CardHeader>
-                  <CardTitle>{item.term}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p>{item.definition}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
         </section>
 
         {/* Brain Facts 輪読会 */}
