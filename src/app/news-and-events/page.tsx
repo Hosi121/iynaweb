@@ -31,6 +31,28 @@ export default function NewsAndEventsPage() {
         <section>
           <h2 className="text-2xl font-semibold mb-6">イベント情報</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                    <Card className="overflow-hidden">
+              <CardHeader>
+                <CardTitle className="text-lg">
+                  第1回脳模試開催！
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <p>
+                  脳科学オリンピックに興味をお持ちの方や、脳科学の知識を体系的につけたい方はぜひ腕試しに解いてみてください。
+                  7/21（月）20:00~21:00より開始．
+                  参加するためにはIYNAのDiscordに参加していただく必要があります．Joinよりfoamをご記入ください．
+                </p>
+                <div className="flex gap-4">
+                  <Link
+                    href="https://x.com/IYNAJapan/status/1946824955653730733"
+                    className="inline-block text-blue-600 hover:underline"
+                  >
+                    告知ポストを見る
+                  </Link>
+                </div>
+              </CardContent>
+              </Card>
             {/* イベント１ */}
                         <Card className="overflow-hidden">
               <CardHeader>
