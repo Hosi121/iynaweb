@@ -50,6 +50,12 @@ export default function NewsAndEventsPage() {
                   >
                     告知ポストを見る
                   </Link>
+                  <Link
+                    href="https://docs.google.com/forms/d/e/1FAIpQLSdegYW3hyieJwmRw0pbKQ6wIKJP7BEiMKf3oCWn1R27rXejBg/viewform?usp=send_form"
+                    className="inline-block text-blue-600 hover:underline"
+                  >
+                    応募フォームはこちら
+                  </Link>
                 </div>
               </CardContent>
               </Card>
