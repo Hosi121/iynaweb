@@ -94,7 +94,7 @@ export default function NewsAndEventsPage() {
               <CardContent className="space-y-4">
                 <p>
                   池谷裕二先生と藤井直敬先生をお招きし、IYNA Japan
-                  の高校生 2 名と「脳と人工知能の融合がもたらす未来」をテーマに対談するイベントを開催いたします。
+                  の高校生 2 名と「脳と人工知能の融合がもたらす未来」をテーマに対談するイベントを開催しました。
                 </p>
                 <ul className="list-none space-y-1">
                   <li>
