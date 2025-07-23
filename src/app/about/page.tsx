@@ -1,6 +1,5 @@
 import Image from "next/image";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import Layout from "@/components/Layout";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";

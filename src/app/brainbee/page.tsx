@@ -4,8 +4,6 @@ import Footer from "@/components/Footer";
 import Link from "next/link";
 import {
   Card,
-  CardHeader,
-  CardTitle,
   CardContent,
 } from "@/components/ui/card";
 import { Icons } from "@/components/icons";
