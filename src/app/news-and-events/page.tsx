@@ -41,7 +41,7 @@ export default function NewsAndEventsPage() {
                 <p>
                   脳科学オリンピックに興味をお持ちの方や、脳科学の知識を体系的につけたい方はぜひ腕試しに解いてみてください。
                   7/21（月）20:00~21:00より開始．
-                  参加するためにはIYNAのDiscordに参加していただく必要があります．Joinよりfoamをご記入ください．
+                  参加するためにはIYNAのDiscordに参加していただく必要があります．Joinよりformをご記入ください．
                 </p>
                 <div className="flex gap-4">
                   <Link
