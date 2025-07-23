@@ -118,7 +118,7 @@ export default function NewsAndEventsPage() {
                 <p>
                   東大メタバース工学部ジュニア教育プログラムの
                   「高校生コラボ講座・生命知能と人工知能―脳をリバースエンジニアリングする―」に
-                  IYNA Japan の運営メンバー 3 名が座談会・質問コーナーに招待され、参加いたします！
+                  IYNA Japan の運営メンバー 3 名が座談会・質問コーナーに招待され、参加しました！
                 </p>
               </CardContent>
             </Card>
