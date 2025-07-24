@@ -7,7 +7,7 @@ import Link from "next/link";
 
 import members from "../data/members-list.json";
 import { Metadata } from "next";
-import { Twitter, Instagram, Linkedin } from "lucide-react";
+import { Twitter } from "lucide-react";
 import * as React from "react";
 
 export const metadata: Metadata = {
@@ -18,12 +18,10 @@ export const metadata: Metadata = {
 
 interface Member {
   name: string;
-  role: string;
+  role: string; // "member" | "advisor" | "alumni" など
   tag?: string[]; // ex. ["運営", "デザイン"]
   sns?: {
     x?: string; // https://x.com/...
-    instagram?: string; // https://instagram.com/...
-    linkedin?: string; // https://linkedin.com/in/...
     note?: string; // https://note.com/... or @id (see below)
     [key: string]: string | undefined; // future‑proof
   };
@@ -73,8 +71,11 @@ function normalizeNoteUrl(raw?: string): string | undefined {
 }
 
 export default function AboutPage() {
-  const alumniMembers = (members as Member[]).filter((member) => member.role === "alumni");
-  const activeMembers = (members as Member[]).filter((member) => member.role !== "alumni");
+  const advisorMembers = (members as Member[]).filter((m) => m.role === "advisor");
+  const alumniMembers = (members as Member[]).filter((m) => m.role === "alumni");
+  const activeMembers = (members as Member[]).filter(
+    (m) => m.role !== "advisor" && m.role !== "alumni",
+  );
 
   const SnsIcons = ({ sns }: { sns?: Member["sns"] }) => {
     if (!sns) return null;
@@ -84,16 +85,6 @@ export default function AboutPage() {
         {sns.x && (
           <Link href={sns.x} target="_blank" rel="noopener noreferrer">
             <Twitter className="h-5 w-5" />
-          </Link>
-        )}
-        {sns.instagram && (
-          <Link href={sns.instagram} target="_blank" rel="noopener noreferrer">
-            <Instagram className="h-5 w-5" />
-          </Link>
-        )}
-        {sns.linkedin && (
-          <Link href={sns.linkedin} target="_blank" rel="noopener noreferrer">
-            <Linkedin className="h-5 w-5" />
           </Link>
         )}
         {noteUrl && (
@@ -110,10 +101,7 @@ export default function AboutPage() {
     return (
       <div className="flex flex-wrap gap-1 mb-2">
         {tag.map((t) => (
-          <span
-            key={t}
-            className="text-xs bg-gray-200 dark:bg-gray-700 rounded px-2 py-0.5"
-          >
+          <span key={t} className="text-xs bg-gray-200 dark:bg-gray-700 rounded px-2 py-0.5">
             {t}
           </span>
         ))}
@@ -121,35 +109,51 @@ export default function AboutPage() {
     );
   };
 
+  const MemberGrid: React.FC<{ list: Member[] }> = ({ list }) => (
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+      {list.map((member) => (
+        <Card key={member.name} className="cursor-pointer">
+          <CardContent>
+            {member.imageSrc && (
+              <div className="relative h-72 w-full mb-4">
+                <Image src={member.imageSrc} alt={member.name} fill className="object-cover rounded" />
+              </div>
+            )}
+            <h3 className="text-lg font-medium">{member.name}</h3>
+            {member.role && <p className="text-sm text-gray-500 mb-1">{member.role}</p>}
+            <TagList tag={member.tag} />
+            <SnsIcons sns={member.sns} />
+          </CardContent>
+        </Card>
+      ))}
+    </div>
+  );
+
   return (
     <Layout>
       <Header />
       <main className="container mx-auto px-6 py-12 space-y-12">
+        {/* ABOUT SECTION */}
         <section className="space-y-4">
           <h1 className="text-3xl font-bold">About IYNA Japan</h1>
           <p>
-            IYNA（International Youth Neuroscience Association）は、次世代の神経科学者にインスピレーションを与えることを
-            目的とした、国際的な学生主導の非営利団体です。
+            IYNA（International Youth Neuroscience Association）は、次世代の神経科学者にインスピレーションを与えることを目的とした、国際的な学生主導の非営利団体です。
           </p>
           <p>
             IYNA は2016年に国際脳科学オリンピックの経験者が立ち上げ、現在は4000人以上のメンバーと126国以上の支部があります。
           </p>
           <p>
             IYNAについての詳細は
-            <Link
-              href="https://www.youthneuro.org/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <Link href="https://www.youthneuro.org/" target="_blank" rel="noopener noreferrer">
               こちら
             </Link>
           </p>
           <p>
-            IYNA Japanは中高生による中高生向けの団体です。神経科学への興味を共有するコミュニティーであると共に、
-            神経科学の教育活動にも励んでおります。
+            IYNA Japanは中高生による中高生向けの団体です。神経科学への興味を共有するコミュニティーであると共に、神経科学の教育活動にも励んでおります。
           </p>
         </section>
 
+        {/* VISION SECTION */}
         <section className="space-y-6">
           <Card>
             <CardHeader>
@@ -174,46 +178,25 @@ export default function AboutPage() {
           </Card>
         </section>
 
+        {/* ACTIVE MEMBERS */}
         <section className="space-y-4">
           <h2 className="text-2xl font-semibold">運営メンバー紹介</h2>
           <p>IYNA Japan コミュニティーの運営として活動しているメンバーを紹介します！</p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-            {activeMembers.map((member) => (
-              <Card key={member.name} className="cursor-pointer">
-                <CardContent>
-                  {member.imageSrc && (
-                    <div className="relative h-72 w-full mb-4">
-                      <Image
-                        src={member.imageSrc}
-                        alt={member.name}
-                        fill
-                        className="object-cover rounded"
-                      />
-                    </div>
-                  )}
-                  <h3 className="text-lg font-medium">{member.name}</h3>
-                  <p className="text-sm text-gray-500 mb-1">{member.role}</p>
-                  <TagList tag={member.tag} />
-                  <SnsIcons sns={member.sns} />
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+          <MemberGrid list={activeMembers} />
         </section>
 
+        {/* ADVISORS */}
+        {advisorMembers.length > 0 && (
+          <section className="space-y-4">
+            <h2 className="text-2xl font-semibold">Advisors</h2>
+            <MemberGrid list={advisorMembers} />
+          </section>
+        )}
+
+        {/* ALUMNI */}
         <section className="space-y-4">
           <h2 className="text-2xl font-semibold">Alumni</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-            {alumniMembers.map((member) => (
-              <Card key={member.name} className="cursor-pointer">
-                <CardContent>
-                  <h3 className="text-lg font-medium">{member.name}</h3>
-                  <TagList tag={member.tag} />
-                  <SnsIcons sns={member.sns} />
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+          <MemberGrid list={alumniMembers} />
         </section>
       </main>
       <Footer />

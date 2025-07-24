@@ -154,5 +154,10 @@
   {
     "name": "Riki Miyoshi",
     "role": "alumni"
+  },
+  {
+    "name": "Takuya Kataiwa",
+    "role": "advisor",
+    "imageSrc": "/member/takuya.png"
   }
 ]
