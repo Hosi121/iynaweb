@@ -87,9 +87,10 @@
     "role": "クリエイター",
     "tag": ["SNS(note)", "大会"],
     "sns": {
-      "note": "https://note.com/iyna_japan/n/nf667a9444a7c?magazine_key=m014c6f6d6935"
+      "note": "https://note.com/iyna_japan/n/nf667a9444a7c?magazine_key=m014c6f6d6935",
+      "x": "https://x.com/passion_frutes"
     },
-    "imageSrc": "",
+    "imageSrc": "/member/rikuto.jpg",
     "description": "クリエイター"
   },
   {
@@ -156,7 +157,7 @@
     "role": "alumni"
   },
   {
-    "name": "片岩 拓哉",
+    "name": "Takuya Kataiwa",
     "role": "advisor",
     "imageSrc": "/member/takuya.png",
     "description": "静岡大学, サイボウズラボユース第14,15期生, セキュリティキャンプ全国大会2025 修了生など．",
@@ -165,7 +166,7 @@
     }
   },
   {
-    "name": "太田 航",
+    "name": "Wataru Ota",
     "role": "academic advisor",
     "description": "横浜市立大学医学部医学科 医学教育センター／生理学 助教\nYCU Frontier Research Fellow\n日本科学振興協会（JAAS）JAAS フェロー\n学生アイデアファクトリー共同実行委員長",
     "sns": {
@@ -174,7 +175,7 @@
     "imageSrc": "/member/wataru.jpg"
   },
   {
-    "name": "池内 与志穂",
+    "name": "Yoshiho Ikeuchi",
     "role": "academic advisor",
     "description": "東京大学 生産技術研究所 教授",
     "sns": {
