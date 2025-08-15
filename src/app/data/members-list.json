@@ -22,6 +22,17 @@
     "description": "副代表"
   },
   {
+    "name": "Linna Sato",
+    "role": "副代表",
+    "tag": ["立ち上げ", "SNS(インスタグラム)", "大会", "コミュニティ企画"],
+    "sns": {
+      "x": "https://x.com/linnaa0o",
+      "note": "https://note.com/iyna_japan/n/nb0ba14468659?magazine_key=m014c6f6d6935"
+    },
+    "imageSrc": "/member/linna.png",
+    "description": "副代表"
+  },
+  {
     "name": "Ayaka Ohara",
     "role": "イラストレーター",
     "tag": ["立ち上げ", "イラスト"],
@@ -52,25 +63,24 @@
     "description": "広報戦略・クリエイター"
   },
   {
-    "name": "Linna Sato",
-    "role": "SNS統括・クリエイター",
-    "tag": ["立ち上げ", "SNS(インスタグラム)", "大会", "コミュニティ企画"],
-    "sns": {
-      "x": "https://x.com/linnaa0o",
-      "note": "https://note.com/iyna_japan/n/nb0ba14468659?magazine_key=m014c6f6d6935"
-    },
-    "imageSrc": "/member/linna.png",
-    "description": "SNS統括・クリエイター"
-  },
-  {
     "name": "Wakana Kiuchi",
     "role": "NRIリーダー・クリエイター",
     "tag": ["SNS(インスタグラム)", "大会"],
     "sns": {
       "note": "https://note.com/iyna_japan/n/na3d830aad2ad?magazine_key=m014c6f6d6935"
     },
-    "imageSrc": "",
+    "imageSrc": "/member/wakana.jpg",
     "description": "NRIリーダー・クリエイター"
+  },
+  {
+    "name": "Riki Nakano",
+    "role": "クリエイター",
+    "tag": ["イベント企画", "コミュニティ企画"],
+    "sns": {
+      "note": "https://note.com/iyna_japan/n/n3f3b728c315e?magazine_key=m014c6f6d6935"
+    },
+    "imageSrc": "/member/riki.jpg",
+    "description": "クリエイター"
   },
   {
     "name": "Rikuto Egawa",
@@ -96,16 +106,6 @@
     "name": "Rino Kim",
     "role": "クリエイター",
     "tag": ["SNS(インスタグラム)", "大会"],
-    "imageSrc": "",
-    "description": "クリエイター"
-  },
-  {
-    "name": "Riki Nakano",
-    "role": "クリエイター",
-    "tag": ["イベント企画", "コミュニティ企画"],
-    "sns": {
-      "note": "https://note.com/iyna_japan/n/n3f3b728c315e?magazine_key=m014c6f6d6935"
-    },
     "imageSrc": "",
     "description": "クリエイター"
   },
@@ -156,8 +156,30 @@
     "role": "alumni"
   },
   {
-    "name": "Takuya Kataiwa",
+    "name": "片岩 拓哉",
     "role": "advisor",
-    "imageSrc": "/member/takuya.png"
+    "imageSrc": "/member/takuya.png",
+    "description": "静岡大学, サイボウズラボユース第14,15期生, セキュリティキャンプ全国大会2025 修了生など．",
+    "sns": {
+      "note": "https://hosi121.github.io/portfolio/"
+    }
+  },
+  {
+    "name": "太田 航",
+    "role": "academic advisor",
+    "description": "横浜市立大学医学部医学科 医学教育センター／生理学 助教\nYCU Frontier Research Fellow\n日本科学振興協会（JAAS）JAAS フェロー\n学生アイデアファクトリー共同実行委員長",
+    "sns": {
+      "researchmap": "https://researchmap.jp/wataru_ota"
+    },
+    "imageSrc": "/member/wataru.jpg"
+  },
+  {
+    "name": "池内 与志穂",
+    "role": "academic advisor",
+    "description": "東京大学 生産技術研究所 教授",
+    "sns": {
+      "website": "https://www.bmce.iis.u-tokyo.ac.jp"
+    },
+    "imageSrc": "/member/ikeuchi.jpg"
   }
 ]

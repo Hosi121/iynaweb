@@ -9,6 +9,12 @@ import members from "../data/members-list.json";
 import { Metadata } from "next";
 import { Twitter } from "lucide-react";
 import * as React from "react";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 export const metadata: Metadata = {
   title: "About | IYNA Japan",
@@ -72,9 +78,10 @@ function normalizeNoteUrl(raw?: string): string | undefined {
 
 export default function AboutPage() {
   const advisorMembers = (members as Member[]).filter((m) => m.role === "advisor");
+  const academicAdvisorMembers = (members as Member[]).filter((m) => m.role === "academic advisor");
   const alumniMembers = (members as Member[]).filter((m) => m.role === "alumni");
   const activeMembers = (members as Member[]).filter(
-    (m) => m.role !== "advisor" && m.role !== "alumni",
+    (m) => m.role !== "advisor" && m.role !== "alumni" && m.role !== "academic advisor",
   );
 
   const SnsIcons = ({ sns }: { sns?: Member["sns"] }) => {
@@ -123,6 +130,31 @@ export default function AboutPage() {
             {member.role && <p className="text-sm text-gray-500 mb-1">{member.role}</p>}
             <TagList tag={member.tag} />
             <SnsIcons sns={member.sns} />
+            {(member.role === "academic advisor" || member.role === "advisor") && member.description && (
+              <Accordion type="single" collapsible className="w-full mt-2">
+                <AccordionItem value="description">
+                  <AccordionTrigger>詳細</AccordionTrigger>
+                  <AccordionContent>
+                    <p className="whitespace-pre-line">{member.description}</p>
+                    {member.sns && member.sns.researchmap && (
+                      <Link href={member.sns.researchmap} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline">
+                        Researchmap
+                      </Link>
+                    )}
+                    {member.sns && member.sns.website && (
+                      <Link href={member.sns.website} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline block">
+                        Webサイト
+                      </Link>
+                    )}
+                    {member.sns && member.sns.note && (
+                      <Link href={normalizeNoteUrl(member.sns.note) || '#'} target="_blank" rel="noopener noreferrer" className="text-blue-500 hover:underline block">
+                        Note
+                      </Link>
+                    )}
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            )}
           </CardContent>
         </Card>
       ))}
@@ -190,6 +222,14 @@ export default function AboutPage() {
           <section className="space-y-4">
             <h2 className="text-2xl font-semibold">Advisors</h2>
             <MemberGrid list={advisorMembers} />
+          </section>
+        )}
+
+        {/* ACADEMIC ADVISORS */}
+        {academicAdvisorMembers.length > 0 && (
+          <section className="space-y-4">
+            <h2 className="text-2xl font-semibold">Academic Advisors</h2>
+            <MemberGrid list={academicAdvisorMembers} />
           </section>
         )}
 
