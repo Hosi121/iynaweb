@@ -145,6 +145,16 @@
     "description": "クリエイター"
   },
   {
+    "name": "Taiyo Toyama",
+    "role": "クリエイター",
+    "tag": ["イベント企画"],
+    "sns": {
+      "note": "https://note.com/iyna_japan/n/n0265e2b9c014"
+    },
+    "imageSrc": "",
+    "description": "クリエイター"
+  },
+  {
     "name": "Ryuzo Kijima",
     "role": "alumni"
   },
