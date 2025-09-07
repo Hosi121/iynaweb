@@ -1,22 +1,92 @@
 [
     {
-      "title": "研究者対談・講演会",
-      "description": "研究者の方との対談や講演会を実施",
+      "title": "IYNA Japan 交流会 @渋谷QWS",
+      "description": "PM: Masaki Hoshino<br>Contributors: Linna Sato, Nobuko Tsujimoto, Rino Kim",
       "imageSrc": ""
     },
     {
-      "title": "大学ラボ見学",
-      "description": "大学のラボの見学を開催",
+      "title": "APPW2025 (第130回日本解剖学会・第102回日本生理学会・第98回日本薬理学会 合同大会)  ポスター発表",
+      "description": "PM: Nobuko Tsujimoto<br>Contributors: Ayaka Ohara, Linna Sato, Ryota Kamikura",
       "imageSrc": ""
     },
     {
-      "title": "株式会社LIFESCAPES様のオフィス見学",
-      "description": "株式会社LIFESCAPES様のオフィス見学を開催",
+      "title": "「脳と人工知能の融合がもたらす未来」池谷裕二×藤井直敬×高校生 対談イベント",
+      "description": "PM: Ryota Kamikura<br>Contributors: Ayaka Ohara, Linna Sato, Rikuto Egawa, Yuma Kai, Masaki Hoshino, Wakana Kiuchi, Misaki Ozawa",
       "imageSrc": ""
     },
     {
-      "title": "玉川大学脳科学研究所の見学",
-      "description": "玉川大学脳科学研究所の見学を開催",
+      "title": "Shibuya Scramble Square 展示",
+      "description": "PM: Ayaka Ohara<br>Contributors: Misaki Ozawa, Linna Sato, Ryota Kamikura, Masaki Hoshino",
+      "imageSrc": ""
+    },
+    {
+      "title": "IYNA Japan ピッチ @渋谷QWS",
+      "description": "PM: Misaki Ozawa<br>Contributors: Ayaka Ohara, Nobuko Tsujimoto, Linna Sato, Ryota Kamikura",
+      "imageSrc": ""
+    },
+    {
+      "title": "玉川大学脳科学研究所見学",
+      "description": "PM: Masaki Hoshino<br>Contributors: Misaki Ozawa",
+      "imageSrc": ""
+    },
+    {
+      "title": "東京大学 生産技術研究所見学",
+      "description": "PM: Ryota Kamikuraz<br>Contributors: Ayaka Ohara, Linna Sato",
+      "imageSrc": ""
+    },
+    {
+      "title": "株式会社LIFESCAPES　オフィス見学",
+      "description": "PM: Ryota Kamikura<br>Contributors: Masaki Hoshino, Wakana Kiuchi",
+      "imageSrc": ""
+    },
+    {
+      "title": "Brain Facts 輪読会",
+      "description": "PM: Misaki Ozawa<br>Contributors: Ayaka Ohara, Linna Sato, Ryota Kamikura",
+      "imageSrc": ""
+    },
+    {
+      "title": "Open Neuroscience Initiative 勉強会",
+      "description": "PM: Misaki Ozawa<br>Contributors: Seisen Fu, Linna Sato",
+      "imageSrc": ""
+    },
+    {
+      "title": "脳模試",
+      "description": "Contributors: Riki Nakano, Linna Sato, Ryota Kamikura",
+      "imageSrc": ""
+    },
+    {
+      "title": "東大メタバース工学部 x IYNA Japan",
+      "description": "PM: Misaki Ozawa<br>Contributors: Ayaka Ohara, Masaki Hoshino, Ryota Kamikura",
+      "imageSrc": ""
+    },
+    {
+      "title": "日本神経科学大会 市民公開講座「脳科学の達人」x IYNA Japan",
+      "description": "PM: Misaki Ozawa<br>Contributors: Linna Sato, Seisen Fu, Masaki Hoshino, Ryota Kamikura",
+      "imageSrc": ""
+    },
+    {
+      "title": "株式会社LIFESCAPES代表取締役CEO兼慶應大教授　牛場潤一先生 講演会",
+      "description": "PM: Masaki Hoshino<br>Contributors: Taiyo Toyama, Rinako Oya, Nagomi Hiroki, Ryota Kamikura",
+      "imageSrc": ""
+    },
+    {
+      "title": "テオリア・テクノロジーズ コラボ",
+      "description": "PM: Rino Kim<br>Contributors: Linna Sato, Yuri Ide, Seisen Fu, Nagomi Hiroki, Rinako Oya, Riki Nakano, Ryota Kamikura",
+      "imageSrc": ""
+    },
+    {
+      "title": "順天堂大学医学部　見学",
+      "description": "PM: Ryota Kamikura<br>Contributors: Linna Sato",
+      "imageSrc": ""
+    },
+    {
+      "title": "東京大学生産技術研究所 池内与志穂先生 講演会",
+      "description": "PM: Yuri Ide<br>Contributors: Ryota Kamikura",
+      "imageSrc": ""
+    },
+    {
+      "title": "Neuroinnovation Research Ideathon",
+      "description": "PM: Wakana Kiuchi<br>Contributors: Linna Sato, Rino Kim, Ryota Kamikura, Rikuto Egawa",
       "imageSrc": ""
     }
   ]
