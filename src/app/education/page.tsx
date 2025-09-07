@@ -145,7 +145,7 @@ export default async function EducationPage() {
                   rel="noopener noreferrer"
                   className="text-blue-600 hover:underline"
                 >
-                  脳の世紀を見る →
+                  脳の世紀推進会議を見る →
                 </Link>
               </CardContent>
             </Card>
