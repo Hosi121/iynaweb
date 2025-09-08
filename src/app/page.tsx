@@ -39,10 +39,10 @@ export default function HomePage() {
 
         <div className="container mx-auto px-6 text-center space-y-8">
           <h1 className="text-5xl md:text-6xl font-extrabold tracking-tight leading-tight md:leading-[1.15] text-gray-900 drop-shadow-md">
-            中高生神経科学者、<span className="text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-600 to-pink-600">集まれ！</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-600 to-pink-600">IYNA Japan</span>
           </h1>
           <p className="text-lg md:text-2xl leading-relaxed md:leading-loose max-w-3xl mx-auto text-gray-800/90">
-            IYNA Japan は中高生の国際的な非営利団体です。日本最大級の中高生神経科学コミュニティーを共に築きましょう。
+            IYNA (International Youth Neuroscience Association) は神経科学に興味がある中高生が集まる、国際的な非営利団体です。IYNA Japan はその日本支部です。
           </p>
           <div className="flex flex-col sm:inline-flex sm:flex-row justify-center gap-4">
             <Link href="/about" passHref legacyBehavior>
