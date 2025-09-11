@@ -39,10 +39,9 @@ export default function BrainBeePage() {
           <Card>
             <CardContent className="space-y-4">
               <p>
-                最新の脳科学論文やレビューをみんなで読み解くオンライン読書会です。専門家によるイントロダクションの後、
-                参加者同士でディスカッションを行い、理解を深めます。
+                現在は休止中ですが、脳科学オリンピックの予選が近くなった際に再開する予定です。
               </p>
-              <p>参加希望の方はメールでご連絡ください。</p>
+              <p>参加希望の方はJoinよりフォームをご記入ください。</p>
               <div className="flex items-center space-x-4">
                 <Link
                   href="mailto:iynajapan2024@gmail.com"
