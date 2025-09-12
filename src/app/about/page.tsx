@@ -208,23 +208,46 @@ export default function AboutPage() {
           <div className="pointer-events-none absolute -bottom-6 left-8 h-24 w-24 rounded-full bg-amber-200/50 blur-2xl animate-pulse" />
         </section>
         {/* ABOUT OVERVIEW */}
-        <section className="space-y-4">
-          <h2 className="text-2xl font-semibold">IYNA Japan とは</h2>
-          <p>
-            IYNA（International Youth Neuroscience Association）は、次世代の神経科学者にインスピレーションを与えることを目的とした、国際的な学生主導の非営利団体です。
-          </p>
-          <p>
-            IYNA は2016年に国際脳科学オリンピックの経験者が立ち上げ、現在は4000人以上のメンバーと126国以上の支部があります。
-          </p>
-          <p>
-            IYNAについての詳細は
-            <Link href="https://www.youthneuro.org/" target="_blank" rel="noopener noreferrer">
-              こちら
-            </Link>
-          </p>
-          <p>
-            IYNA Japanは中高生による中高生向けの団体です。神経科学への興味を共有するコミュニティーであると共に、神経科学の教育活動にも励んでおります。
-          </p>
+        <section>
+          <div className="grid md:grid-cols-2 gap-8 items-center">
+            <div className="space-y-4">
+              <div className="group relative rounded-2xl bg-white/60 backdrop-blur-sm ring-1 ring-pink-200/50 p-6">
+                <div className="pointer-events-none absolute -inset-1 rounded-3xl bg-gradient-to-br from-fuchsia-400/15 via-rose-300/15 to-amber-200/15 blur-2xl" />
+                <div className="relative">
+                  <h2 className="text-2xl font-semibold mb-3">IYNA Japan とは</h2>
+                  <p>
+                    IYNA（International Youth Neuroscience Association）は、次世代の神経科学者にインスピレーションを与えることを目的とした、国際的な学生主導の非営利団体です。
+                  </p>
+                  <p>
+                    IYNA は2016年に国際脳科学オリンピックの経験者が立ち上げ、現在は4000人以上のメンバーと126国以上の支部があります。
+                  </p>
+                  <p>
+                    IYNAについての詳細は
+                    <Link href="https://www.youthneuro.org/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+                      こちら
+                    </Link>
+                  </p>
+                  <p>
+                    IYNA Japanは中高生による中高生向けの団体です。神経科学への興味を共有するコミュニティーであると共に、神経科学の教育活動にも励んでおります。
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="relative order-first md:order-last flex justify-center">
+              <div className="pointer-events-none absolute -top-6 right-6 h-24 w-24 rounded-full bg-pink-300/40 blur-2xl" />
+              <div className="pointer-events-none absolute -bottom-6 left-6 h-24 w-24 rounded-full bg-amber-200/40 blur-2xl" />
+              <div className="relative rounded-2xl ring-1 ring-gray-200/60 shadow-sm overflow-hidden bg-white/70 backdrop-blur">
+                <Image
+                  src="/brain_hirameki.png"
+                  alt="IYNA Illustration"
+                  width={420}
+                  height={420}
+                  className="object-contain"
+                  priority
+                />
+              </div>
+            </div>
+          </div>
         </section>
 
         {/* VISION SECTION */}
