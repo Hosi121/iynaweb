@@ -1,12 +1,6 @@
 import Parser from "rss-parser";
 import { load } from "cheerio";
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-  CardDescription,
-} from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import Link from "next/link";
 import { ExternalLink } from "lucide-react";
 import FadeIn from "@/components/FadeIn";

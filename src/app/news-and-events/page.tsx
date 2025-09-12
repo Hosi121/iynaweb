@@ -1,7 +1,6 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
 import { ExternalLink } from "lucide-react";
 import FadeIn from "@/components/FadeIn";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";

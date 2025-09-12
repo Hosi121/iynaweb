@@ -39,18 +39,18 @@ export default function FadeIn({ children, className = "", as = "div", delayMs =
     return () => observer.disconnect();
   }, []);
 
-  const Comp: any = as;
-  return (
-    <Comp
-      ref={ref}
-      className={[
+  const Comp: React.ElementType = as;
+  return React.createElement(
+    Comp,
+    {
+      ref,
+      className: [
         "transform transition-all duration-700 ease-out will-change-transform will-change-opacity",
         inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4",
         className,
-      ].join(" ")}
-      style={{ transitionDelay: `${delayMs}ms` }}
-    >
-      {children}
-    </Comp>
+      ].join(" "),
+      style: { transitionDelay: `${delayMs}ms` },
+    },
+    children
   );
 }
