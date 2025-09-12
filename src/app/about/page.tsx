@@ -4,6 +4,7 @@ import Layout from "@/components/Layout";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Link from "next/link";
+import { Button } from "@/components/ui/button";
 
 import members from "../data/members-list.json";
 import { Metadata } from "next";
@@ -165,9 +166,50 @@ export default function AboutPage() {
     <Layout>
       <Header />
       <main className="container mx-auto px-6 py-12 space-y-12">
-        {/* ABOUT SECTION */}
+        {/* HERO */}
+        <section className="relative isolate overflow-hidden rounded-2xl bg-gradient-to-br from-pink-200 via-rose-100 to-amber-100 py-14 text-center">
+          <svg
+            className="absolute -z-10 top-6 left-1/2 -translate-x-1/2 w-[120%] h-auto opacity-30 blur-3xl"
+            viewBox="0 0 600 600"
+            aria-hidden
+          >
+            <defs>
+              <radialGradient id="grad-about" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stopColor="#FDB4BF" />
+                <stop offset="100%" stopColor="#FCE7F3" />
+              </radialGradient>
+            </defs>
+            <circle cx="300" cy="300" r="300" fill="url(#grad-about)" />
+          </svg>
+          <svg
+            className="absolute -z-10 bottom-0 left-0 w-full h-20 opacity-30"
+            preserveAspectRatio="none"
+            viewBox="0 0 800 200"
+            aria-hidden
+          >
+            <path d="M0 100 C150 200 350 0 800 100 L800 200 L0 200 Z" fill="#ffffff" />
+          </svg>
+
+          <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight text-gray-900 drop-shadow-sm">
+            About IYNA Japan
+          </h1>
+          <p className="mt-3 text-lg text-gray-700">
+            中高生による・中高生のための神経科学コミュニティ
+          </p>
+          <div className="mt-6 flex justify-center gap-3">
+            <Button asChild className="bg-pink-600 hover:bg-pink-700 text-white shadow-md">
+              <Link href="/join">仲間になる</Link>
+            </Button>
+            <Button asChild variant="outline">
+              <Link href="/activities">活動実績を見る</Link>
+            </Button>
+          </div>
+          <div className="pointer-events-none absolute -top-6 right-8 h-24 w-24 rounded-full bg-pink-300/50 blur-2xl animate-pulse" />
+          <div className="pointer-events-none absolute -bottom-6 left-8 h-24 w-24 rounded-full bg-amber-200/50 blur-2xl animate-pulse" />
+        </section>
+        {/* ABOUT OVERVIEW */}
         <section className="space-y-4">
-          <h1 className="text-3xl font-bold">About IYNA Japan</h1>
+          <h2 className="text-2xl font-semibold">IYNA Japan とは</h2>
           <p>
             IYNA（International Youth Neuroscience Association）は、次世代の神経科学者にインスピレーションを与えることを目的とした、国際的な学生主導の非営利団体です。
           </p>
