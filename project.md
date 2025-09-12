@@ -1,6 +1,6 @@
 IYNA Japan サイトを Next.js＋ShadCN/UI でリファクタリング・移植するにあたり、まずは現行の各ページに掲載されている「正の情報」をベースとして、ページごとに表示すべき要素と必要なデータ項目を論説形式で整理します。
 
-ホーム（/）では、最上部にロゴとグローバルナビゲーションバーが固定されており、そこには Home、About、Education、BrainBee、Competition、News & Events、Join の各リンクが並んでいます（ナビゲーションは共通コンポーネントとして抽出）
+ホーム（/）では、最上部にロゴとグローバルナビゲーションバーが固定されており、そこには Home、About、Activities、Education、Competition、News & Events、Join の各リンクが並んでいます（ナビゲーションは共通コンポーネントとして抽出）
 iyna-japan.com
 。次に「中高生神経科学者、集まれ！」というヒーロー見出しと背景画像が置かれ、その下に IYNA Japan の簡潔な団体紹介文と「日本一大きい中高生の神経科学コミュニティーを作ります！」というキャッチコピーが続きます。ページ下部には住所（Tokyo, Japan）、問い合わせ用メールアドレス（iynajapan2024@gmail.com）、および Twitter／Instagram／note へのソーシャルリンクと著作権表記が一括して配置されています
 iyna-japan.com
@@ -10,11 +10,11 @@ About（/about）ページには、団体概要を説明するリード段落と
 iyna-japan.com
 。
 
-Education（/education）ページは導入文で「運営メンバーが行っている活動を記録」「研究者インタビューやイベント開催」などの趣旨説明を置き、その下に「イベント企画」「Articles」「Short Posts」の三つの小セクションが並列に配置されています。イベント企画では実施中・予定の各イベント名と説明文、関連する画像の URL を、Articles では記事タイトルと note への外部リンクを、Short Posts では Instagram への投稿リンクや「脳科学オリンピック用語集の解説」といったリスト形式の項目をそれぞれ掲載します
+Education（/education）ページは、神経科学の学習リソース（記事・外部リンク）を掲載します。note の RSS から最新の記事（ヘッダー画像付き）を表示し、加えて関連リンクを紹介します（活動実績は Education ではなく Activities ページに集約）
 iyna-japan.com
 。
 
-BrainBee（/brainbee）ページには「脳科学オリンピック 挑戦者へ」というイントロの下、Acetylcholine、Action Potential といった専門用語とその英語定義を段落ごとに示すグロッサリーセクションがあります。さらに「Brain Facts 輪読会」では開催趣旨と価値を説明し、「参加はメールへ」という一文と Twitter／Instagram／note のソーシャルリンクアイコンを並べています
+Activities（/activities）ページには、IYNA Japan の活動実績（イベント名と担当 PM、Contributors の関係）をカード形式で一覧表示します。
 iyna-japan.com
 。
 
