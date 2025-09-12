@@ -1,0 +1,31 @@
+{
+    "events": [
+      {
+        "title": "第1回脳模試開催！",
+        "description": "脳科学オリンピックに興味をお持ちの方や、脳科学の知識を体系的につけたい方はぜひ腕試しに解いてみてください。7/21（月）20:00~21:00より開始。参加するためには IYNA の Discord に参加していただく必要があります。Join より form をご記入ください。",
+        "links": [
+          { "label": "告知ポストを見る", "href": "https://x.com/IYNAJapan/status/1946824955653730733" },
+          { "label": "応募フォームはこちら", "href": "https://docs.google.com/forms/d/e/1FAIpQLSdegYW3hyieJwmRw0pbKQ6wIKJP7BEiMKf3oCWn1R27rXejBg/viewform?usp=send_form" }
+        ]
+      },
+      {
+        "title": "神経科学学会 脳科学の達人 コラボ企画",
+        "description": "2025 年開催の日本神経科学大会 市民公開講座「脳科学の達人」にて、IYNA Japan を運営メンバー4人が登壇します。脳科学の達人 x 高校生のディスカッションを行います！",
+        "links": [
+          { "label": "公開講座の詳細はこちら", "href": "https://neuroscience2025.jnss.org/open_lecture.html" },
+          { "label": "告知ポストを見る", "href": "https://x.com/iynajapan/status/1940037675752595733" }
+        ]
+      },
+      {
+        "title": "「脳と人工知能の融合がもたらす未来」池谷裕二×藤井直敬×高校生 対談イベント",
+        "description": "池谷裕二先生と藤井直敬先生をお招きし、IYNA Japan の高校生 2 名と「脳と人工知能の融合がもたらす未来」をテーマに対談するイベントを開催しました。",
+        "location": "渋谷スクランブルスクエア15階 渋谷QWS",
+        "datetime": "4/20 10:30～14:00"
+      },
+      {
+        "title": "東大メタバース工学部 コラボ企画",
+        "description": "東大メタバース工学部ジュニア教育プログラムの「高校生コラボ講座・生命知能と人工知能―脳をリバースエンジニアリングする―」に IYNA Japan の運営メンバー 3 名が座談会・質問コーナーに招待され、参加しました！"
+      }
+    ]
+  }
+  
