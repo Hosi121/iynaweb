@@ -9,6 +9,7 @@ import {
 } from "@/components/ui/card";
 import Link from "next/link";
 import { ExternalLink } from "lucide-react";
+import FadeIn from "@/components/FadeIn";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Metadata } from "next";
@@ -108,38 +109,42 @@ export default async function EducationPage() {
         <section>
           <h2 className="text-2xl font-semibold mb-4">記事</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {articles.map(({ title, link, snippet, imageUrl }) => (
-              <Card
-                key={link}
-                className="group relative overflow-hidden rounded-2xl bg-white/60 backdrop-blur-sm ring-1 ring-pink-200/50 shadow-sm transition hover:shadow-lg hover:-translate-y-0.5"
-              >
-                <div className="pointer-events-none absolute -inset-1 rounded-3xl bg-gradient-to-br from-fuchsia-400/15 via-rose-300/15 to-amber-200/15 opacity-0 group-hover:opacity-100 transition blur-2xl" />
-                <CardHeader>
-                  <CardTitle className="text-lg">{title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  {imageUrl && (
-                    <div className="relative mb-2">
-                      <img
-                        src={imageUrl}
-                        alt={`Header for ${title}`}
-                        className="w-full h-40 object-cover rounded-xl ring-1 ring-gray-200/50"
-                      />
-                      <div className="pointer-events-none absolute inset-0 rounded-xl bg-gradient-to-t from-white/20 to-transparent" />
-                    </div>
-                  )}
-                  {snippet && <p className="line-clamp-3 mb-3 text-gray-700">{snippet}</p>}
-                  <Link
-                    href={link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 rounded-full bg-white/70 ring-1 ring-pink-200/60 px-3 py-1 text-sm text-gray-800 hover:shadow-sm"
+            {articles.map((a, idx) => {
+              const { title, link, snippet, imageUrl } = a;
+              return (
+                <FadeIn key={link} delayMs={idx * 80}>
+                  <Card
+                    className="group relative overflow-hidden rounded-2xl bg-white/60 backdrop-blur-sm ring-1 ring-pink-200/50 shadow-sm transition hover:shadow-lg hover:-translate-y-0.5"
                   >
-                    <ExternalLink className="w-4 h-4 text-pink-600" /> 記事を読む
-                  </Link>
-                </CardContent>
-              </Card>
-            ))}
+                    <div className="pointer-events-none absolute -inset-1 rounded-3xl bg-gradient-to-br from-fuchsia-400/15 via-rose-300/15 to-amber-200/15 opacity-0 group-hover:opacity-100 transition blur-2xl" />
+                    <CardHeader>
+                      <CardTitle className="text-lg">{title}</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      {imageUrl && (
+                        <div className="relative mb-2">
+                          <img
+                            src={imageUrl}
+                            alt={`Header for ${title}`}
+                            className="w-full h-40 object-cover rounded-xl ring-1 ring-gray-200/50"
+                          />
+                          <div className="pointer-events-none absolute inset-0 rounded-xl bg-gradient-to-t from-white/20 to-transparent" />
+                        </div>
+                      )}
+                      {snippet && <p className="line-clamp-3 mb-3 text-gray-700">{snippet}</p>}
+                      <Link
+                        href={link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 rounded-full bg-white/70 ring-1 ring-pink-200/60 px-3 py-1 text-sm text-gray-800 hover:shadow-sm"
+                      >
+                        <ExternalLink className="w-4 h-4 text-pink-600" /> 記事を読む
+                      </Link>
+                    </CardContent>
+                  </Card>
+                </FadeIn>
+              );
+            })}
           </div>
         </section>
 
@@ -147,25 +152,27 @@ export default async function EducationPage() {
         <section>
           <h2 className="text-2xl font-semibold mb-4">関連リンク</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <Card className="group relative overflow-hidden rounded-2xl bg-white/60 backdrop-blur-sm ring-1 ring-pink-200/50 shadow-sm transition hover:shadow-lg hover:-translate-y-0.5">
-              <div className="pointer-events-none absolute -inset-1 rounded-3xl bg-gradient-to-br from-fuchsia-400/15 via-rose-300/15 to-amber-200/15 opacity-0 group-hover:opacity-100 transition blur-2xl" />
-              <CardHeader>
-                <CardTitle>関連リンク</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="line-clamp-3 mb-3 text-gray-700">
-                  脳科学に関する情報を提供するウェブサイトです。
-                </p>
-                <Link
-                  href="https://www.braincentury.org/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 rounded-full bg-white/70 ring-1 ring-pink-200/60 px-3 py-1 text-sm text-gray-800 hover:shadow-sm"
-                >
-                  <ExternalLink className="w-4 h-4 text-pink-600" /> 脳の世紀を見る
-                </Link>
-              </CardContent>
-            </Card>
+            <FadeIn>
+              <Card className="group relative overflow-hidden rounded-2xl bg-white/60 backdrop-blur-sm ring-1 ring-pink-200/50 shadow-sm transition hover:shadow-lg hover:-translate-y-0.5">
+                <div className="pointer-events-none absolute -inset-1 rounded-3xl bg-gradient-to-br from-fuchsia-400/15 via-rose-300/15 to-amber-200/15 opacity-0 group-hover:opacity-100 transition blur-2xl" />
+                <CardHeader>
+                  <CardTitle>関連リンク</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="line-clamp-3 mb-3 text-gray-700">
+                    脳科学に関する情報を提供するウェブサイトです。
+                  </p>
+                  <Link
+                    href="https://www.braincentury.org/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 rounded-full bg-white/70 ring-1 ring-pink-200/60 px-3 py-1 text-sm text-gray-800 hover:shadow-sm"
+                  >
+                    <ExternalLink className="w-4 h-4 text-pink-600" /> 脳の世紀を見る
+                  </Link>
+                </CardContent>
+              </Card>
+            </FadeIn>
           </div>
         </section>
 
