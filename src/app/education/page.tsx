@@ -1,4 +1,3 @@
-import events from "../data/events-list.json";
 import Parser from "rss-parser";
 import { load } from "cheerio";
 import {
@@ -71,29 +70,7 @@ export default async function EducationPage() {
     <>
       <Header />
       <main className="container mx-auto py-8">
-        {/* ――― イベント企画 セクション ――― */}
-        <section className="mb-12">
-          <h2 className="text-2xl font-semibold mb-4">イベント企画</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {events.map((e) => (
-              <Card key={e.title}>
-                <CardHeader>
-                  <CardTitle>{e.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  {e.imageSrc && (
-                    <img
-                      src={e.imageSrc}
-                      alt={e.title}
-                      className="w-full h-40 object-cover rounded mb-2"
-                    />
-                  )}
-                  <CardDescription>{e.description}</CardDescription>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </section>
+        {/* 学習リソース専用（イベント企画は活動実績ページへ移設） */}
 
         {/* ――― Articles (Note RSS + Header Image) ――― */}
         <section className="mb-12">
