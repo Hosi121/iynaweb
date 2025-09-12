@@ -13,7 +13,6 @@ export default function Header() {
     { label: "Home", href: "/" },
     { label: "About", href: "/about" },
     { label: "Education", href: "/education" },
-    { label: "BrainBee", href: "/brainbee" },
     { label: "Competition", href: "/competition" },
     { label: "News & Events", href: "/news-and-events" },
     { label: "Join", href: "/join" },
