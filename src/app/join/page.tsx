@@ -10,6 +10,7 @@ import {
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Calendar, Share2, Users } from "lucide-react";
+import FadeIn from "@/components/FadeIn";
 
 export const metadata = {
   title: "Join | IYNA Japan",
@@ -98,18 +99,19 @@ export default function JoinPage() {
                 Icon: Users,
                 text: "学生同士での学び合いと交流",
               }].map(({ Icon, text }, i) => (
-                <div
-                  key={i}
-                  className="group relative rounded-xl bg-white/70 backdrop-blur-sm ring-1 ring-gray-200/60 p-6 overflow-hidden transition shadow-sm hover:shadow-md hover:-translate-y-0.5"
-                >
-                  <div className="absolute -inset-0.5 bg-gradient-to-br from-fuchsia-400/0 via-pink-200/0 to-rose-200/0 opacity-0 group-hover:opacity-100 transition blur-xl" />
-                  <div className="relative flex flex-col items-center text-center space-y-3">
-                    <span className="flex h-12 w-12 items-center justify-center rounded-full bg-pink-50 text-pink-600 ring-1 ring-pink-200 shadow-sm group-hover:scale-105 transition">
-                      <Icon className="h-6 w-6" aria-hidden />
-                    </span>
-                    <p className="text-gray-700 leading-relaxed">{text}</p>
+                <FadeIn key={i} delayMs={i * 80}>
+                  <div
+                    className="group relative rounded-xl bg-white/70 backdrop-blur-sm ring-1 ring-gray-200/60 p-6 overflow-hidden transition shadow-sm hover:shadow-md hover:-translate-y-0.5"
+                  >
+                    <div className="absolute -inset-0.5 bg-gradient-to-br from-fuchsia-400/0 via-pink-200/0 to-rose-200/0 opacity-0 group-hover:opacity-100 transition blur-xl" />
+                    <div className="relative flex flex-col items-center text-center space-y-3">
+                      <span className="flex h-12 w-12 items-center justify-center rounded-full bg-pink-50 text-pink-600 ring-1 ring-pink-200 shadow-sm group-hover:scale-105 transition">
+                        <Icon className="h-6 w-6" aria-hidden />
+                      </span>
+                      <p className="text-gray-700 leading-relaxed">{text}</p>
+                    </div>
                   </div>
-                </div>
+                </FadeIn>
               ))}
             </div>
 
