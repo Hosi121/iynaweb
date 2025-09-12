@@ -16,7 +16,13 @@ export default function FadeIn({ children, className = "", as = "div", delayMs =
   React.useEffect(() => {
     const el = ref.current;
     if (!el) return;
-
+    const reduceMotion = typeof window !== "undefined" &&
+      window.matchMedia &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduceMotion) {
+      setInView(true);
+      return;
+    }
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -48,4 +54,3 @@ export default function FadeIn({ children, className = "", as = "div", delayMs =
     </Comp>
   );
 }
-
