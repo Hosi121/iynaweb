@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ExternalLink } from "lucide-react";
+import FadeIn from "@/components/FadeIn";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import posts from "@/data/post.json";
 
@@ -63,16 +64,16 @@ export default function NewsAndEventsPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {events.map((ev, idx) => (
-              <Card
-                className="group relative overflow-hidden rounded-2xl bg-white/60 backdrop-blur-sm ring-1 ring-pink-200/50 shadow-sm transition hover:shadow-lg hover:-translate-y-0.5"
-                key={idx}
-              >
-                <div className="pointer-events-none absolute -inset-1 rounded-3xl bg-gradient-to-br from-fuchsia-400/15 via-rose-300/15 to-amber-200/15 opacity-0 group-hover:opacity-100 transition blur-2xl" />
-                <CardHeader>
-                  <CardTitle className="text-lg">{ev.title}</CardTitle>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  <p className="whitespace-pre-line">{ev.description}</p>
+              <FadeIn key={idx} delayMs={idx * 80}>
+                <Card
+                  className="group relative overflow-hidden rounded-2xl bg-white/60 backdrop-blur-sm ring-1 ring-pink-200/50 shadow-sm transition hover:shadow-lg hover:-translate-y-0.5"
+                >
+                  <div className="pointer-events-none absolute -inset-1 rounded-3xl bg-gradient-to-br from-fuchsia-400/15 via-rose-300/15 to-amber-200/15 opacity-0 group-hover:opacity-100 transition blur-2xl" />
+                  <CardHeader>
+                    <CardTitle className="text-lg">{ev.title}</CardTitle>
+                  </CardHeader>
+                  <CardContent className="space-y-4">
+                    <p className="whitespace-pre-line">{ev.description}</p>
 
                   {(ev.location || ev.datetime) && (
                     <ul className="list-none space-y-1">
@@ -91,24 +92,25 @@ export default function NewsAndEventsPage() {
                     </ul>
                   )}
 
-                  {ev.links && ev.links.length > 0 && (
-                    <div className="flex flex-wrap gap-2">
-                      {ev.links.map((lk, i) => (
-                        <Link
-                          key={i}
-                          href={lk.href}
-                          className="inline-flex items-center gap-2 rounded-full bg-white/70 ring-1 ring-pink-200/60 px-3 py-1 text-sm text-gray-800 hover:shadow-sm"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          <ExternalLink className="w-4 h-4 text-pink-600" />
-                          {lk.label}
-                        </Link>
-                      ))}
-                    </div>
-                  )}
-                </CardContent>
-              </Card>
+                    {ev.links && ev.links.length > 0 && (
+                      <div className="flex flex-wrap gap-2">
+                        {ev.links.map((lk, i) => (
+                          <Link
+                            key={i}
+                            href={lk.href}
+                            className="inline-flex items-center gap-2 rounded-full bg-white/70 ring-1 ring-pink-200/60 px-3 py-1 text-sm text-gray-800 hover:shadow-sm"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            <ExternalLink className="w-4 h-4 text-pink-600" />
+                            {lk.label}
+                          </Link>
+                        ))}
+                      </div>
+                    )}
+                  </CardContent>
+                </Card>
+              </FadeIn>
             ))}
           </div>
         </section>
