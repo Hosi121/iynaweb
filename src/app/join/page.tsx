@@ -87,31 +87,30 @@ export default function JoinPage() {
             </p>
 
             <h3 className="text-lg font-medium">活動内容</h3>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
-              <div>
-                <span className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-pink-50 text-pink-600 ring-1 ring-pink-200">
-                  <Calendar className="h-6 w-6" aria-hidden />
-                </span>
-                <p className="mt-2 text-gray-700">
-                  サイエンスコミュニケーションイベントの企画・運営
-                </p>
-              </div>
-              <div>
-                <span className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-pink-50 text-pink-600 ring-1 ring-pink-200">
-                  <Share2 className="h-6 w-6" aria-hidden />
-                </span>
-                <p className="mt-2 text-gray-700">
-                  SNSを活用した情報発信
-                </p>
-              </div>
-              <div>
-                <span className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-pink-50 text-pink-600 ring-1 ring-pink-200">
-                  <Users className="h-6 w-6" aria-hidden />
-                </span>
-                <p className="mt-2 text-gray-700">
-                  学生同士での学び合いと交流
-                </p>
-              </div>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+              {[{
+                Icon: Calendar,
+                text: "サイエンスコミュニケーションイベントの企画・運営",
+              },{
+                Icon: Share2,
+                text: "SNSを活用した情報発信",
+              },{
+                Icon: Users,
+                text: "学生同士での学び合いと交流",
+              }].map(({ Icon, text }, i) => (
+                <div
+                  key={i}
+                  className="group relative rounded-xl bg-white/70 backdrop-blur-sm ring-1 ring-gray-200/60 p-6 overflow-hidden transition shadow-sm hover:shadow-md hover:-translate-y-0.5"
+                >
+                  <div className="absolute -inset-0.5 bg-gradient-to-br from-fuchsia-400/0 via-pink-200/0 to-rose-200/0 opacity-0 group-hover:opacity-100 transition blur-xl" />
+                  <div className="relative flex flex-col items-center text-center space-y-3">
+                    <span className="flex h-12 w-12 items-center justify-center rounded-full bg-pink-50 text-pink-600 ring-1 ring-pink-200 shadow-sm group-hover:scale-105 transition">
+                      <Icon className="h-6 w-6" aria-hidden />
+                    </span>
+                    <p className="text-gray-700 leading-relaxed">{text}</p>
+                  </div>
+                </div>
+              ))}
             </div>
 
             <h3 className="text-lg font-medium">参加方法</h3>
