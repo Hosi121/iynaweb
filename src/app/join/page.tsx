@@ -16,13 +16,20 @@ export const metadata = {
 };
 
 export default function JoinPage() {
+  const EMBED_URL = process.env.NEXT_PUBLIC_JOIN_FORM_EMBED_URL;
   return (
     <>
       <Header />
 
       <main className="container mx-auto py-10 px-6 space-y-12">
+        {/* Hero */}
+        <section className="text-center">
+          <h1 className="text-4xl font-bold mb-2">Join</h1>
+          <p className="text-gray-600">IYNA Japan に参加して一緒に活動しよう</p>
+        </section>
+
         {/* コミュニティーメンバー募集 */}
-        <Card>
+        <Card className="overflow-hidden">
           <CardHeader>
             <CardTitle className="text-2xl">コミュニティーメンバー募集</CardTitle>
           </CardHeader>
@@ -35,19 +42,25 @@ export default function JoinPage() {
             <h3 className="text-lg font-medium">活動内容</h3>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
               <div>
-                <Calendar className="mx-auto h-12 w-12" />
+                <span className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-pink-50 text-pink-600 ring-1 ring-pink-200">
+                  <Calendar className="h-6 w-6" aria-hidden />
+                </span>
                 <p className="mt-2 text-gray-700">
                   サイエンスコミュニケーションイベントの企画・運営
                 </p>
               </div>
               <div>
-                <Share2 className="mx-auto h-12 w-12" />
+                <span className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-pink-50 text-pink-600 ring-1 ring-pink-200">
+                  <Share2 className="h-6 w-6" aria-hidden />
+                </span>
                 <p className="mt-2 text-gray-700">
                   SNSを活用した情報発信
                 </p>
               </div>
               <div>
-                <Users className="mx-auto h-12 w-12" />
+                <span className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-pink-50 text-pink-600 ring-1 ring-pink-200">
+                  <Users className="h-6 w-6" aria-hidden />
+                </span>
                 <p className="mt-2 text-gray-700">
                   学生同士での学び合いと交流
                 </p>
@@ -56,20 +69,39 @@ export default function JoinPage() {
 
             <h3 className="text-lg font-medium">参加方法</h3>
             <p>興味のある方は、以下のフォームからご登録ください。</p>
-            <Link
-              href="https://forms.gle/EjsxHpSGE3DtJGvw8"
-              className="inline-flex items-center text-blue-600 hover:underline"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Share2 className="w-5 h-5 mr-2" />
-              参加フォーム
-            </Link>
+
+            {EMBED_URL ? (
+              <div className="relative w-full overflow-hidden rounded-lg border bg-white">
+                <iframe
+                  title="IYNA Japan 参加フォーム"
+                  src={EMBED_URL}
+                  className="w-full h-[1200px]"
+                  frameBorder="0"
+                  marginHeight={0}
+                  marginWidth={0}
+                />
+              </div>
+            ) : (
+              <div className="space-y-2">
+                <p className="text-sm text-gray-600">
+                  フォームの埋め込みは現在無効です。下記リンクからフォームに移動してください。
+                </p>
+                <Link
+                  href="https://forms.gle/EjsxHpSGE3DtJGvw8"
+                  className="inline-flex items-center text-blue-600 hover:underline"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Share2 className="w-5 h-5 mr-2" />
+                  参加フォームを開く
+                </Link>
+              </div>
+            )}
           </CardContent>
         </Card>
 
         {/* Advisor 募集 */}
-        <Card>
+        <Card className="overflow-hidden">
           <CardHeader>
             <CardTitle className="text-2xl">Advisor 募集</CardTitle>
           </CardHeader>
