@@ -8,6 +8,7 @@ import {
   CardTitle,
   CardContent,
 } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 import { Calendar, Share2, Users } from "lucide-react";
 
 export const metadata = {
@@ -17,6 +18,9 @@ export const metadata = {
 
 export default function JoinPage() {
   const EMBED_URL = process.env.NEXT_PUBLIC_JOIN_FORM_EMBED_URL;
+  const FORM_URL =
+    process.env.NEXT_PUBLIC_JOIN_FORM_URL ||
+    "https://forms.gle/EjsxHpSGE3DtJGvw8";
   return (
     <>
       <Header />
@@ -70,7 +74,8 @@ export default function JoinPage() {
             <h3 className="text-lg font-medium">参加方法</h3>
             <p>興味のある方は、以下のフォームからご登録ください。</p>
 
-            {EMBED_URL ? (
+            {/* 埋め込み（提供側で無効な場合は表示されないことがあります） */}
+            {EMBED_URL && (
               <div className="relative w-full overflow-hidden rounded-lg border bg-white">
                 <iframe
                   title="IYNA Japan 参加フォーム"
@@ -81,22 +86,22 @@ export default function JoinPage() {
                   marginWidth={0}
                 />
               </div>
-            ) : (
-              <div className="space-y-2">
-                <p className="text-sm text-gray-600">
-                  フォームの埋め込みは現在無効です。下記リンクからフォームに移動してください。
-                </p>
-                <Link
-                  href="https://forms.gle/EjsxHpSGE3DtJGvw8"
-                  className="inline-flex items-center text-blue-600 hover:underline"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <Share2 className="w-5 h-5 mr-2" />
-                  参加フォームを開く
-                </Link>
-              </div>
             )}
+
+            {/* 常に外部フォームも案内（埋め込みが無効でも入力可能に） */}
+            <div className="flex items-center gap-3">
+              <Button asChild variant="outline">
+                <Link href={FORM_URL} target="_blank" rel="noopener noreferrer">
+                  <Share2 className="w-5 h-5 mr-2" />
+                  別タブでフォームを開く
+                </Link>
+              </Button>
+              {!EMBED_URL && (
+                <p className="text-sm text-gray-600">
+                  埋め込みは現在無効です。上のボタンから入力してください。
+                </p>
+              )}
+            </div>
           </CardContent>
         </Card>
 
