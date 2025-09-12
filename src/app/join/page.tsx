@@ -118,11 +118,12 @@ export default function JoinPage() {
 
             {/* 埋め込み（提供側で無効な場合は表示されないことがあります） */}
             {EMBED_URL && (
-              <div className="relative w-full overflow-hidden rounded-lg border bg-white">
+              <div className="relative w-full overflow-hidden rounded-2xl border bg-white/80 backdrop-blur-sm ring-1 ring-pink-200/60 shadow-sm">
+                <div className="pointer-events-none absolute -inset-1 rounded-3xl bg-gradient-to-br from-fuchsia-400/20 via-rose-300/20 to-amber-200/20 blur-2xl" />
                 <iframe
                   title="IYNA Japan 参加フォーム"
                   src={EMBED_URL}
-                  className="w-full h-[1200px]"
+                  className="relative w-full h-[1200px]"
                   frameBorder="0"
                   marginHeight={0}
                   marginWidth={0}
@@ -132,7 +133,7 @@ export default function JoinPage() {
 
             {/* 常に外部フォームも案内（埋め込みが無効でも入力可能に） */}
             <div className="flex items-center gap-3">
-              <Button asChild variant="outline">
+              <Button asChild className="bg-pink-600 hover:bg-pink-700 text-white shadow-md">
                 <Link href={FORM_URL} target="_blank" rel="noopener noreferrer">
                   <Share2 className="w-5 h-5 mr-2" />
                   別タブでフォームを開く
