@@ -27,9 +27,52 @@ export default function JoinPage() {
 
       <main className="container mx-auto py-10 px-6 space-y-12">
         {/* Hero */}
-        <section className="text-center">
-          <h1 className="text-4xl font-bold mb-2">Join</h1>
-          <p className="text-gray-600">IYNA Japan に参加して一緒に活動しよう</p>
+        <section
+          className="relative isolate text-center overflow-hidden rounded-2xl bg-gradient-to-br from-pink-200 via-rose-100 to-amber-100 py-16"
+        >
+          {/* dynamic radial glow */}
+          <svg
+            className="absolute -z-10 top-10 left-1/2 -translate-x-1/2 w-[120%] h-auto opacity-30 blur-3xl"
+            viewBox="0 0 600 600"
+            aria-hidden
+          >
+            <defs>
+              <radialGradient id="grad-join" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stopColor="#FDB4BF" />
+                <stop offset="100%" stopColor="#FCE7F3" />
+              </radialGradient>
+            </defs>
+            <circle cx="300" cy="300" r="300" fill="url(#grad-join)" />
+          </svg>
+          {/* soft wave overlay */}
+          <svg
+            className="absolute -z-10 bottom-0 left-0 w-full h-24 opacity-30"
+            preserveAspectRatio="none"
+            viewBox="0 0 800 200"
+            aria-hidden
+          >
+            <path
+              d="M0 100 C150 200 350 0 800 100 L800 200 L0 200 Z"
+              fill="#ffffff"
+            />
+          </svg>
+
+          <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight text-gray-900 drop-shadow-sm">
+            Join IYNA Japan
+          </h1>
+          <p className="mt-3 text-lg text-gray-700">
+            参加して、一緒に神経科学コミュニティを広げよう
+          </p>
+          <div className="mt-6 flex justify-center">
+            <Button asChild className="bg-pink-600 hover:bg-pink-700 text-white shadow-md">
+              <Link href={FORM_URL} target="_blank" rel="noopener noreferrer">
+                参加フォームを開く
+              </Link>
+            </Button>
+          </div>
+          {/* floating decorations */}
+          <div className="pointer-events-none absolute -top-6 right-8 h-24 w-24 rounded-full bg-pink-300/50 blur-2xl animate-pulse" />
+          <div className="pointer-events-none absolute -bottom-6 left-8 h-24 w-24 rounded-full bg-amber-200/50 blur-2xl animate-pulse" />
         </section>
 
         {/* コミュニティーメンバー募集 */}
