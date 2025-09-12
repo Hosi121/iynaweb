@@ -1,9 +1,11 @@
 import Image from "next/image";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Lightbulb, Target, Rocket } from "lucide-react";
 import Layout from "@/components/Layout";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Link from "next/link";
+import { Button } from "@/components/ui/button";
 
 import members from "../data/members-list.json";
 import { Metadata } from "next";
@@ -165,49 +167,131 @@ export default function AboutPage() {
     <Layout>
       <Header />
       <main className="container mx-auto px-6 py-12 space-y-12">
-        {/* ABOUT SECTION */}
-        <section className="space-y-4">
-          <h1 className="text-3xl font-bold">About IYNA Japan</h1>
-          <p>
-            IYNA（International Youth Neuroscience Association）は、次世代の神経科学者にインスピレーションを与えることを目的とした、国際的な学生主導の非営利団体です。
+        {/* HERO */}
+        <section className="relative isolate overflow-hidden rounded-2xl bg-gradient-to-br from-pink-200 via-rose-100 to-amber-100 py-14 text-center">
+          <svg
+            className="absolute -z-10 top-6 left-1/2 -translate-x-1/2 w-[120%] h-auto opacity-30 blur-3xl"
+            viewBox="0 0 600 600"
+            aria-hidden
+          >
+            <defs>
+              <radialGradient id="grad-about" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stopColor="#FDB4BF" />
+                <stop offset="100%" stopColor="#FCE7F3" />
+              </radialGradient>
+            </defs>
+            <circle cx="300" cy="300" r="300" fill="url(#grad-about)" />
+          </svg>
+          <svg
+            className="absolute -z-10 bottom-0 left-0 w-full h-20 opacity-30"
+            preserveAspectRatio="none"
+            viewBox="0 0 800 200"
+            aria-hidden
+          >
+            <path d="M0 100 C150 200 350 0 800 100 L800 200 L0 200 Z" fill="#ffffff" />
+          </svg>
+
+          <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight text-gray-900 drop-shadow-sm">
+            About IYNA Japan
+          </h1>
+          <p className="mt-3 text-lg text-gray-700">
+            中高生による・中高生のための神経科学コミュニティ
           </p>
-          <p>
-            IYNA は2016年に国際脳科学オリンピックの経験者が立ち上げ、現在は4000人以上のメンバーと126国以上の支部があります。
-          </p>
-          <p>
-            IYNAについての詳細は
-            <Link href="https://www.youthneuro.org/" target="_blank" rel="noopener noreferrer">
-              こちら
-            </Link>
-          </p>
-          <p>
-            IYNA Japanは中高生による中高生向けの団体です。神経科学への興味を共有するコミュニティーであると共に、神経科学の教育活動にも励んでおります。
-          </p>
+          <div className="mt-6 flex justify-center gap-3">
+            <Button asChild className="bg-pink-600 hover:bg-pink-700 text-white shadow-md">
+              <Link href="/join">仲間になる</Link>
+            </Button>
+            <Button asChild variant="outline">
+              <Link href="/activities">活動実績を見る</Link>
+            </Button>
+          </div>
+          <div className="pointer-events-none absolute -top-6 right-8 h-24 w-24 rounded-full bg-pink-300/50 blur-2xl animate-pulse" />
+          <div className="pointer-events-none absolute -bottom-6 left-8 h-24 w-24 rounded-full bg-amber-200/50 blur-2xl animate-pulse" />
+        </section>
+        {/* ABOUT OVERVIEW */}
+        <section>
+          <div className="grid md:grid-cols-2 gap-8 items-center">
+            <div className="space-y-4">
+              <div className="group relative rounded-2xl bg-white/60 backdrop-blur-sm ring-1 ring-pink-200/50 p-6">
+                <div className="pointer-events-none absolute -inset-1 rounded-3xl bg-gradient-to-br from-fuchsia-400/15 via-rose-300/15 to-amber-200/15 blur-2xl" />
+                <div className="relative">
+                  <h2 className="text-2xl font-semibold mb-3">IYNA Japan とは</h2>
+                  <p>
+                    IYNA（International Youth Neuroscience Association）は、次世代の神経科学者にインスピレーションを与えることを目的とした、国際的な学生主導の非営利団体です。
+                  </p>
+                  <p>
+                    IYNA は2016年に国際脳科学オリンピックの経験者が立ち上げ、現在は4000人以上のメンバーと126国以上の支部があります。
+                  </p>
+                  <p>
+                    IYNAについての詳細は
+                    <Link href="https://www.youthneuro.org/" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+                      こちら
+                    </Link>
+                  </p>
+                  <p>
+                    IYNA Japanは中高生による中高生向けの団体です。神経科学への興味を共有するコミュニティーであると共に、神経科学の教育活動にも励んでおります。
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="relative order-first md:order-last flex justify-center">
+              <div className="pointer-events-none absolute -top-6 right-6 h-24 w-24 rounded-full bg-pink-300/40 blur-2xl" />
+              <div className="pointer-events-none absolute -bottom-6 left-6 h-24 w-24 rounded-full bg-amber-200/40 blur-2xl" />
+              <div className="relative rounded-2xl ring-1 ring-gray-200/60 shadow-sm overflow-hidden bg-white/70 backdrop-blur">
+                <Image
+                  src="/brain_hirameki.png"
+                  alt="IYNA Illustration"
+                  width={420}
+                  height={420}
+                  className="object-contain"
+                  priority
+                />
+              </div>
+            </div>
+          </div>
         </section>
 
         {/* VISION SECTION */}
         <section className="space-y-6">
-          <Card>
-            <CardHeader>
-              <CardTitle className="text-2xl">Vision</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              <p>
-                私たちIYNA Japanは、IYNA本部とは異なり、日本支部として活動する際に大切にしている理念があります。
-              </p>
-              <ul className="space-y-2 list-disc list-inside">
-                <li>
-                  <strong>Core Value (価値観):</strong> 神経科学の理解への扉を開く
-                </li>
-                <li>
-                  <strong>Purpose (存在意義):</strong> 日本の中高生が神経科学の知識にアクセスしやすくする
-                </li>
-                <li>
-                  <strong>Mission (使命):</strong> IYNA Japanを神経科学に関するシンクタンクとして育て上げる
-                </li>
-              </ul>
-            </CardContent>
-          </Card>
+          <h2 className="text-2xl font-semibold">Vision</h2>
+          <p className="text-gray-700">日本支部として、大切にしている理念。</p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[
+              {
+                Icon: Lightbulb,
+                title: "Core Value",
+                desc: "神経科学の理解への扉を開く",
+              },
+              {
+                Icon: Target,
+                title: "Purpose",
+                desc: "日本の中高生が知識にアクセスしやすくする",
+              },
+              {
+                Icon: Rocket,
+                title: "Mission",
+                desc: "IYNA Japan をシンクタンクとして育てる",
+              },
+            ].map(({ Icon, title, desc }) => (
+              <Card
+                key={title}
+                className="group relative overflow-hidden rounded-2xl bg-white/60 backdrop-blur-sm ring-1 ring-pink-200/50 shadow-sm transition hover:shadow-lg hover:-translate-y-0.5"
+              >
+                <div className="pointer-events-none absolute -inset-1 rounded-3xl bg-gradient-to-br from-fuchsia-400/15 via-rose-300/15 to-amber-200/15 opacity-0 group-hover:opacity-100 transition blur-2xl" />
+                <CardHeader>
+                  <div className="flex items-center gap-3">
+                    <span className="flex h-10 w-10 items-center justify-center rounded-full bg-pink-50 text-pink-600 ring-1 ring-pink-200">
+                      <Icon className="h-5 w-5" aria-hidden />
+                    </span>
+                    <CardTitle className="text-xl text-gray-900">{title}</CardTitle>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-gray-700">{desc}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
         </section>
 
         {/* ACTIVE MEMBERS */}
