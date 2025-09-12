@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { User, Users } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import activities from "../data/activities-list.json";
@@ -76,34 +77,44 @@ export default function ActivitiesPage() {
             {list.map((item) => {
               const meta = parseMeta(item.description || "");
               return (
-                <Card key={item.title}>
+                <Card
+                  key={item.title}
+                  className="group relative overflow-hidden rounded-2xl bg-white/60 backdrop-blur-sm ring-1 ring-pink-200/50 shadow-sm transition hover:shadow-lg hover:-translate-y-0.5"
+                >
+                  {/* gradient glow */}
+                  <div className="pointer-events-none absolute -inset-1 rounded-3xl bg-gradient-to-br from-fuchsia-400/15 via-rose-300/15 to-amber-200/15 opacity-0 group-hover:opacity-100 transition blur-2xl" />
                   <CardHeader>
-                    <CardTitle className="text-lg">{item.title}</CardTitle>
+                    <CardTitle className="text-lg text-gray-900">{item.title}</CardTitle>
                   </CardHeader>
-                  <CardContent className="space-y-3">
-                    {item.imageSrc && (
-                      <img
-                        src={item.imageSrc}
-                        alt={item.title}
-                        className="w-full h-40 object-cover rounded"
-                      />
-                    )}
+                  <CardContent className="relative space-y-4">
+                    {item.imageSrc ? (
+                      <div className="relative">
+                        <img
+                          src={item.imageSrc}
+                          alt={item.title}
+                          className="w-full h-40 object-cover rounded-xl ring-1 ring-gray-200/50"
+                        />
+                        <div className="pointer-events-none absolute inset-0 rounded-xl bg-gradient-to-t from-white/20 to-transparent" />
+                      </div>
+                    ) : null}
 
                     {(meta.pm || meta.contributors) ? (
-                      <ul className="text-sm text-gray-700 space-y-1">
+                      <div className="space-y-2">
                         {meta.pm && (
-                          <li>
-                            <strong>PM：</strong>
-                            {meta.pm}
-                          </li>
+                          <div className="inline-flex items-center gap-2 rounded-full bg-white/70 ring-1 ring-pink-200/60 px-3 py-1 text-sm text-gray-800">
+                            <User className="w-4 h-4 text-pink-600" />
+                            <span className="font-medium">PM</span>
+                            <span className="text-gray-700">{meta.pm}</span>
+                          </div>
                         )}
                         {meta.contributors && (
-                          <li>
-                            <strong>Contributors：</strong>
-                            {meta.contributors}
-                          </li>
+                          <div className="inline-flex items-center gap-2 rounded-full bg-white/70 ring-1 ring-pink-200/60 px-3 py-1 text-sm text-gray-800">
+                            <Users className="w-4 h-4 text-pink-600" />
+                            <span className="font-medium">Contributors</span>
+                            <span className="text-gray-700">{meta.contributors}</span>
+                          </div>
                         )}
-                      </ul>
+                      </div>
                     ) : (
                       <p className="text-sm text-gray-700">{item.description}</p>
                     )}
