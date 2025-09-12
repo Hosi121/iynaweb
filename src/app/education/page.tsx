@@ -15,7 +15,7 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Education | IYNA Japan",
   description:
-    "IYNA Japanが主催するイベントや、神経科学に関する解説記事、学習リソースなどを紹介します。",
+    "神経科学に関する解説記事や学習リソースを紹介します。",
 };
 
 export const revalidate = 3600; // 1時間ごとに再検証
@@ -69,12 +69,19 @@ export default async function EducationPage() {
   return (
     <>
       <Header />
-      <main className="container mx-auto py-8">
+      <main className="container mx-auto py-10 px-6">
+        {/* ヒーロー */}
+        <section className="text-center mb-12">
+          <h1 className="text-4xl font-bold mb-2">Education</h1>
+          <p className="text-lg text-gray-600">
+            神経科学を学ぶためのリソースと記事を紹介します
+          </p>
+        </section>
         {/* 学習リソース専用（イベント企画は活動実績ページへ移設） */}
 
         {/* ――― Articles (Note RSS + Header Image) ――― */}
         <section className="mb-12">
-          <h2 className="text-2xl font-semibold mb-4">Articles</h2>
+          <h2 className="text-2xl font-semibold mb-4">記事</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {articles.map(({ title, link, snippet, imageUrl }) => (
               <Card key={link}>
