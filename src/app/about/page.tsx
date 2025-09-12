@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Lightbulb, Target, Rocket } from "lucide-react";
 import Layout from "@/components/Layout";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -252,27 +253,45 @@ export default function AboutPage() {
 
         {/* VISION SECTION */}
         <section className="space-y-6">
-          <Card>
-            <CardHeader>
-              <CardTitle className="text-2xl">Vision</CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-4">
-              <p>
-                私たちIYNA Japanは、IYNA本部とは異なり、日本支部として活動する際に大切にしている理念があります。
-              </p>
-              <ul className="space-y-2 list-disc list-inside">
-                <li>
-                  <strong>Core Value (価値観):</strong> 神経科学の理解への扉を開く
-                </li>
-                <li>
-                  <strong>Purpose (存在意義):</strong> 日本の中高生が神経科学の知識にアクセスしやすくする
-                </li>
-                <li>
-                  <strong>Mission (使命):</strong> IYNA Japanを神経科学に関するシンクタンクとして育て上げる
-                </li>
-              </ul>
-            </CardContent>
-          </Card>
+          <h2 className="text-2xl font-semibold">Vision</h2>
+          <p className="text-gray-700">日本支部として、大切にしている理念。</p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[
+              {
+                Icon: Lightbulb,
+                title: "Core Value",
+                desc: "神経科学の理解への扉を開く",
+              },
+              {
+                Icon: Target,
+                title: "Purpose",
+                desc: "日本の中高生が知識にアクセスしやすくする",
+              },
+              {
+                Icon: Rocket,
+                title: "Mission",
+                desc: "IYNA Japan をシンクタンクとして育てる",
+              },
+            ].map(({ Icon, title, desc }) => (
+              <Card
+                key={title}
+                className="group relative overflow-hidden rounded-2xl bg-white/60 backdrop-blur-sm ring-1 ring-pink-200/50 shadow-sm transition hover:shadow-lg hover:-translate-y-0.5"
+              >
+                <div className="pointer-events-none absolute -inset-1 rounded-3xl bg-gradient-to-br from-fuchsia-400/15 via-rose-300/15 to-amber-200/15 opacity-0 group-hover:opacity-100 transition blur-2xl" />
+                <CardHeader>
+                  <div className="flex items-center gap-3">
+                    <span className="flex h-10 w-10 items-center justify-center rounded-full bg-pink-50 text-pink-600 ring-1 ring-pink-200">
+                      <Icon className="h-5 w-5" aria-hidden />
+                    </span>
+                    <CardTitle className="text-xl text-gray-900">{title}</CardTitle>
+                  </div>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-gray-700">{desc}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
         </section>
 
         {/* ACTIVE MEMBERS */}
