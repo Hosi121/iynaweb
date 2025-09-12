@@ -1,7 +1,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import activities from "../data/events-list.json";
+import activities from "../data/activities-list.json";
 
 export const metadata = {
   title: "Activities | IYNA Japan",
@@ -84,4 +84,3 @@ export default function ActivitiesPage() {
     </>
   );
 }
-
