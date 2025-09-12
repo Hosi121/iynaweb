@@ -3,6 +3,7 @@ import { load } from "cheerio";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import Link from "next/link";
 import { ExternalLink } from "lucide-react";
+import Image from "next/image";
 import FadeIn from "@/components/FadeIn";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -117,11 +118,14 @@ export default async function EducationPage() {
                     <CardContent>
                       {imageUrl && (
                         <div className="relative mb-2">
-                          <img
-                            src={imageUrl}
-                            alt={`Header for ${title}`}
-                            className="w-full h-40 object-cover rounded-xl ring-1 ring-gray-200/50"
-                          />
+                      <Image
+                        src={imageUrl}
+                        alt={`Header for ${title}`}
+                        fill
+                        sizes="(min-width:1024px) 33vw, (min-width:768px) 50vw, 100vw"
+                        className="object-cover rounded-xl ring-1 ring-gray-200/50"
+                        priority={false}
+                      />
                           <div className="pointer-events-none absolute inset-0 rounded-xl bg-gradient-to-t from-white/20 to-transparent" />
                         </div>
                       )}

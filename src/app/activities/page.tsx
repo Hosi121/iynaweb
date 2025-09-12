@@ -4,6 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { User, Users } from "lucide-react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 import FadeIn from "@/components/FadeIn";
 import activities from "../data/activities-list.json";
 
@@ -88,16 +89,19 @@ export default function ActivitiesPage() {
                       <CardTitle className="text-lg text-gray-900">{item.title}</CardTitle>
                     </CardHeader>
                     <CardContent className="relative space-y-4">
-                      {item.imageSrc ? (
-                        <div className="relative">
-                          <img
-                            src={item.imageSrc}
-                            alt={item.title}
-                            className="w-full h-40 object-cover rounded-xl ring-1 ring-gray-200/50"
-                          />
-                          <div className="pointer-events-none absolute inset-0 rounded-xl bg-gradient-to-t from-white/20 to-transparent" />
-                        </div>
-                      ) : null}
+                    {item.imageSrc ? (
+                      <div className="relative h-40 w-full">
+                        <Image
+                          src={item.imageSrc}
+                          alt={item.title}
+                          fill
+                          sizes="(min-width:1024px) 33vw, (min-width:768px) 50vw, 100vw"
+                          className="object-cover rounded-xl ring-1 ring-gray-200/50"
+                          priority={false}
+                        />
+                        <div className="pointer-events-none absolute inset-0 rounded-xl bg-gradient-to-t from-white/20 to-transparent" />
+                      </div>
+                    ) : null}
 
                       {(meta.pm || meta.contributors) ? (
                         <div className="space-y-2">
