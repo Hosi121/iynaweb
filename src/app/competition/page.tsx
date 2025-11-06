@@ -93,7 +93,7 @@ export default function CompetitionPage() {
           <h2 className="text-2xl font-semibold">お問い合わせ</h2>
           <p>ご支援のご連絡やお問い合わせは、以下のメールアドレスまでお願いいたします。</p>
           <Link href="mailto:iynajapan.nri@gmail.com" className="text-blue-600 hover:underline">
-            iynajapan.nri@gmail.com
+            iynajapan2024@gmail.com
           </Link>
         </section>
       </main>
