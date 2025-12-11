@@ -22,7 +22,7 @@ export default function CompetitionPage() {
           <h1 className="text-3xl font-bold">Neuroinnovation Research Ideathon</h1>
           <p className="text-lg">
             NRI (Neuroinnovation Research Ideathon) は、神経科学を活用し、中高生の創造的なアイデアを発表するコンテストです。
-            評価は知識量ではなく、創造性・実用性・現実性が鍵となります。初開催の今回は、参加者と共に企画を盛り上げ、今後も継続開催し、若者のアイデア発信を支援します！
+            評価は知識量ではなく、創造性・実用性・現実性が鍵となります。
           </p>
         </section>
 
@@ -91,7 +91,7 @@ export default function CompetitionPage() {
         {/* Contact Section */}
         <section className="space-y-2">
           <h2 className="text-2xl font-semibold">お問い合わせ</h2>
-          <p>ご支援のご連絡やお問い合わせは、以下のメールアドレスまでお願いいたします。</p>
+          <p>スポンサーのご連絡やお問い合わせは、以下のメールアドレスまでお願いいたします。</p>
           <Link href="mailto:iynajapan.nri@gmail.com" className="text-blue-600 hover:underline">
             iynajapan2024@gmail.com
           </Link>
