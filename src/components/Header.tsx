@@ -17,11 +17,12 @@ export default function Header() {
     { label: "Competition", href: "/competition" },
     { label: "News & Events", href: "/news-and-events" },
     { label: "Join", href: "/join" },
+    { label: "Privacy Policy", href: "/privacy-policy" },
   ];
 
   return (
     <header className="bg-white shadow-sm">
-      <div className="container mx-auto flex items-center justify-between py-4 px-6">
+      <div className="container mx-auto flex items-center justify-between py-8 px-6">
         {/* Logo + Brand */}
         <Link
           href="/"

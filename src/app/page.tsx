@@ -45,23 +45,21 @@ export default function HomePage() {
             IYNA Japan は中高生の国際的な非営利団体です。日本最大級の中高生神経科学コミュニティーを共に築きましょう。
           </p>
           <div className="flex flex-col sm:inline-flex sm:flex-row justify-center gap-4">
-            <Link href="/about" passHref legacyBehavior>
-              <Button
-                variant="outline"
-                size="lg"
-                className="border-pink-400 text-pink-700 hover:bg-pink-100/60 backdrop-blur-md"
-              >
-                About
-              </Button>
-            </Link>
-            <Link href="/join" passHref legacyBehavior>
-              <Button
-                size="lg"
-                className="bg-pink-600 hover:bg-pink-700 text-white shadow-lg"
-              >
-                参加する
-              </Button>
-            </Link>
+            <Button
+              asChild
+              variant="outline"
+              size="lg"
+              className="border-pink-400 text-pink-700 hover:bg-pink-100/60 backdrop-blur-md"
+            >
+              <Link href="/about">About</Link>
+            </Button>
+            <Button
+              asChild
+              size="lg"
+              className="bg-pink-600 hover:bg-pink-700 text-white shadow-lg"
+            >
+              <Link href="/join">参加する</Link>
+            </Button>
           </div>
         </div>
       </section>
@@ -120,11 +118,9 @@ export default function HomePage() {
             <p className="text-gray-800 leading-relaxed">
               日本支部として、中高生向けの教育活動とコミュニティ運営を行っています。
             </p>
-            <Link href="/about" passHref legacyBehavior>
-              <Button variant="ghost" className="text-pink-700 hover:bg-pink-100/40">
-                もっと見る →
-              </Button>
-            </Link>
+            <Button asChild variant="ghost" className="text-pink-700 hover:bg-pink-100/40">
+              <Link href="/about">もっと見る →</Link>
+            </Button>
           </div>
           <div className="order-1 md:order-2 flex justify-center">
             {/* 任意のイラスト / 画像を配置 */}
@@ -167,14 +163,13 @@ export default function HomePage() {
           <p className="text-lg md:text-xl drop-shadow-sm">
             今すぐメンバーに参加して、神経科学の未来を創ろう！
           </p>
-          <Link href="/join" passHref legacyBehavior>
             <Button
+              asChild
               size="lg"
               className="bg-white text-pink-600 hover:bg-gray-50 shadow-md"
             >
-              参加する
+              <Link href="/join">参加する</Link>
             </Button>
-          </Link>
         </div>
       </section>
 
