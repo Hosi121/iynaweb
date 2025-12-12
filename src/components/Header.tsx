@@ -17,7 +17,6 @@ export default function Header() {
     { label: "Competition", href: "/competition" },
     { label: "News & Events", href: "/news-and-events" },
     { label: "Join", href: "/join" },
-    { label: "Privacy Policy", href: "/privacy-policy" },
   ];
 
   return (
