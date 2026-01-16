@@ -21,7 +21,7 @@ export default function Header() {
 
   return (
     <header className="bg-white shadow-sm">
-      <div className="container mx-auto flex items-center justify-between py-4 px-6">
+      <div className="container mx-auto flex items-center justify-between py-8 px-6">
         {/* Logo + Brand */}
         <Link
           href="/"
