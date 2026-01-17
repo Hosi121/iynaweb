@@ -21,8 +21,8 @@ export default function CompetitionPage() {
         <section className="space-y-4">
           <h1 className="text-3xl font-bold">Neuroinnovation Research Ideathon</h1>
           <p className="text-lg">
-            NRI (Neuroinnovation Research Ideathon) は、神経科学を活用し、中高生の創造的なアイデアを発表するコンテストです。
-            評価は知識量ではなく、創造性・実用性・現実性が鍵となります。
+            NRI(Neuroinnovation Research Ideathon)は、中高生が神経科学を活用した斬新なアイデアを発表するコンテストです。
+            評価点は知識ではなく、創造性・実用性・現実性。
           </p>
         </section>
 
@@ -42,7 +42,17 @@ export default function CompetitionPage() {
             <CardTitle className="text-2xl">応募</CardTitle>
           </CardHeader>
           <CardContent>
-            <p>Coming Soon...</p>
+              <p> 募集期間 </p>
+               <p>2025年12月12日（金）〜 2026年2月15日（日）</p>
+            <p></p>
+            <p> 応募条件</p>
+            <p> 個人または2~5名のチームであること</p>
+            <p>チーム全員が中学1年生〜高校3年生のいずれかであること（2025年度時点）</p>
+            <p>専門知識は不要。自由な発想で応募が可能です</p>
+            <p></p>
+            <p>登録フォーム</p>
+            <p> <a href="https://example.com">登録フォームはこちら</a></p>
+
           </CardContent>
         </Card>
 
