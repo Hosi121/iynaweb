@@ -51,7 +51,7 @@ export default function CompetitionPage() {
             <p>専門知識は不要。自由な発想で応募が可能です</p>
             <p></p>
             <p>登録フォーム</p>
-            <p> <a href="https://example.com">登録フォームはこちら</a></p>
+            <p> <a href="https://docs.google.com/forms/d/e/1FAIpQLSd7MHQUahkEiubzmj4YDWMn7mLpUZkloyp1_6njWCTEmkkz5A/viewform?usp=dialog">登録フォームはこちら</a></p>
 
           </CardContent>
         </Card>
