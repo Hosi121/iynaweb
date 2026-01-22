@@ -1,0 +1,120 @@
+.heroPlaceholder {
+  height: 300px;
+  background-color: #f0f0f0;
+  border-bottom: 2px solid #ddd;
+}
+
+.sectionBanner {
+  width: 95%;
+  margin: 60px auto 30px;
+  padding: 15px 20px;
+  color: white;
+  text-align: center;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.bannerRed {
+  background-color: #f68989;
+}
+
+.bannerBlue {
+  background-color: #0b5394;
+}
+
+.jpTitle {
+  display: block;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.enTitle {
+  display: block;
+  font-size: 1.3rem;
+}
+
+.highlight {
+  display: inline-block;
+  background-color: #f68989;
+  color: white;
+  font-weight: bold;
+  font-size: 1.5rem;
+  padding: 2px 10px;
+  border-radius: 4px;
+}
+
+.roundButton {
+  position: relative;
+  width: 320px;
+  padding: 18px 30px;
+  background-color: #f68989;
+  color: white;
+  border-radius: 9999px;
+  font-weight: bold;
+  transition: 0.3s;
+  box-shadow: 0 5px 15px rgba(43, 76, 126, 0.3);
+}
+
+.roundButton:hover {
+  background-color: #ff7070;
+  font-size: 1.15rem;
+}
+
+.icon {
+  position: absolute;
+  right: 65px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.circleImg {
+  width: 160px;
+  height: 160px;
+  border-radius: 9999px;
+  background-color: #eee;
+  border: 5px solid #f8f8f8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.circleImgKeynote {
+  width: 300px;
+  height: 300px;
+  border-radius: 9999px;
+  border: 6px solid #f8f8f8;
+  background-color: #eee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bracketBox {
+  position: relative;
+  padding: 30px 50px;
+  font-size: 3rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.bracketBox::before,
+.bracketBox::after {
+  content: "";
+  position: absolute;
+  width: 45px;
+  height: 45px;
+}
+
+.bracketBox::before {
+  top: 0;
+  left: 0;
+  border-top: 5px solid #e56b6f;
+  border-left: 5px solid #e56b6f;
+}
+
+.bracketBox::after {
+  bottom: 0;
+  right: 0;
+  border-bottom: 5px solid #e56b6f;
+  border-right: 5px solid #e56b6f;
+}
