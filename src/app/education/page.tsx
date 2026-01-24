@@ -4,8 +4,6 @@ import Link from "next/link";
 import { ExternalLink } from "lucide-react";
 import Image from "next/image";
 import FadeIn from "@/components/FadeIn";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -104,7 +102,6 @@ export default async function EducationPage() {
 
   return (
     <>
-      <Header />
       <main className="container mx-auto py-10 px-6 space-y-12">
         {/* Dynamic Hero */}
         <section className="relative isolate overflow-hidden rounded-2xl bg-gradient-to-br from-pink-200 via-rose-100 to-amber-100 py-14 text-center">
@@ -214,7 +211,6 @@ export default async function EducationPage() {
         </section>
 
       </main>
-      <Footer />
     </>
   );
 }

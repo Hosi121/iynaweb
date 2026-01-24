@@ -1,9 +1,6 @@
 import Image from "next/image";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Lightbulb, Target, Rocket } from "lucide-react";
-import Layout from "@/components/Layout";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 
@@ -164,8 +161,6 @@ export default function AboutPage() {
   );
 
   return (
-    <Layout>
-      <Header />
       <main className="container mx-auto px-6 py-12 space-y-12">
         {/* HERO */}
         <section className="relative isolate overflow-hidden rounded-2xl bg-gradient-to-br from-pink-200 via-rose-100 to-amber-100 py-14 text-center">
@@ -323,7 +318,5 @@ export default function AboutPage() {
           <MemberGrid list={alumniMembers} />
         </section>
       </main>
-      <Footer />
-    </Layout>
   );
 }

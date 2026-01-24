@@ -1,5 +1,3 @@
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import Link from "next/link";
 import { Metadata } from "next";
 
@@ -25,7 +23,6 @@ const securityMeasures = [
 export default function PrivacyPolicyPage() {
   return (
     <>
-      <Header />
       <main className="container mx-auto px-6 py-10 space-y-10">
         <section className="rounded-2xl bg-white p-8 shadow-sm">
           <p className="text-lg text-gray-700 leading-relaxed">
@@ -154,7 +151,6 @@ export default function PrivacyPolicyPage() {
           </p>
         </section>
       </main>
-      <Footer />
     </>
   );
 }

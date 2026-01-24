@@ -1,5 +1,3 @@
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import Link from "next/link";
 import { Icons } from "@/components/icons";
 import {
@@ -24,8 +22,6 @@ export default function JoinPage() {
     "https://forms.gle/EjsxHpSGE3DtJGvw8";
   return (
     <>
-      <Header />
-
       <main className="container mx-auto py-10 px-6 space-y-12">
         {/* Hero */}
         <section
@@ -172,8 +168,6 @@ export default function JoinPage() {
           </CardContent>
         </Card>
       </main>
-
-      <Footer />
     </>
   );
 }

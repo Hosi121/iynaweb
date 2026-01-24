@@ -1,5 +1,3 @@
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { User, Users } from "lucide-react";
 import Link from "next/link";
@@ -34,7 +32,6 @@ export default function ActivitiesPage() {
 
   return (
     <>
-      <Header />
       <main className="container mx-auto py-10 px-6 space-y-12">
         {/* dynamic hero */}
         <section className="relative isolate overflow-hidden rounded-2xl bg-gradient-to-br from-pink-200 via-rose-100 to-amber-100 py-14 text-center">
@@ -131,7 +128,6 @@ export default function ActivitiesPage() {
           </div>
         </section>
       </main>
-      <Footer />
     </>
   );
 }

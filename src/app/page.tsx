@@ -1,7 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Users, Calendar, BookOpen } from "lucide-react";
@@ -14,8 +12,6 @@ export const metadata = {
 export default function HomePage() {
   return (
     <>
-      <Header />
-
       {/* Hero セクション */}
       <section
         id="hero"
@@ -172,8 +168,6 @@ export default function HomePage() {
             </Button>
         </div>
       </section>
-
-      <Footer />
     </>
   );
 }
