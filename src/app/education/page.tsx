@@ -1,5 +1,4 @@
 import Parser from "rss-parser";
-import { load } from "cheerio";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import Link from "next/link";
 import { ExternalLink } from "lucide-react";
@@ -15,7 +14,14 @@ export const metadata: Metadata = {
     "神経科学に関する解説記事や学習リソースを紹介します。",
 };
 
+const REVALIDATE_SECONDS = 3600;
 export const revalidate = 3600; // 1時間ごとに再検証
+const RSS_URL = "https://note.com/iyna_japan/rss";
+const FETCH_TIMEOUT_MS = 5000;
+const OG_IMAGE_PATTERN =
+  /<meta[^>]+property=["']og:image["'][^>]+content=["']([^"']+)["'][^>]*>/i;
+const OG_IMAGE_PATTERN_FALLBACK =
+  /<meta[^>]+content=["']([^"']+)["'][^>]+property=["']og:image["'][^>]*>/i;
 
 const parser = new Parser();
 
@@ -28,10 +34,23 @@ type Article = {
 
 export default async function EducationPage() {
   // 1) RSS を取得
-  const RSS_URL = "https://note.com/iyna_japan/rss";
   let feed;
   try {
-    feed = await parser.parseURL(RSS_URL);
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), FETCH_TIMEOUT_MS);
+    try {
+      const response = await fetch(RSS_URL, {
+        signal: controller.signal,
+        next: { revalidate: REVALIDATE_SECONDS },
+      });
+      if (!response.ok) {
+        throw new Error(`RSS request failed: ${response.status}`);
+      }
+      const xml = await response.text();
+      feed = await parser.parseString(xml);
+    } finally {
+      clearTimeout(timeoutId);
+    }
   } catch (e) {
     console.error("RSS parse error:", e);
     feed = { items: [] as Article[] };
@@ -46,9 +65,29 @@ export default async function EducationPage() {
 
       if (!imageUrl) {
         try {
-          const html = await fetch(item.link).then((res) => res.text());
-          const $ = load(html);
-          imageUrl = $('meta[property="og:image"]').attr("content") || "";
+          if (item.link) {
+            const controller = new AbortController();
+            const timeoutId = setTimeout(
+              () => controller.abort(),
+              FETCH_TIMEOUT_MS
+            );
+            try {
+              const response = await fetch(item.link, {
+                signal: controller.signal,
+                next: { revalidate: REVALIDATE_SECONDS },
+              });
+              if (!response.ok) {
+                throw new Error(`Article request failed: ${response.status}`);
+              }
+              const html = await response.text();
+              imageUrl =
+                OG_IMAGE_PATTERN.exec(html)?.[1] ??
+                OG_IMAGE_PATTERN_FALLBACK.exec(html)?.[1] ??
+                "";
+            } finally {
+              clearTimeout(timeoutId);
+            }
+          }
         } catch (err) {
           console.warn(`Failed to fetch image for ${item.link}`, err);
         }
@@ -117,15 +156,15 @@ export default async function EducationPage() {
                     </CardHeader>
                     <CardContent>
                       {imageUrl && (
-                        <div className="relative mb-2">
-                      <Image
-                        src={imageUrl}
-                        alt={`Header for ${title}`}
-                        fill
-                        sizes="(min-width:1024px) 33vw, (min-width:768px) 50vw, 100vw"
-                        className="object-cover rounded-xl ring-1 ring-gray-200/50"
-                        priority={false}
-                      />
+                        <div className="relative mb-2 aspect-[16/9] overflow-hidden">
+                          <Image
+                            src={imageUrl}
+                            alt={`Header for ${title}`}
+                            fill
+                            sizes="(min-width:1024px) 33vw, (min-width:768px) 50vw, 100vw"
+                            className="object-cover rounded-xl ring-1 ring-gray-200/50"
+                            priority={false}
+                          />
                           <div className="pointer-events-none absolute inset-0 rounded-xl bg-gradient-to-t from-white/20 to-transparent" />
                         </div>
                       )}
