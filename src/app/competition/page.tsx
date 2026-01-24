@@ -20,7 +20,7 @@ export default function CompetitionPage() {
         
         <div className="container fade-in">
             <div className="hero-placeholder">
-                [ NRI Title Image Placeholder ]
+                <img src="competition/images/title.png">
             </div>
 
             <div className="section-banner banner-red">
@@ -107,22 +107,22 @@ export default function CompetitionPage() {
                 <div style={{background: '#fff2f2', padding: '12px 0 15px'}}>
                     <div className="grid">
                         <div className="card">
-                            <div className="circle-img">Photo</div>
+                            <div className="circle-img"><img src="competition/images/Fujii.png"></div>
                             <div className="role">デジタルハリウッド大学卓越教授<br/>ハコスコ取締役CTO</div>
                             <div className="name">藤井 直敬 先生</div>
                         </div>
                         <div className="card">
-                            <div className="circle-img">Photo</div>
+                            <div className="circle-img"><img src="competition/images/Hatano.png"></div>
                             <div className="role">順天堂大学医学部 神経学講座 主任教授</div>
                             <div className="name">波田野 琢 先生</div>
                         </div>
                         <div className="card">
-                            <div className="circle-img">Photo</div>
+                            <div className="circle-img"><img src="competition/images/Okumura.png"></div>
                             <div className="role">玉川大学脳科学研究所 教授</div>
                             <div className="name">奥村 哲 先生</div>
                         </div>
                         <div className="card">
-                            <div className="circle-img">Photo</div>
+                            <div className="circle-img"><img src="competition/images/Nagata.png"></div>
                             <div className="role">順天堂大学医学部 准教授</div>
                             <div className="name">長田 貴宏 先生</div>
                         </div>
@@ -146,7 +146,7 @@ export default function CompetitionPage() {
 
                         <div className="speaker-profile-group">
                             <div className="circle-img-keynote">
-                                Photo
+                                <img src="competition/images/Hattori.png">
                             </div>
                             <div className="speaker-text-details">
                                 <h2 className="name-large text-white">服部 信孝 先生</h2>
