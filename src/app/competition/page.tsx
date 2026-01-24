@@ -1,8 +1,4 @@
-import Layout from "@/components/Layout";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import styles from "./competition.module.css";
-import Link from "next/link";
+import Image from "next/image";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -13,14 +9,17 @@ export const metadata: Metadata = {
 
 export default function CompetitionPage() {
   return (
-    <Layout>
-      <Header />
-
       <main className="container mx-auto px-6 py-12 space-y-16">
-        
+
         <div className="container fade-in">
             <div className="hero-placeholder">
-                <img src="competition/images/title.png">
+                <Image
+                  src="/competition/images/title.png"
+                  alt="NRI タイトルビジュアル"
+                  width={657}
+                  height={215}
+                  priority
+                />
             </div>
 
             <div className="section-banner banner-red">
@@ -107,22 +106,50 @@ export default function CompetitionPage() {
                 <div style={{background: '#fff2f2', padding: '12px 0 15px'}}>
                     <div className="grid">
                         <div className="card">
-                            <div className="circle-img"><img src="competition/images/Fujii.png"></div>
+                            <div className="circle-img">
+                                <Image
+                                  src="/competition/images/Fujii.png"
+                                  alt="審査員 藤井 直敬 先生"
+                                  width={207}
+                                  height={274}
+                                />
+                            </div>
                             <div className="role">デジタルハリウッド大学卓越教授<br/>ハコスコ取締役CTO</div>
                             <div className="name">藤井 直敬 先生</div>
                         </div>
                         <div className="card">
-                            <div className="circle-img"><img src="competition/images/Hatano.png"></div>
+                            <div className="circle-img">
+                                <Image
+                                  src="/competition/images/Hatano.png"
+                                  alt="審査員 波田野 琢 先生"
+                                  width={203}
+                                  height={262}
+                                />
+                            </div>
                             <div className="role">順天堂大学医学部 神経学講座 主任教授</div>
                             <div className="name">波田野 琢 先生</div>
                         </div>
                         <div className="card">
-                            <div className="circle-img"><img src="competition/images/Okumura.png"></div>
+                            <div className="circle-img">
+                                <Image
+                                  src="/competition/images/Okumura.png"
+                                  alt="審査員 奥村 哲 先生"
+                                  width={167}
+                                  height={251}
+                                />
+                            </div>
                             <div className="role">玉川大学脳科学研究所 教授</div>
                             <div className="name">奥村 哲 先生</div>
                         </div>
                         <div className="card">
-                            <div className="circle-img"><img src="competition/images/Nagata.png"></div>
+                            <div className="circle-img">
+                                <Image
+                                  src="/competition/images/Nagata.png"
+                                  alt="審査員 長田 貴宏 先生"
+                                  width={190}
+                                  height={255}
+                                />
+                            </div>
                             <div className="role">順天堂大学医学部 准教授</div>
                             <div className="name">長田 貴宏 先生</div>
                         </div>
@@ -146,7 +173,12 @@ export default function CompetitionPage() {
 
                         <div className="speaker-profile-group">
                             <div className="circle-img-keynote">
-                                <img src="competition/images/Hattori.png">
+                                <Image
+                                  src="/competition/images/Hattori.png"
+                                  alt="基調講演 服部 信孝 先生"
+                                  width={235}
+                                  height={333}
+                                />
                             </div>
                             <div className="speaker-text-details">
                                 <h2 className="name-large text-white">服部 信孝 先生</h2>
@@ -172,8 +204,5 @@ export default function CompetitionPage() {
             </div>
         </div>
       </main>
-
-      <Footer />
-    </Layout>
   );
 }
