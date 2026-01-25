@@ -34,10 +34,12 @@ export default function HomePage() {
         </svg>
 
         <div className="container mx-auto px-6 text-center space-y-8">
-          <h1 className="text-5xl md:text-6xl font-extrabold tracking-tight leading-tight md:leading-[1.15] text-gray-900 drop-shadow-md">
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-fuchsia-600 to-pink-600">IYNA Japan</span>
+          <h1 className="text-5xl md:text-6xl font-extrabold tracking-tight leading-tight md:leading-[1.15] text-gray-900 drop-shadow-md text-balance">
+            <span className="inline-flex items-center justify-center bg-black text-white px-6 py-3 shadow-lg ring-1 ring-white/20">
+              IYNA Japan
+            </span>
           </h1>
-          <p className="text-lg md:text-2xl leading-relaxed md:leading-loose max-w-3xl mx-auto text-gray-800/90">
+          <p className="text-lg md:text-2xl leading-relaxed md:leading-loose max-w-3xl mx-auto text-gray-800/90 text-pretty">
             IYNA (International Youth Neuroscience Association) は神経科学に興味がある中高生が集まる、国際的な非営利団体です。IYNA Japan はその日本支部です。
           </p>
           <div className="flex flex-col sm:inline-flex sm:flex-row justify-center gap-4">
