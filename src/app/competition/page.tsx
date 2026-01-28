@@ -73,7 +73,7 @@ export default function CompetitionPage() {
                 <p style={{fontSize: '1.5rem'}}>2025年12月12日(金) ~ 2026年2月15日(日)</p>
                 
                 <div className="btn-container">
-                    <a href="http://example.com" className="round-button">募集要項はこちら<span className="icon"> &gt; </span></a>
+                    <a href="/NRI.pdf" className="round-button">募集要項はこちら<span className="icon"> &gt; </span></a>
                 </div>
 
                 <div style={{textAlign: 'center'}}><p className="redsection">【応募条件】</p></div>
@@ -89,7 +89,7 @@ export default function CompetitionPage() {
                 <div style={{textAlign: 'center'}}><p className="redsection">【登録フォーム】</p></div>
 
                 <div className="btn-container">
-                    <a href="http://example.com" className="round-button">登録フォームはこちら<span className="icon"> &gt; </span></a>
+                    <a href="https://forms.gle/CsWFJSY2oVNij8Gx6" className="round-button">登録フォームはこちら<span className="icon"> &gt; </span></a>
                 </div>
             </div>
 
