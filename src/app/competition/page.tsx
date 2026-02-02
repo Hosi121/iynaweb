@@ -155,6 +155,15 @@ export default function CompetitionPage() {
                         </div>
                     </div>
                 </div>
+
+                <p className="redsection" style={{marginTop: '50px'}}>【賞】</p>
+                <div style={{background: '#fff5f5', padding: '20px', borderRadius: '8px', textAlign: 'center'}}>
+                    <p style={{fontSize: '1.3rem', fontWeight: 'bold', margin: '10px 0'}}>最優秀賞</p>
+                    <p style={{fontSize: '1.3rem', fontWeight: 'bold', margin: '10px 0'}}>優秀賞（2チーム）</p>
+                    <p style={{fontSize: '1.3rem', fontWeight: 'bold', margin: '10px 0'}}>
+                        <a href="https://prtimes.jp/topics/keywords/JU★STAR" target="_blank" rel="noopener noreferrer" style={{color: '#0B5394', textDecoration: 'underline'}}>JU★STAR</a>賞
+                    </p>
+                </div>
             </div>
 
             <div style={{backgroundColor: 'rgba(11, 83, 148, 0.9)'}}>
