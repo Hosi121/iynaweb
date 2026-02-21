@@ -124,3 +124,8 @@
     @apply bg-background text-foreground font-sans;
   }
 }
+
+/* Unlayered — overrides Tailwind's container utility breakpoints */
+.container {
+  max-width: 1000px;
+}
