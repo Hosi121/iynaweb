@@ -1,12 +1,5 @@
 import Link from "next/link";
 import { Icons } from "@/components/icons";
-import {
-  Card,
-  CardHeader,
-  CardTitle,
-  CardContent,
-} from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
 import { Calendar, Share2, Users } from "lucide-react";
 import FadeIn from "@/components/FadeIn";
 
@@ -15,159 +8,208 @@ export const metadata = {
   description: "IYNA Japan への参加・アドバイザー募集ページ",
 };
 
+const activityItems = [
+  {
+    Icon: Calendar,
+    text: "サイエンスコミュニケーションイベントの企画・運営",
+  },
+  {
+    Icon: Share2,
+    text: "SNSを活用した情報発信",
+  },
+  {
+    Icon: Users,
+    text: "学生同士での学び合いと交流",
+  },
+];
+
 export default function JoinPage() {
   const EMBED_URL = process.env.NEXT_PUBLIC_JOIN_FORM_EMBED_URL;
   const FORM_URL =
     process.env.NEXT_PUBLIC_JOIN_FORM_URL ||
     "https://forms.gle/EjsxHpSGE3DtJGvw8";
-  return (
-    <>
-      <main className="container mx-auto py-10 px-6 space-y-12">
-        {/* Hero */}
-        <section
-          className="relative isolate text-center overflow-hidden rounded-2xl bg-gradient-to-br from-pink-200 via-rose-100 to-amber-100 py-16"
-        >
-          {/* dynamic radial glow */}
-          <svg
-            className="absolute -z-10 top-10 left-1/2 -translate-x-1/2 w-[120%] h-auto opacity-30 blur-3xl"
-            viewBox="0 0 600 600"
-            aria-hidden
-          >
-            <defs>
-              <radialGradient id="grad-join" cx="50%" cy="50%" r="50%">
-                <stop offset="0%" stopColor="#FDB4BF" />
-                <stop offset="100%" stopColor="#FCE7F3" />
-              </radialGradient>
-            </defs>
-            <circle cx="300" cy="300" r="300" fill="url(#grad-join)" />
-          </svg>
-          {/* soft wave overlay */}
-          <svg
-            className="absolute -z-10 bottom-0 left-0 w-full h-24 opacity-30"
-            preserveAspectRatio="none"
-            viewBox="0 0 800 200"
-            aria-hidden
-          >
-            <path
-              d="M0 100 C150 200 350 0 800 100 L800 200 L0 200 Z"
-              fill="#ffffff"
-            />
-          </svg>
 
-          <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight text-gray-900 drop-shadow-sm">
-            Join IYNA Japan
-          </h1>
-          <p className="mt-3 text-lg text-gray-700">
-            参加して、一緒に神経科学コミュニティを広げよう
-          </p>
-          <div className="mt-6 flex justify-center">
-            <Button asChild className="bg-pink-600 hover:bg-pink-700 text-white shadow-md">
-              <Link href={FORM_URL} target="_blank" rel="noopener noreferrer">
+  return (
+    <main>
+      {/* ── Page Header ── */}
+      <section className="pt-12 pb-16 px-6 border-b border-gray-100">
+        <div className="container mx-auto">
+          <FadeIn>
+            <p className="text-[10px] font-mono tracking-[0.3em] uppercase text-gray-400 mb-4">
+              Join
+            </p>
+          </FadeIn>
+          <FadeIn delayMs={100}>
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-gray-900">
+              Join IYNA Japan
+            </h1>
+          </FadeIn>
+          <FadeIn delayMs={200}>
+            <p className="text-lg text-gray-500 mt-4 max-w-2xl">
+              参加して、一緒に神経科学コミュニティを広げよう
+            </p>
+          </FadeIn>
+          <FadeIn delayMs={300}>
+            <div className="mt-8">
+              <Link
+                href={FORM_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center px-7 py-3 text-sm font-medium bg-gray-900 text-white rounded-full hover:bg-gray-800 transition-all duration-300"
+              >
                 参加フォームを開く
               </Link>
-            </Button>
-          </div>
-          {/* floating decorations */}
-          <div className="pointer-events-none absolute -top-6 right-8 h-24 w-24 rounded-full bg-pink-300/50 blur-2xl animate-pulse" />
-          <div className="pointer-events-none absolute -bottom-6 left-8 h-24 w-24 rounded-full bg-amber-200/50 blur-2xl animate-pulse" />
-        </section>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
 
-        {/* コミュニティーメンバー募集 */}
-        <Card className="overflow-hidden">
-          <CardHeader>
-            <CardTitle className="text-2xl">コミュニティーメンバー募集</CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-6">
-            <p>
-              IYNA Japan のビジョンを共有し、一緒に活動を盛り上げてくれるメンバーを募集しています！
+      <div className="container mx-auto px-6 py-16 space-y-20">
+        {/* ── Community Member Recruitment ── */}
+        <section>
+          <FadeIn>
+            <p className="text-[10px] font-mono tracking-[0.3em] uppercase text-gray-400 mb-4">
+              Community
+            </p>
+            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
+              コミュニティーメンバー募集
+            </h2>
+            <p className="text-gray-600 leading-relaxed max-w-2xl">
+              IYNA Japan
+              のビジョンを共有し、一緒に活動を盛り上げてくれるメンバーを募集しています！
               神経科学やサイエンスコミュニケーションに興味のある方、大歓迎です。
             </p>
+          </FadeIn>
 
-            <h3 className="text-lg font-medium">活動内容</h3>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-              {[{
-                Icon: Calendar,
-                text: "サイエンスコミュニケーションイベントの企画・運営",
-              },{
-                Icon: Share2,
-                text: "SNSを活用した情報発信",
-              },{
-                Icon: Users,
-                text: "学生同士での学び合いと交流",
-              }].map(({ Icon, text }, i) => (
-                <FadeIn key={i} delayMs={i * 80}>
-                  <div
-                    className="group relative rounded-xl bg-white/70 backdrop-blur-sm ring-1 ring-gray-200/60 p-6 overflow-hidden transition shadow-sm hover:shadow-md hover:-translate-y-0.5"
-                  >
-                    <div className="absolute -inset-0.5 bg-gradient-to-br from-fuchsia-400/0 via-pink-200/0 to-rose-200/0 opacity-0 group-hover:opacity-100 transition blur-xl" />
-                    <div className="relative flex flex-col items-center text-center space-y-3">
-                      <span className="flex h-12 w-12 items-center justify-center rounded-full bg-pink-50 text-pink-600 ring-1 ring-pink-200 shadow-sm group-hover:scale-105 transition">
-                        <Icon className="h-6 w-6" aria-hidden />
-                      </span>
-                      <p className="text-gray-700 leading-relaxed">{text}</p>
-                    </div>
-                  </div>
-                </FadeIn>
-              ))}
-            </div>
+          <FadeIn delayMs={100}>
+            <p className="text-[10px] font-mono tracking-[0.3em] uppercase text-gray-400 mt-12 mb-6">
+              活動内容
+            </p>
+          </FadeIn>
 
-            <h3 className="text-lg font-medium">参加方法</h3>
-            <p>興味のある方は、以下のフォームからご登録ください。</p>
+          <div className="grid md:grid-cols-3">
+            {activityItems.map(({ Icon, text }, i) => (
+              <FadeIn key={i} delayMs={i * 100}>
+                <div
+                  className={[
+                    "relative py-6 md:py-0",
+                    i > 0 ? "md:pl-8" : "",
+                    i < activityItems.length - 1 ? "md:pr-8" : "",
+                  ].join(" ")}
+                >
+                  {i > 0 && (
+                    <div
+                      className="hidden md:block absolute left-0 top-0 bottom-0 w-px"
+                      style={{
+                        background:
+                          "linear-gradient(to bottom, transparent, rgba(236, 72, 153, 0.12) 30%, rgba(236, 72, 153, 0.12) 70%, transparent)",
+                      }}
+                    />
+                  )}
+                  {i > 0 && (
+                    <div
+                      className="md:hidden h-px mb-6"
+                      style={{
+                        background:
+                          "linear-gradient(to right, rgba(236, 72, 153, 0.12), transparent)",
+                      }}
+                    />
+                  )}
+                  <Icon className="w-5 h-5 text-pink-400/60 mb-3" />
+                  <p className="text-gray-700 leading-relaxed">{text}</p>
+                </div>
+              </FadeIn>
+            ))}
+          </div>
 
-            {/* 埋め込み（提供側で無効な場合は表示されないことがあります） */}
+          {/* Form */}
+          <div className="mt-16 space-y-6">
+            <FadeIn>
+              <p className="text-[10px] font-mono tracking-[0.3em] uppercase text-gray-400 mb-4">
+                参加方法
+              </p>
+              <p className="text-gray-600 mb-6">
+                興味のある方は、以下のフォームからご登録ください。
+              </p>
+            </FadeIn>
+
             {EMBED_URL && (
-              <div className="relative w-full overflow-hidden rounded-2xl border bg-white/80 backdrop-blur-sm ring-1 ring-pink-200/60 shadow-sm">
-                <div className="pointer-events-none absolute -inset-1 rounded-3xl bg-gradient-to-br from-fuchsia-400/20 via-rose-300/20 to-amber-200/20 blur-2xl" />
-                <iframe
-                  title="IYNA Japan 参加フォーム"
-                  src={EMBED_URL}
-                  className="relative w-full h-[1200px]"
-                  frameBorder="0"
-                  marginHeight={0}
-                  marginWidth={0}
-                />
-              </div>
+              <FadeIn delayMs={100}>
+                <div className="rounded-xl border border-gray-100 overflow-hidden bg-white">
+                  <iframe
+                    title="IYNA Japan 参加フォーム"
+                    src={EMBED_URL}
+                    className="w-full h-[1200px]"
+                    frameBorder="0"
+                    marginHeight={0}
+                    marginWidth={0}
+                  />
+                </div>
+              </FadeIn>
             )}
 
-            {/* 常に外部フォームも案内（埋め込みが無効でも入力可能に） */}
-            <div className="flex items-center gap-3">
-              <Button asChild className="bg-pink-600 hover:bg-pink-700 text-white shadow-md">
-                <Link href={FORM_URL} target="_blank" rel="noopener noreferrer">
-                  <Share2 className="w-5 h-5 mr-2" />
+            <FadeIn delayMs={200}>
+              <div className="flex items-center gap-4">
+                <Link
+                  href={FORM_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-2.5 text-sm font-medium bg-gray-900 text-white rounded-full hover:bg-gray-800 transition-all duration-300"
+                >
+                  <Share2 className="w-4 h-4" />
                   別タブでフォームを開く
                 </Link>
-              </Button>
-              {!EMBED_URL && (
-                <p className="text-sm text-gray-600">
-                  埋め込みは現在無効です。上のボタンから入力してください。
-                </p>
-              )}
-            </div>
-          </CardContent>
-        </Card>
+                {!EMBED_URL && (
+                  <p className="text-sm text-gray-400">
+                    埋め込みは現在無効です。ボタンから入力してください。
+                  </p>
+                )}
+              </div>
+            </FadeIn>
+          </div>
+        </section>
 
-        {/* Advisor 募集 */}
-        <Card className="overflow-hidden">
-          <CardHeader>
-            <CardTitle className="text-2xl">Advisor 募集</CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-4">
-            <p>
-              私たちの活動をサポートしていただけるアドバイザーを募集しています！
-              記事やコンテンツに関するファクトチェックや研究のアドバイスを通じて、
-              中高生の神経科学への理解を深め、活動をさらに盛り上げていただきたいと思っています。
-            </p>
-            <p>ご興味がある方は、以下のメールアドレスにご連絡ください。</p>
-            <Link
-              href="mailto:iynajapan2024@gmail.com"
-              className="inline-flex items-center text-blue-600 hover:underline"
-            >
-              <Icons.mail className="w-5 h-5 mr-2" />
-              iynajapan2024@gmail.com
-            </Link>
-          </CardContent>
-        </Card>
-      </main>
-    </>
+        {/* ── Advisor Recruitment ── */}
+        <section className="relative py-16 px-8 sm:px-12 rounded-xl bg-[#080a1a] overflow-hidden">
+          <div
+            className="absolute inset-0 pointer-events-none"
+            aria-hidden="true"
+            style={{
+              background:
+                "radial-gradient(ellipse at 30% 50%, rgba(120, 40, 100, 0.08) 0%, transparent 60%)",
+            }}
+          />
+          <div className="relative space-y-4">
+            <FadeIn>
+              <p className="text-[10px] font-mono tracking-[0.3em] uppercase text-pink-400/40 mb-3">
+                For Researchers
+              </p>
+              <h2 className="text-2xl sm:text-3xl font-bold text-white">
+                Advisor 募集
+              </h2>
+            </FadeIn>
+            <FadeIn delayMs={100}>
+              <p className="text-white/50 leading-relaxed max-w-2xl">
+                私たちの活動をサポートしていただけるアドバイザーを募集しています。
+                記事やコンテンツに関するファクトチェックや研究のアドバイスを通じて、
+                中高生の神経科学への理解を深め、活動をさらに盛り上げていただきたいと思っています。
+              </p>
+            </FadeIn>
+            <FadeIn delayMs={200}>
+              <p className="text-white/40 text-sm mt-4">
+                ご興味がある方は、以下のメールアドレスにご連絡ください。
+              </p>
+              <a
+                href="mailto:iynajapan2024@gmail.com"
+                className="inline-flex items-center gap-2 text-sm font-mono text-pink-300/60 hover:text-pink-300 transition-colors duration-300 mt-3"
+              >
+                <Icons.mail className="w-4 h-4" />
+                iynajapan2024@gmail.com
+              </a>
+            </FadeIn>
+          </div>
+        </section>
+      </div>
+    </main>
   );
 }

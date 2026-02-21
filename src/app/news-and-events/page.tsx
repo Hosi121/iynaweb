@@ -1,7 +1,6 @@
 import Link from "next/link";
-import { ExternalLink } from "lucide-react";
+import { ExternalLink, MapPin, Clock } from "lucide-react";
 import FadeIn from "@/components/FadeIn";
-import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import posts from "@/data/post.json";
 
 export const metadata = {
@@ -22,94 +21,84 @@ export default function NewsAndEventsPage() {
   const events = (posts as { events: EventItem[] }).events;
 
   return (
-    <>
-      <main className="container mx-auto py-10 px-6 space-y-16">
-        {/* Dynamic Hero */}
-        <section className="relative isolate overflow-hidden rounded-2xl bg-gradient-to-br from-pink-200 via-rose-100 to-amber-100 py-14 text-center">
-          <svg
-            className="absolute -z-10 top-6 left-1/2 -translate-x-1/2 w-[120%] h-auto opacity-30 blur-3xl"
-            viewBox="0 0 600 600"
-            aria-hidden
-          >
-            <defs>
-              <radialGradient id="grad-news" cx="50%" cy="50%" r="50%">
-                <stop offset="0%" stopColor="#FDB4BF" />
-                <stop offset="100%" stopColor="#FCE7F3" />
-              </radialGradient>
-            </defs>
-            <circle cx="300" cy="300" r="300" fill="url(#grad-news)" />
-          </svg>
-          <svg
-            className="absolute -z-10 bottom-0 left-0 w-full h-20 opacity-30"
-            preserveAspectRatio="none"
-            viewBox="0 0 800 200"
-            aria-hidden
-          >
-            <path d="M0 100 C150 200 350 0 800 100 L800 200 L0 200 Z" fill="#ffffff" />
-          </svg>
+    <main>
+      {/* ── Page Header ── */}
+      <section className="pt-12 pb-16 px-6 border-b border-gray-100">
+        <div className="container mx-auto">
+          <FadeIn>
+            <p className="text-[10px] font-mono tracking-[0.3em] uppercase text-gray-400 mb-4">
+              News & Events
+            </p>
+          </FadeIn>
+          <FadeIn delayMs={100}>
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-gray-900">
+              News & Events
+            </h1>
+          </FadeIn>
+          <FadeIn delayMs={200}>
+            <p className="text-lg text-gray-500 mt-4">
+              IYNA Japan の最新情報
+            </p>
+          </FadeIn>
+        </div>
+      </section>
 
-          <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight text-gray-900 drop-shadow-sm">
-            News & Events
-          </h1>
-          <p className="mt-3 text-lg text-gray-700">IYNA Japan の最新情報</p>
-        </section>
+      <div className="container mx-auto px-6 py-16">
+        <FadeIn>
+          <p className="text-[10px] font-mono tracking-[0.3em] uppercase text-gray-400 mb-10">
+            Upcoming & Recent
+          </p>
+        </FadeIn>
 
-        <section>
-          <h2 className="text-2xl font-semibold mb-6">イベント情報</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {events.map((ev, idx) => (
+            <FadeIn key={idx} delayMs={idx * 60}>
+              <div className="group rounded-xl border border-gray-100 p-6 transition-all duration-300 hover:border-gray-200 hover:shadow-sm space-y-4">
+                <h3 className="text-base font-bold text-gray-900 group-hover:text-pink-600 transition-colors duration-300">
+                  {ev.title}
+                </h3>
+                <p className="text-sm text-gray-500 whitespace-pre-line leading-relaxed">
+                  {ev.description}
+                </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {events.map((ev, idx) => (
-              <FadeIn key={idx} delayMs={idx * 80}>
-                <Card
-                  className="group relative overflow-hidden rounded-2xl bg-white/60 backdrop-blur-sm ring-1 ring-pink-200/50 shadow-sm transition hover:shadow-lg hover:-translate-y-0.5"
-                >
-                  <div className="pointer-events-none absolute -inset-1 rounded-3xl bg-gradient-to-br from-fuchsia-400/15 via-rose-300/15 to-amber-200/15 opacity-0 group-hover:opacity-100 transition blur-2xl" />
-                  <CardHeader>
-                    <CardTitle className="text-lg">{ev.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent className="space-y-4">
-                    <p className="whitespace-pre-line">{ev.description}</p>
-
-                  {(ev.location || ev.datetime) && (
-                    <ul className="list-none space-y-1">
-                      {ev.location && (
-                        <li>
-                          <strong>場所：</strong>
-                          {ev.location}
-                        </li>
-                      )}
-                      {ev.datetime && (
-                        <li>
-                          <strong>日時：</strong>
-                          {ev.datetime}
-                        </li>
-                      )}
-                    </ul>
-                  )}
-
-                    {ev.links && ev.links.length > 0 && (
-                      <div className="flex flex-wrap gap-2">
-                        {ev.links.map((lk, i) => (
-                          <Link
-                            key={i}
-                            href={lk.href}
-                            className="inline-flex items-center gap-2 rounded-full bg-white/70 ring-1 ring-pink-200/60 px-3 py-1 text-sm text-gray-800 hover:shadow-sm"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
-                            <ExternalLink className="w-4 h-4 text-pink-600" />
-                            {lk.label}
-                          </Link>
-                        ))}
+                {(ev.location || ev.datetime) && (
+                  <div className="space-y-1.5">
+                    {ev.location && (
+                      <div className="flex items-center gap-1.5 text-xs text-gray-400">
+                        <MapPin className="w-3.5 h-3.5" />
+                        <span>{ev.location}</span>
                       </div>
                     )}
-                  </CardContent>
-                </Card>
-              </FadeIn>
-            ))}
-          </div>
-        </section>
-      </main>
-    </>
+                    {ev.datetime && (
+                      <div className="flex items-center gap-1.5 text-xs text-gray-400">
+                        <Clock className="w-3.5 h-3.5" />
+                        <span>{ev.datetime}</span>
+                      </div>
+                    )}
+                  </div>
+                )}
+
+                {ev.links && ev.links.length > 0 && (
+                  <div className="flex flex-wrap gap-2 pt-1">
+                    {ev.links.map((lk, i) => (
+                      <Link
+                        key={i}
+                        href={lk.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-1.5 text-xs font-mono text-pink-500 hover:text-pink-600 transition-colors"
+                      >
+                        <ExternalLink className="w-3.5 h-3.5" />
+                        {lk.label}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
+            </FadeIn>
+          ))}
+        </div>
+      </div>
+    </main>
   );
 }
