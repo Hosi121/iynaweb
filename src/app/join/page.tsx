@@ -55,7 +55,7 @@ export default function JoinPage() {
                 href={FORM_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center px-7 py-3 text-sm font-medium bg-gray-900 text-white rounded-full hover:bg-gray-800 focus-visible:ring-2 focus-visible:ring-gray-900 focus-visible:ring-offset-2 active:bg-gray-700 transition-all duration-300 outline-none"
+                className="inline-flex items-center justify-center px-7 py-3 text-sm font-medium bg-gray-900 text-white rounded-full hover:bg-pink-600 focus-visible:ring-2 focus-visible:ring-gray-900 focus-visible:ring-offset-2 active:bg-pink-700 transition-all duration-300 outline-none"
               >
                 参加フォームを開く
               </Link>
@@ -154,7 +154,7 @@ export default function JoinPage() {
                   href={FORM_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 px-6 py-2.5 text-sm font-medium bg-gray-900 text-white rounded-full hover:bg-gray-800 focus-visible:ring-2 focus-visible:ring-gray-900 focus-visible:ring-offset-2 active:bg-gray-700 transition-all duration-300 outline-none"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-2.5 text-sm font-medium bg-gray-900 text-white rounded-full hover:bg-pink-600 focus-visible:ring-2 focus-visible:ring-gray-900 focus-visible:ring-offset-2 active:bg-pink-700 transition-all duration-300 outline-none"
                 >
                   <Share2 className="w-4 h-4" />
                   別タブでフォームを開く

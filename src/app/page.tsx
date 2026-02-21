@@ -120,13 +120,13 @@ export default function HomePage() {
                 <div className="flex flex-col sm:flex-row gap-4 mt-12">
                   <Link
                     href="/about"
-                    className="inline-flex items-center justify-center px-7 py-3 text-sm font-medium border border-gray-300 text-gray-700 rounded-full hover:border-gray-400 hover:bg-gray-50 focus-visible:ring-2 focus-visible:ring-gray-400 focus-visible:ring-offset-2 active:bg-gray-100 transition-all duration-300 outline-none"
+                    className="inline-flex items-center justify-center px-7 py-3 text-sm font-medium border border-gray-300 text-gray-700 rounded-full hover:bg-gray-900 hover:text-white hover:border-gray-900 focus-visible:ring-2 focus-visible:ring-gray-400 focus-visible:ring-offset-2 active:bg-gray-700 transition-all duration-300 outline-none"
                   >
                     About Us
                   </Link>
                   <Link
                     href="/join"
-                    className="inline-flex items-center justify-center px-7 py-3 text-sm font-medium bg-gray-900 text-white rounded-full hover:bg-gray-800 focus-visible:ring-2 focus-visible:ring-gray-900 focus-visible:ring-offset-2 active:bg-gray-700 transition-all duration-300 outline-none"
+                    className="inline-flex items-center justify-center px-7 py-3 text-sm font-medium bg-gray-900 text-white rounded-full hover:bg-pink-600 focus-visible:ring-2 focus-visible:ring-gray-900 focus-visible:ring-offset-2 active:bg-pink-700 transition-all duration-300 outline-none"
                   >
                     参加する&nbsp;&nbsp;→
                   </Link>
@@ -259,8 +259,8 @@ export default function HomePage() {
             delayMs={200}
           >
             <Image
-              src="/brain_hirameki.png"
-              alt="Neuroscience illustration"
+              src="/favicon.png"
+              alt="IYNA Japan logo"
               width={400}
               height={400}
               className="drop-shadow-[0_0_60px_rgba(236,72,153,0.12)]"
@@ -394,7 +394,7 @@ export default function HomePage() {
           <div className="pt-4">
             <Link
               href="/join"
-              className="inline-flex items-center justify-center px-8 py-3.5 text-sm font-medium bg-pink-500 text-white rounded-full hover:bg-pink-400 hover:shadow-[0_0_30px_rgba(236,72,153,0.4)] focus-visible:ring-2 focus-visible:ring-pink-400 focus-visible:ring-offset-2 focus-visible:ring-offset-[#060818] active:bg-pink-600 transition-all duration-300 outline-none"
+              className="inline-flex items-center justify-center px-8 py-3.5 text-sm font-medium bg-pink-500 text-white rounded-full hover:bg-white hover:text-pink-600 hover:shadow-[0_0_30px_rgba(236,72,153,0.3)] focus-visible:ring-2 focus-visible:ring-pink-400 focus-visible:ring-offset-2 focus-visible:ring-offset-[#060818] active:bg-pink-600 transition-all duration-300 outline-none"
             >
               参加する
             </Link>
