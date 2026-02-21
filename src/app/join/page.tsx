@@ -159,11 +159,6 @@ export default function JoinPage() {
                   <Share2 className="w-4 h-4" />
                   別タブでフォームを開く
                 </Link>
-                {!EMBED_URL && (
-                  <p className="text-sm text-gray-400">
-                    埋め込みは現在無効です。ボタンから入力してください。
-                  </p>
-                )}
               </div>
             </FadeIn>
           </div>
@@ -181,7 +176,7 @@ export default function JoinPage() {
           />
           <div className="relative space-y-4">
             <FadeIn>
-              <p className="text-[10px] font-mono tracking-[0.3em] uppercase text-pink-400/40 mb-3">
+              <p className="text-[10px] font-mono tracking-[0.3em] uppercase text-white/30 mb-3">
                 For Researchers
               </p>
               <h2 className="text-2xl sm:text-3xl font-bold text-white">
@@ -201,7 +196,7 @@ export default function JoinPage() {
               </p>
               <a
                 href="mailto:iynajapan2024@gmail.com"
-                className="inline-flex items-center gap-2 text-sm font-mono text-pink-300/60 hover:text-pink-300 focus-visible:text-pink-300 focus-visible:ring-2 focus-visible:ring-pink-400/50 focus-visible:ring-offset-2 focus-visible:ring-offset-[#080a1a] rounded outline-none transition-colors duration-300 mt-3"
+                className="inline-flex items-center gap-2 text-sm font-mono text-white/70 hover:text-white focus-visible:text-white focus-visible:ring-2 focus-visible:ring-white/30 focus-visible:ring-offset-2 focus-visible:ring-offset-[#080a1a] rounded outline-none transition-colors duration-300 mt-3"
               >
                 <Icons.mail className="w-4 h-4" />
                 iynajapan2024@gmail.com
