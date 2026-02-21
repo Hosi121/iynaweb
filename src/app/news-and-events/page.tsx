@@ -86,7 +86,7 @@ export default function NewsAndEventsPage() {
                         href={lk.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1.5 text-xs font-mono text-pink-500 hover:text-pink-600 transition-colors"
+                        className="inline-flex items-center gap-1.5 text-xs font-mono text-pink-500 hover:text-pink-600 focus-visible:ring-2 focus-visible:ring-pink-400 focus-visible:ring-offset-2 rounded outline-none transition-colors"
                       >
                         <ExternalLink className="w-3.5 h-3.5" />
                         {lk.label}

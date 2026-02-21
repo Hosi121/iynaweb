@@ -32,7 +32,7 @@ export default function Footer() {
                 target={s.href.startsWith("mailto:") ? undefined : "_blank"}
                 rel={s.href.startsWith("mailto:") ? undefined : "noopener noreferrer"}
                 aria-label={s.label}
-                className="text-gray-400 hover:text-gray-600 transition-colors duration-300"
+                className="text-gray-400 hover:text-gray-600 focus-visible:ring-2 focus-visible:ring-gray-400 focus-visible:ring-offset-2 rounded outline-none transition-colors duration-300"
               >
                 <s.icon className="w-4 h-4" />
               </Link>
@@ -43,7 +43,7 @@ export default function Footer() {
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 text-xs text-gray-400">
             <Link
               href="/privacy-policy"
-              className="hover:text-gray-600 transition-colors"
+              className="hover:text-gray-600 focus-visible:ring-2 focus-visible:ring-gray-400 focus-visible:ring-offset-2 rounded outline-none transition-colors"
             >
               プライバシーポリシー
             </Link>

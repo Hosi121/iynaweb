@@ -55,7 +55,7 @@ export default function JoinPage() {
                 href={FORM_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center px-7 py-3 text-sm font-medium bg-gray-900 text-white rounded-full hover:bg-gray-800 transition-all duration-300"
+                className="inline-flex items-center justify-center px-7 py-3 text-sm font-medium bg-gray-900 text-white rounded-full hover:bg-gray-800 focus-visible:ring-2 focus-visible:ring-gray-900 focus-visible:ring-offset-2 active:bg-gray-700 transition-all duration-300 outline-none"
               >
                 参加フォームを開く
               </Link>
@@ -154,7 +154,7 @@ export default function JoinPage() {
                   href={FORM_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 px-6 py-2.5 text-sm font-medium bg-gray-900 text-white rounded-full hover:bg-gray-800 transition-all duration-300"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-2.5 text-sm font-medium bg-gray-900 text-white rounded-full hover:bg-gray-800 focus-visible:ring-2 focus-visible:ring-gray-900 focus-visible:ring-offset-2 active:bg-gray-700 transition-all duration-300 outline-none"
                 >
                   <Share2 className="w-4 h-4" />
                   別タブでフォームを開く
@@ -201,7 +201,7 @@ export default function JoinPage() {
               </p>
               <a
                 href="mailto:iynajapan2024@gmail.com"
-                className="inline-flex items-center gap-2 text-sm font-mono text-pink-300/60 hover:text-pink-300 transition-colors duration-300 mt-3"
+                className="inline-flex items-center gap-2 text-sm font-mono text-pink-300/60 hover:text-pink-300 focus-visible:text-pink-300 focus-visible:ring-2 focus-visible:ring-pink-400/50 focus-visible:ring-offset-2 focus-visible:ring-offset-[#080a1a] rounded outline-none transition-colors duration-300 mt-3"
               >
                 <Icons.mail className="w-4 h-4" />
                 iynajapan2024@gmail.com

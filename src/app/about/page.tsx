@@ -107,7 +107,7 @@ export default function AboutPage() {
             href={sns.x}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gray-400 hover:text-gray-600 transition-colors"
+            className="text-gray-400 hover:text-gray-600 focus-visible:ring-2 focus-visible:ring-gray-400 focus-visible:ring-offset-2 rounded outline-none transition-colors"
           >
             <Twitter className="h-4 w-4" />
           </Link>
@@ -117,7 +117,7 @@ export default function AboutPage() {
             href={noteUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-gray-400 hover:text-gray-600 transition-colors"
+            className="text-gray-400 hover:text-gray-600 focus-visible:ring-2 focus-visible:ring-gray-400 focus-visible:ring-offset-2 rounded outline-none transition-colors"
           >
             <NoteIcon className="h-4 w-4" />
           </Link>
@@ -195,7 +195,7 @@ export default function AboutPage() {
                               href={member.sns.researchmap}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="text-sm text-pink-500 hover:text-pink-600"
+                              className="text-sm text-pink-500 hover:text-pink-600 focus-visible:ring-2 focus-visible:ring-pink-400 focus-visible:ring-offset-2 rounded outline-none transition-colors"
                             >
                               Researchmap →
                             </Link>
@@ -205,7 +205,7 @@ export default function AboutPage() {
                               href={member.sns.website}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="text-sm text-pink-500 hover:text-pink-600"
+                              className="text-sm text-pink-500 hover:text-pink-600 focus-visible:ring-2 focus-visible:ring-pink-400 focus-visible:ring-offset-2 rounded outline-none transition-colors"
                             >
                               Website →
                             </Link>
@@ -215,7 +215,7 @@ export default function AboutPage() {
                               href={normalizeNoteUrl(member.sns.note) || "#"}
                               target="_blank"
                               rel="noopener noreferrer"
-                              className="text-sm text-pink-500 hover:text-pink-600"
+                              className="text-sm text-pink-500 hover:text-pink-600 focus-visible:ring-2 focus-visible:ring-pink-400 focus-visible:ring-offset-2 rounded outline-none transition-colors"
                             >
                               Note →
                             </Link>
@@ -256,13 +256,13 @@ export default function AboutPage() {
             <div className="flex gap-4 mt-8">
               <Link
                 href="/join"
-                className="inline-flex items-center justify-center px-6 py-2.5 text-sm font-medium bg-gray-900 text-white rounded-full hover:bg-gray-800 transition-all duration-300"
+                className="inline-flex items-center justify-center px-6 py-2.5 text-sm font-medium bg-gray-900 text-white rounded-full hover:bg-gray-800 focus-visible:ring-2 focus-visible:ring-gray-900 focus-visible:ring-offset-2 active:bg-gray-700 transition-all duration-300 outline-none"
               >
                 仲間になる
               </Link>
               <Link
                 href="/activities"
-                className="inline-flex items-center justify-center px-6 py-2.5 text-sm font-medium border border-gray-300 text-gray-700 rounded-full hover:border-gray-400 transition-all duration-300"
+                className="inline-flex items-center justify-center px-6 py-2.5 text-sm font-medium border border-gray-300 text-gray-700 rounded-full hover:border-gray-400 hover:bg-gray-50 focus-visible:ring-2 focus-visible:ring-gray-400 focus-visible:ring-offset-2 active:bg-gray-100 transition-all duration-300 outline-none"
               >
                 活動実績を見る
               </Link>
@@ -293,7 +293,7 @@ export default function AboutPage() {
               href="https://www.youthneuro.org/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex text-sm font-mono text-pink-500 hover:text-pink-600 transition-colors"
+              className="inline-flex text-sm font-mono text-pink-500 hover:text-pink-600 focus-visible:ring-2 focus-visible:ring-pink-400 focus-visible:ring-offset-2 rounded outline-none transition-colors"
             >
               IYNA 本部サイト&nbsp;&nbsp;→
             </Link>

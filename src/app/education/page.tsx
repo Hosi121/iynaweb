@@ -132,7 +132,7 @@ export default async function EducationPage() {
                   href={a.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group block rounded-xl border border-gray-100 overflow-hidden transition-all duration-300 hover:border-gray-200 hover:shadow-sm"
+                  className="group block rounded-xl border border-gray-100 overflow-hidden transition-all duration-300 hover:border-gray-200 hover:shadow-sm focus-visible:ring-2 focus-visible:ring-pink-400 focus-visible:ring-offset-2 outline-none"
                 >
                   {a.imageUrl && (
                     <div className="relative aspect-[16/9] bg-gray-50">
@@ -177,7 +177,7 @@ export default async function EducationPage() {
               href="https://www.braincentury.org/"
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex items-center justify-between rounded-xl border border-gray-100 p-6 transition-all duration-300 hover:border-gray-200 hover:shadow-sm"
+              className="group flex items-center justify-between rounded-xl border border-gray-100 p-6 transition-all duration-300 hover:border-gray-200 hover:shadow-sm focus-visible:ring-2 focus-visible:ring-pink-400 focus-visible:ring-offset-2 outline-none"
             >
               <div>
                 <h3 className="text-base font-bold text-gray-900 group-hover:text-pink-600 transition-colors duration-300">

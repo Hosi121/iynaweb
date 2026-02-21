@@ -67,7 +67,7 @@ export default function Header() {
           {/* Logo */}
           <Link
             href="/"
-            className="flex items-center space-x-2 text-xl font-extrabold tracking-tight"
+            className="flex items-center space-x-2 text-xl font-extrabold tracking-tight focus-visible:ring-2 focus-visible:ring-pink-400 focus-visible:ring-offset-2 rounded-lg outline-none"
             onClick={close}
           >
             <Image
@@ -89,7 +89,7 @@ export default function Header() {
 
           {/* Menu toggle */}
           <button
-            className="relative z-50 flex items-center gap-3"
+            className="relative z-50 flex items-center gap-3 focus-visible:ring-2 focus-visible:ring-pink-400 focus-visible:ring-offset-2 rounded-lg outline-none transition-colors"
             onClick={() => setOpen((v) => !v)}
             aria-label="Toggle menu"
             aria-expanded={open}
@@ -175,7 +175,7 @@ export default function Header() {
                         href={item.href}
                         onClick={close}
                         className={[
-                          "group flex items-baseline gap-4 sm:gap-6 py-3 lg:py-4 transition-all duration-700 ease-[cubic-bezier(0.77,0,0.18,1)]",
+                          "group flex items-baseline gap-4 sm:gap-6 py-3 lg:py-4 rounded-lg outline-none focus-visible:ring-2 focus-visible:ring-pink-400/50 focus-visible:ring-offset-4 focus-visible:ring-offset-[#080a1a] transition-all duration-700 ease-[cubic-bezier(0.77,0,0.18,1)]",
                           open
                             ? "opacity-100 translate-y-0"
                             : "opacity-0 translate-y-8",
@@ -262,7 +262,7 @@ export default function Header() {
                 </p>
                 <a
                   href="mailto:iynajapan2024@gmail.com"
-                  className="text-sm text-white/35 hover:text-pink-300/70 transition-colors duration-300"
+                  className="text-sm text-white/35 hover:text-pink-300/70 focus-visible:text-pink-300/70 focus-visible:ring-2 focus-visible:ring-pink-400/50 focus-visible:ring-offset-2 focus-visible:ring-offset-[#080a1a] rounded outline-none transition-colors duration-300"
                 >
                   iynajapan2024@gmail.com
                 </a>
@@ -284,7 +284,7 @@ export default function Header() {
                       target="_blank"
                       rel="noopener noreferrer"
                       aria-label={s.label}
-                      className="text-white/20 hover:text-pink-300/60 transition-colors duration-300"
+                      className="text-white/20 hover:text-pink-300/60 focus-visible:text-pink-300/60 focus-visible:ring-2 focus-visible:ring-pink-400/50 focus-visible:ring-offset-2 focus-visible:ring-offset-[#080a1a] rounded outline-none transition-colors duration-300"
                     >
                       <s.icon className="w-5 h-5" />
                     </a>
