@@ -1,174 +1,272 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { Users, Calendar, BookOpen } from "lucide-react";
+import FadeIn from "@/components/FadeIn";
 
 export const metadata = {
   title: "IYNA Japan",
   description: "中高生神経科学者のためのコミュニティ、IYNA Japan 公式サイト",
 };
 
+const stats = [
+  { value: "4,000+", label: "Members" },
+  { value: "126+", label: "Countries" },
+  { value: "2016", label: "Established" },
+];
+
+const activities = [
+  {
+    title: "コミュニティ形成",
+    text: "神経科学に興味を持つ中高生が学びあい、交流できる場を提供します。",
+  },
+  {
+    title: "イベント企画",
+    text: "講演会やワークショップなど多彩なイベントを企画・開催しています。",
+  },
+  {
+    title: "学習サポート",
+    text: "用語集や記事を通じて、神経科学の基礎知識をわかりやすく提供します。",
+  },
+];
+
 export default function HomePage() {
   return (
     <>
-      {/* Hero セクション */}
-      <section
-        id="hero"
-        className="relative isolate flex items-center justify-center min-h-[80vh] overflow-hidden bg-gradient-to-br from-pink-300 via-rose-200 to-amber-100"
-      >
-        {/* 背景の装飾 SVG */}
-        <svg
-          className="absolute -z-10 top-32 left-0 w-[120%] h-auto opacity-30 blur-3xl"
-          viewBox="0 0 600 600"
-          aria-hidden
-          focusable="false"
-        >
-          <defs>
-            <radialGradient id="grad" cx="50%" cy="50%" r="50%">
-              <stop offset="0%" stopColor="#FDB4BF" />
-              <stop offset="100%" stopColor="#FCE7F3" />
-            </radialGradient>
-          </defs>
-          <circle cx="300" cy="300" r="300" fill="url(#grad)" />
-        </svg>
+      {/* ── Hero ── */}
+      <section className="relative min-h-[90vh] flex items-center overflow-hidden">
+        {/* Dot grid */}
+        <div
+          className="absolute inset-0 opacity-[0.03]"
+          aria-hidden="true"
+          style={{
+            backgroundImage:
+              "radial-gradient(circle, #000 1px, transparent 1px)",
+            backgroundSize: "24px 24px",
+          }}
+        />
 
-        <div className="container mx-auto px-6 text-center space-y-8">
-          <h1 className="text-5xl md:text-6xl font-extrabold tracking-tight leading-tight md:leading-[1.15] text-gray-900 drop-shadow-md text-balance">
-            <span className="inline-flex items-center justify-center bg-black text-white px-6 py-3 shadow-lg ring-1 ring-white/20">
-              IYNA Japan
-            </span>
-          </h1>
-          <p className="text-lg md:text-2xl leading-relaxed md:leading-loose max-w-3xl mx-auto text-gray-800/90 text-pretty">
-            IYNA (International Youth Neuroscience Association) は神経科学に興味がある中高生が集まる、国際的な非営利団体です。IYNA Japan はその日本支部です。
-          </p>
-          <div className="flex flex-col sm:inline-flex sm:flex-row justify-center gap-4">
-            <Button
-              asChild
-              variant="outline"
-              size="lg"
-              className="border-pink-400 text-pink-700 hover:bg-pink-100/60 backdrop-blur-md"
+        <div className="container mx-auto px-6 lg:px-12">
+          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+            {/* Left — text content */}
+            <div>
+              <FadeIn>
+                <p className="text-[11px] font-mono tracking-[0.3em] uppercase text-gray-400 mb-6">
+                  International Youth Neuroscience Association
+                </p>
+              </FadeIn>
+
+              <FadeIn delayMs={100}>
+                <h1 className="text-7xl sm:text-8xl lg:text-9xl font-extrabold tracking-tighter text-gray-900 leading-[0.85]">
+                  IYNA
+                  <br />
+                  <span className="bg-gradient-to-r from-pink-500 to-rose-400 bg-clip-text text-transparent">
+                    Japan
+                  </span>
+                </h1>
+              </FadeIn>
+
+              <FadeIn delayMs={200}>
+                <p className="text-lg lg:text-xl text-gray-500 max-w-lg leading-relaxed mt-8">
+                  神経科学に興味がある中高生が集まる、
+                  <br className="hidden sm:block" />
+                  国際的な非営利団体の日本支部です。
+                </p>
+              </FadeIn>
+
+              {/* Stats */}
+              <FadeIn delayMs={300}>
+                <div className="flex flex-wrap items-center gap-6 sm:gap-0 mt-12">
+                  {stats.map((s, i) => (
+                    <div
+                      key={s.label}
+                      className={
+                        i > 0
+                          ? "pl-6 sm:pl-10 border-l border-gray-200"
+                          : "pr-6 sm:pr-10"
+                      }
+                    >
+                      <p className="text-2xl sm:text-3xl font-mono font-bold text-gray-900 tabular-nums">
+                        {s.value}
+                      </p>
+                      <p className="text-[10px] font-mono tracking-[0.2em] uppercase text-gray-400 mt-1">
+                        {s.label}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </FadeIn>
+
+              {/* CTAs */}
+              <FadeIn delayMs={400}>
+                <div className="flex flex-col sm:flex-row gap-4 mt-12">
+                  <Link
+                    href="/about"
+                    className="inline-flex items-center justify-center px-7 py-3 text-sm font-medium border border-gray-300 text-gray-700 rounded-full hover:border-gray-400 hover:bg-gray-50 transition-all duration-300"
+                  >
+                    About Us
+                  </Link>
+                  <Link
+                    href="/join"
+                    className="inline-flex items-center justify-center px-7 py-3 text-sm font-medium bg-gray-900 text-white rounded-full hover:bg-gray-800 transition-all duration-300"
+                  >
+                    参加する&nbsp;&nbsp;→
+                  </Link>
+                </div>
+              </FadeIn>
+            </div>
+
+            {/* Right — brain visual */}
+            <FadeIn
+              className="hidden lg:flex justify-center items-center relative"
+              delayMs={300}
             >
-              <Link href="/about">About</Link>
-            </Button>
-            <Button
-              asChild
-              size="lg"
-              className="bg-pink-600 hover:bg-pink-700 text-white shadow-lg"
-            >
-              <Link href="/join">参加する</Link>
-            </Button>
+              {/* Ambient glow behind image */}
+              <div
+                className="absolute inset-0 pointer-events-none"
+                aria-hidden="true"
+                style={{
+                  background:
+                    "radial-gradient(circle at 50% 50%, rgba(236, 72, 153, 0.08) 0%, transparent 60%)",
+                }}
+              />
+              <Image
+                src="/brain_hirameki.png"
+                alt="Neuroscience illustration"
+                width={420}
+                height={420}
+                priority
+                className="relative drop-shadow-xl"
+              />
+            </FadeIn>
           </div>
         </div>
       </section>
 
-      {/* Feature セクション */}
-      <section id="features" className="bg-white py-24 px-6">
+      {/* ── Activities — 3-column neural pathway ── */}
+      <section className="py-24 px-6 border-t border-gray-100">
         <div className="container mx-auto">
-          <h2 className="text-3xl font-semibold text-center mb-16 text-pink-800 tracking-tight">
-            私たちの活動
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-            {[
-              {
-                Icon: Users,
-                title: "コミュニティ形成",
-                text: "神経科学に興味を持つ中高生が学びあい、交流できる場を提供します。",
-              },
-              {
-                Icon: Calendar,
-                title: "イベント企画",
-                text: "講演会やワークショップなど多彩なイベントを企画・開催しています。",
-              },
-              {
-                Icon: BookOpen,
-                title: "学習サポート",
-                text: "用語集や記事を通じて、神経科学の基礎知識をわかりやすく提供します。",
-              },
-            ].map(({ Icon, title, text }) => (
-              <Card
-                key={title}
-                className="group relative overflow-hidden rounded-2xl border-0 bg-pink-50/60 backdrop-blur-sm ring-1 ring-inset ring-pink-200/40 transition shadow-sm hover:shadow-lg"
-              >
-                <div className="absolute -inset-0.5 bg-gradient-to-br from-fuchsia-400/30 to-pink-200/30 opacity-0 group-hover:opacity-100 transition" />
-                <CardContent className="relative flex flex-col items-center text-center p-8 space-y-4">
-                  <span className="flex h-16 w-16 items-center justify-center rounded-full bg-white shadow-md ring-1 ring-gray-200">
-                    <Icon className="w-8 h-8 text-pink-600" />
+          <FadeIn>
+            <p className="text-[10px] font-mono tracking-[0.3em] uppercase text-gray-400 mb-12">
+              What We Do
+            </p>
+          </FadeIn>
+
+          <div className="grid md:grid-cols-3">
+            {activities.map((item, i) => (
+              <FadeIn key={item.title} delayMs={i * 120}>
+                <div
+                  className={[
+                    "group relative py-8 md:py-0",
+                    i > 0 ? "md:pl-10" : "",
+                    i < activities.length - 1 ? "md:pr-10" : "",
+                  ].join(" ")}
+                >
+                  {/* Vertical axon divider (desktop) */}
+                  {i > 0 && (
+                    <div
+                      className="hidden md:block absolute left-0 top-0 bottom-0 w-px"
+                      style={{
+                        background:
+                          "linear-gradient(to bottom, transparent, rgba(236, 72, 153, 0.12) 30%, rgba(236, 72, 153, 0.12) 70%, transparent)",
+                      }}
+                    />
+                  )}
+                  {/* Horizontal axon divider (mobile) */}
+                  {i > 0 && (
+                    <div
+                      className="md:hidden h-px mb-8"
+                      style={{
+                        background:
+                          "linear-gradient(to right, rgba(236, 72, 153, 0.12), transparent)",
+                      }}
+                    />
+                  )}
+
+                  <span className="text-sm font-mono text-pink-400/40 tabular-nums">
+                    {String(i + 1).padStart(2, "0")}
                   </span>
-                  <h3 className="text-xl font-medium text-pink-800">{title}</h3>
-                  <p className="text-gray-700 leading-relaxed">{text}</p>
-                </CardContent>
-              </Card>
+                  <h3 className="text-xl sm:text-2xl font-bold text-gray-900 group-hover:text-pink-600 transition-colors duration-300 mt-3">
+                    {item.title}
+                  </h3>
+                  <p className="text-gray-500 mt-3 leading-relaxed">
+                    {item.text}
+                  </p>
+                </div>
+              </FadeIn>
             ))}
           </div>
         </div>
       </section>
 
-      {/* About セクション */}
-      <section id="about" className="relative isolate py-24 px-6 bg-pink-50">
-        <div className="absolute inset-0 -z-10 bg-[url('/brain-bg.svg')] bg-contain bg-center opacity-10" />
-        <div className="container mx-auto grid md:grid-cols-2 items-center gap-12 max-w-5xl">
-          <div className="order-2 md:order-1 space-y-6">
-            <h2 className="text-3xl font-semibold text-pink-800">IYNA Japan とは</h2>
-            <p className="text-gray-800 leading-relaxed">
-              IYNA（International Youth Neuroscience Association）は、次世代の神経科学者にインスピレーションを与えることを目的とした学生主導の非営利団体です。2016年に設立され、現在は 4,000 名以上のメンバーと 126 国以上の支部があります。
+      {/* ── About — dark neural space ── */}
+      <section className="relative py-32 px-6 bg-[#080a1a] overflow-hidden">
+        {/* Ambient neural glow */}
+        <div
+          className="absolute inset-0 pointer-events-none"
+          aria-hidden="true"
+          style={{
+            background:
+              "radial-gradient(ellipse at 70% 50%, rgba(120, 40, 100, 0.1) 0%, transparent 60%)",
+          }}
+        />
+
+        <div className="container mx-auto grid md:grid-cols-2 gap-12 lg:gap-20 items-center max-w-5xl relative">
+          <FadeIn className="order-2 md:order-1 space-y-6">
+            <p className="text-[10px] font-mono tracking-[0.3em] uppercase text-pink-400/40">
+              About Us
             </p>
-            <p className="text-gray-800 leading-relaxed">
+            <h2 className="text-3xl lg:text-4xl font-bold text-white">
+              IYNA Japan とは
+            </h2>
+            <p className="text-white/50 leading-relaxed">
+              IYNA（International Youth Neuroscience
+              Association）は、次世代の神経科学者にインスピレーションを与えることを目的とした学生主導の非営利団体です。2016年に設立され、現在は
+              4,000 名以上のメンバーと 126
+              国以上の支部があります。
+            </p>
+            <p className="text-white/50 leading-relaxed">
               日本支部として、中高生向けの教育活動とコミュニティ運営を行っています。
             </p>
-            <Button asChild variant="ghost" className="text-pink-700 hover:bg-pink-100/40">
-              <Link href="/about">もっと見る →</Link>
-            </Button>
-          </div>
-          <div className="order-1 md:order-2 flex justify-center">
-            {/* 任意のイラスト / 画像を配置 */}
+            <Link
+              href="/about"
+              className="inline-flex text-sm font-mono text-pink-300/60 hover:text-pink-300 transition-colors duration-300"
+            >
+              もっと見る&nbsp;&nbsp;→
+            </Link>
+          </FadeIn>
+
+          <FadeIn
+            className="order-1 md:order-2 flex justify-center"
+            delayMs={200}
+          >
             <Image
               src="/brain_hirameki.png"
               alt="Neuroscience illustration"
               width={400}
               height={400}
-              className="drop-shadow-md"
+              className="drop-shadow-[0_0_60px_rgba(236,72,153,0.12)]"
             />
-          </div>
+          </FadeIn>
         </div>
       </section>
 
-      {/* Call to Action セクション */}
-      <section
-        id="cta"
-        className="relative isolate flex items-center justify-center py-24 px-6 bg-gradient-to-r from-pink-200 via-rose-100 to-amber-100 text-pink-900">
-        <svg
-          className="absolute -z-10 w-full h-full inset-0 opacity-20 mix-blend-overlay"
-          preserveAspectRatio="none"
-          viewBox="0 0 800 400"
-          aria-hidden
-        >
-          <defs>
-            <linearGradient id="waves" x1="0" x2="0" y1="0" y2="1">
-              <stop offset="0%" stopColor="#ffffff" stopOpacity="0.4" />
-              <stop offset="100%" stopColor="#ffffff" stopOpacity="0" />
-            </linearGradient>
-          </defs>
-          <path
-            d="M0 100 C150 200 350 0 800 100 L800 400 L0 400 Z"
-            fill="url(#waves)"
-          />
-        </svg>
-        <div className="text-center space-y-6 max-w-xl">
-          <h2 className="text-3xl md:text-4xl font-semibold tracking-tight drop-shadow-lg">
+      {/* ── CTA — synapse pulse ── */}
+      <section className="py-28 px-6 bg-[#060818]">
+        <FadeIn className="text-center max-w-xl mx-auto space-y-6">
+          <h2 className="text-3xl lg:text-4xl font-bold text-white tracking-tight">
             仲間になろう
           </h2>
-          <p className="text-lg md:text-xl drop-shadow-sm">
-            今すぐメンバーに参加して、神経科学の未来を創ろう！
+          <p className="text-white/40 text-lg">
+            今すぐメンバーに参加して、神経科学の未来を創ろう。
           </p>
-            <Button
-              asChild
-              size="lg"
-              className="bg-white text-pink-600 hover:bg-gray-50 shadow-md"
+          <div className="pt-4">
+            <Link
+              href="/join"
+              className="inline-flex items-center justify-center px-8 py-3.5 text-sm font-medium bg-pink-500 text-white rounded-full hover:bg-pink-400 hover:shadow-[0_0_30px_rgba(236,72,153,0.4)] transition-all duration-300"
             >
-              <Link href="/join">参加する</Link>
-            </Button>
-        </div>
+              参加する
+            </Link>
+          </div>
+        </FadeIn>
       </section>
     </>
   );
