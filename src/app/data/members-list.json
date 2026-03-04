@@ -1,24 +1,20 @@
 [
   {
-    "name": "Misaki Ozawa",
-    "role": "代表 / 創設者",
-    "tag": ["立ち上げ", "イベント企画", "コミュニティ企画", "財務"],
-    "sns": {
-      "x": "https://x.com/Misaki__Ozawa",
-      "note": "https://note.com/iyna_japan/n/ndc9cd14702b0?magazine_key=m014c6f6d6935"
-    },
-    "imageSrc": "/member/misaki.png",
-    "description": "代表 / 創設者"
-  },
-  {
     "name": "Ryota Kamikura",
-    "role": "副代表",
+    "role": "代表",
     "tag": ["立ち上げ", "財務", "大会", "広報", "イベント企画"],
     "sns": {
       "x": "https://x.com/ry_al_04",
       "note": "https://note.com/iyna_japan/n/naa59f56001c3?magazine_key=m014c6f6d6935"
     },
     "imageSrc": "/member/ryota.png",
+    "description": "代表"
+  },
+  {
+    "name": "Ruriko Hiroshige",
+    "role": "副代表",
+    "tag": [],
+    "imageSrc": "/member/ruriko.png",
     "description": "副代表"
   },
   {
@@ -31,6 +27,17 @@
     },
     "imageSrc": "/member/linna.png",
     "description": "副代表"
+  },
+  {
+    "name": "Misaki Ozawa",
+    "role": "クリエイター",
+    "tag": ["立ち上げ", "イベント企画", "コミュニティ企画", "財務"],
+    "sns": {
+      "x": "https://x.com/Misaki__Ozawa",
+      "note": "https://note.com/iyna_japan/n/ndc9cd14702b0?magazine_key=m014c6f6d6935"
+    },
+    "imageSrc": "/member/misaki.png",
+    "description": "クリエイター"
   },
   {
     "name": "Ayaka Ohara",
