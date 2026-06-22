@@ -29,6 +29,18 @@ body {
     object-position: center;
 }
 
+.closed-announcement {
+    width: 95%;
+    max-width: 960px;
+    margin: 20px auto 0;
+}
+
+.closed-announcement img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
 .section-banner {
     width: 95%;
     justify-content: center;
@@ -170,10 +182,6 @@ body {
 .role { font-size: 0.9rem; color: #555; margin-bottom: 5px; }
 .name { font-size: 1.25rem; font-weight: bold; }
 
-.fade-in {
-    animation: fadeIn 0.8s ease-in;
-}
-
 .keynote-wrapper {
     display: flex;
     flex-direction: column;
@@ -276,9 +284,4 @@ body {
     .bracket-side {
         justify-content: center;
     }
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
 }
