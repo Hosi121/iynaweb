@@ -82,7 +82,7 @@ const visionItems = [
 
 export default function AboutPage() {
   const advisorMembers = (members as Member[]).filter(
-    (m) => m.role === "advisor",
+    (m) => m.role === "advisor" || m.role === "Executive Advisor & Operator",
   );
   const academicAdvisorMembers = (members as Member[]).filter(
     (m) => m.role === "academic advisor",
@@ -94,7 +94,8 @@ export default function AboutPage() {
     (m) =>
       m.role !== "advisor" &&
       m.role !== "alumni" &&
-      m.role !== "academic advisor",
+      m.role !== "academic advisor" &&
+      m.role !== "Executive Advisor & Operator",
   );
 
   const SnsIcons = ({ sns }: { sns?: Member["sns"] }) => {
