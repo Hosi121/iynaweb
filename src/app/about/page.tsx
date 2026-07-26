@@ -175,7 +175,8 @@ export default function AboutPage() {
               <TagList tag={member.tag} />
               <SnsIcons sns={member.sns} />
               {(member.role === "academic advisor" ||
-                member.role === "advisor") &&
+                member.role === "advisor"||
+                member.role === "Executive Advisor & Operator") &&
                 member.description && (
                   <Accordion
                     type="single"
