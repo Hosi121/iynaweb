@@ -160,6 +160,7 @@ export default function AboutPage() {
                     src={member.imageSrc}
                     alt={member.name}
                     fill
+                    sizes="(min-width: 1024px) 280px, (min-width: 640px) calc(50vw - 44px), calc(100vw - 48px)"
                     className="object-cover transition-transform duration-500 group-hover:scale-[1.02]"
                   />
                 </div>
@@ -306,7 +307,7 @@ export default function AboutPage() {
               alt="IYNA Illustration"
               width={400}
               height={400}
-              priority
+              sizes="(min-width: 768px) 400px, 80vw"
               className="drop-shadow-lg"
             />
           </FadeIn>

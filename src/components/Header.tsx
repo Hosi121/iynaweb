@@ -22,10 +22,25 @@ export default function Header() {
   const pathname = usePathname();
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20);
+    let frameId = 0;
+    const onScroll = () => {
+      if (frameId) return;
+
+      frameId = window.requestAnimationFrame(() => {
+        frameId = 0;
+        const nextScrolled = window.scrollY > 20;
+        setScrolled((current) =>
+          current === nextScrolled ? current : nextScrolled,
+        );
+      });
+    };
+
     window.addEventListener("scroll", onScroll, { passive: true });
     onScroll();
-    return () => window.removeEventListener("scroll", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      if (frameId) window.cancelAnimationFrame(frameId);
+    };
   }, []);
 
   useEffect(() => {
@@ -75,7 +90,6 @@ export default function Header() {
               alt="IYNA Japan logo"
               width={28}
               height={28}
-              priority
             />
             <span
               className={[
@@ -137,7 +151,9 @@ export default function Header() {
       <div
         className={[
           "fixed inset-0 z-40",
-          open ? "visible" : "invisible",
+          open
+            ? "visible pointer-events-auto"
+            : "invisible pointer-events-none",
         ].join(" ")}
         aria-hidden={!open}
       >
