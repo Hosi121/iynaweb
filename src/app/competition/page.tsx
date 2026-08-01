@@ -19,6 +19,7 @@ export default function CompetitionPage() {
                   width={657}
                   height={215}
                   priority
+                  sizes="(min-width: 1024px) 657px, calc(100vw - 48px)"
                 />
             </div>
 
@@ -28,7 +29,7 @@ export default function CompetitionPage() {
                   alt="2025年度の開催は終了いたしました。たくさんのご応募ありがとうございました。2026年度もどうぞよろしくお願いいたします。"
                   width={960}
                   height={540}
-                  priority
+                  sizes="(min-width: 1024px) 960px, calc(100vw - 48px)"
                 />
             </div>
         </div>

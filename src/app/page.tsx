@@ -153,7 +153,7 @@ export default function HomePage() {
                 alt="Neuroscience illustration"
                 width={420}
                 height={420}
-                priority
+                sizes="(min-width: 1024px) 420px, 80vw"
                 className="relative drop-shadow-xl"
               />
             </FadeIn>
