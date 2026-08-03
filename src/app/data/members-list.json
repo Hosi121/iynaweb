@@ -11,13 +11,6 @@
     "description": "代表"
   },
   {
-    "name": "Ruriko Hiroshige",
-    "role": "副代表",
-    "tag": ["イベント企画", "SNS(インスタグラム)", "コミュニティ企画"],
-    "imageSrc": "/member/ruriko.png",
-    "description": "副代表"
-  },
-  {
     "name": "Linna Sato",
     "role": "コミュニティ統括・副代表",
     "tag": ["立ち上げ", "SNS(インスタグラム)", "大会", "コミュニティ企画"],
@@ -27,6 +20,13 @@
     },
     "imageSrc": "/member/linna.png",
     "description": "コミュニティ統括・副代表"
+  },
+  {
+    "name": "Ruriko Hiroshige",
+    "role": "副代表",
+    "tag": ["イベント企画", "SNS(インスタグラム)", "コミュニティ企画"],
+    "imageSrc": "/member/ruriko.png",
+    "description": "副代表"
   },
   {
     "name": "Sarina Tsuchiya",
@@ -74,6 +74,48 @@
     "description": "クリエイター"
   },
   {
+    "name": "Sora Ueda",
+    "role": "クリエイター",
+    "tag": ["イベント企画"],
+    "imageSrc": "/member/sora.png",
+    "description": "クリエイター"
+  },
+  {
+    "name": "Liona",
+    "role": "クリエイター",
+    "tag": ["SNS(note)"],
+    "imageSrc": "/member/Liona.png",
+    "description": "クリエイター"
+  },
+  {
+    "name": "Ema Totoki",
+    "role": "クリエイター",
+    "tag": ["イベント企画"],
+    "imageSrc": "/member/Ema.png",
+    "description": "クリエイター"
+  },
+  {
+    "name": "Waka Kitao",
+    "role": "クリエイター",
+    "tag": [],
+    "imageSrc": "/member/waka.png",
+    "description": "クリエイター"
+  },
+  {
+    "name": "Izumi Morishita",
+    "role": "クリエイター",
+    "tag": ["研究", "イベント企画"],
+    "imageSrc": "/member/izumi.png",
+    "description": "クリエイター"
+  },
+  {
+    "name": "Yassel Yu",
+    "role": "クリエイター",
+    "tag": ["イベント企画"],
+    "imageSrc": "/member/yassel.png",
+    "description": "クリエイター"
+  },
+   {
     "name": "Rinako Oya",
     "role": "クリエイター",
     "tag": ["コミュニティ企画"],
@@ -101,13 +143,6 @@
     "description": "クリエイター"
   },
   {
-    "name": "Nagomi Hiroki",
-    "role": "クリエイター",
-    "tag": ["イベント企画", "コミュニティ企画"],
-    "imageSrc": "",
-    "description": "クリエイター"
-  },
-  {
     "name": "Yuri Ide",
     "role": "クリエイター",
     "tag": ["イベント企画"],
@@ -125,48 +160,6 @@
       "note": "https://note.com/iyna_japan/n/n0265e2b9c014"
     },
     "imageSrc": "",
-    "description": "クリエイター"
-  },
-  {
-    "name": "Sora Ueda",
-    "role": "クリエイター",
-    "tag": ["クリエイター","イベント企画"],
-    "imageSrc": "/member/sora.png",
-    "description": "クリエイター"
-  },
-  {
-    "name": "Liona",
-    "role": "クリエイター",
-    "tag": ["クリエイター","SNS(note)"],
-    "imageSrc": "/member/Liona.png",
-    "description": "クリエイター"
-  },
-  {
-    "name": "Ema Totoki",
-    "role": "クリエイター",
-    "tag": ["クリエイター","イベント企画"],
-    "imageSrc": "/member/Ema.png",
-    "description": "クリエイター"
-  },
-  {
-    "name": "Waka Kitao",
-    "role": "クリエイター",
-    "tag": ["クリエイター"],
-    "imageSrc": "/member/waka.png",
-    "description": "クリエイター"
-  },
-  {
-    "name": "Izumi Morishita",
-    "role": "クリエイター",
-    "tag": ["クリエイター", "研究", "イベント企画"],
-    "imageSrc": "/member/izumi.png",
-    "description": "クリエイター"
-  },
-  {
-    "name": "Yassel Yu",
-    "role": "クリエイター",
-    "tag": ["クリエイター", "イベント企画"],
-    "imageSrc": "/member/yassel.png",
     "description": "クリエイター"
   },
   {
@@ -194,21 +187,25 @@
     "role": "alumni"
   },
   {
+    "name": "Nagomi Hiroki",
+    "role": "alumni"
+  },
+  {
     "name": "Misaki Ozawa",
     "role": "advisor",
-    "tag": ["立ち上げ", "イベント企画", "コミュニティ企画", "財務"],
+    "tag": ["創設者", "立ち上げ", "イベント企画", "コミュニティ企画", "財務"],
     "sns": {
       "x": "https://x.com/Misaki__Ozawa",
       "note": "https://note.com/iyna_japan/n/ndc9cd14702b0?magazine_key=m014c6f6d6935"
     },
     "imageSrc": "/member/misaki.png",
-    "description": "創設者"
+    "description": "IYNA Japan 創設者, 第4期ニューロナビゲータ, 脳科学オリンピック2024年度 優勝, アジアサイエンスキャンプ, 数理の翼 など"
   },
   {
     "name": "Syun",
     "role": "Executive Advisor & Operator",
     "imageSrc": "/member/Syun.png",
-    "description": "World Scholar’s Cup運営, アジアサイエンスキャンプ, 数理の翼, PhysicsBowl Asia Gold Awardなど"
+    "description": "World Scholar’s Cup運営, QFC-SP リサーチ7期生, PhysicsBowl Asia Gold Award, アジアサイエンスキャンプ, 数理の翼 など"
   },
   {
     "name": "Takuya Kataiwa",
@@ -226,8 +223,7 @@
     "sns": {
       "note": "https://note.com/iyna_japan/n/nc340559c55df?magazine_key=m014c6f6d6935"
     },
-    "imageSrc": "/member/hoshino.png",
-    "description": "広報戦略・クリエイター"
+    "imageSrc": "/member/hoshino.png"
   },
   {
     "name": "Yuma Kai",
@@ -236,8 +232,7 @@
     "sns": {
       "note": "https://note.com/iyna_japan/n/n60fac37a41cd?magazine_key=m014c6f6d6935"
     },
-    "imageSrc": "/member/kai.png",
-    "description": "クリエイター"
+    "imageSrc": "/member/kai.png"
   },
   {
     "name": "Wataru Ota",
