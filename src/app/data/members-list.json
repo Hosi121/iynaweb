@@ -29,6 +29,16 @@
     "description": "副代表"
   },
   {
+    "name": "Wakana Kiuchi",
+    "role": "幹部・NRIリーダー",
+    "tag": ["SNS(インスタグラム)", "大会"],
+    "sns": {
+      "note": "https://note.com/iyna_japan/n/na3d830aad2ad?magazine_key=m014c6f6d6935"
+    },
+    "imageSrc": "/member/wakana.jpg",
+    "description": "幹部・NRIリーダー"
+  },
+  {
     "name": "Sarina Tsuchiya",
     "role": "幹部",
     "tag": ["幹部", "SNS(インスタグラム)", "イベント企画"],
@@ -41,26 +51,6 @@
     "tag": ["幹部", "SNS(X)", "イベント企画"],
     "imageSrc": "/member/mizuki.png",
     "description": "幹部・クリエイター"
-  },
-  {
-    "name": "Wakana Kiuchi",
-    "role": "NRIリーダー・クリエイター",
-    "tag": ["SNS(インスタグラム)", "大会"],
-    "sns": {
-      "note": "https://note.com/iyna_japan/n/na3d830aad2ad?magazine_key=m014c6f6d6935"
-    },
-    "imageSrc": "/member/wakana.jpg",
-    "description": "幹部・NRIリーダー・クリエイター"
-  },
-  {
-    "name": "Riki Nakano",
-    "role": "クリエイター",
-    "tag": ["イベント企画", "コミュニティ企画"],
-    "sns": {
-      "note": "https://note.com/iyna_japan/n/n3f3b728c315e?magazine_key=m014c6f6d6935"
-    },
-    "imageSrc": "/member/riki.jpg",
-    "description": "クリエイター"
   },
   {
     "name": "Rikuto Egawa",
@@ -190,6 +180,10 @@
     "name": "Nagomi Hiroki",
     "role": "alumni"
   },
+   {
+    "name": "Riki Nakano",
+    "role": "alumni"
+  },
   {
     "name": "Misaki Ozawa",
     "role": "advisor",
@@ -204,6 +198,7 @@
   {
     "name": "Syun",
     "role": "Executive Advisor & Operator",
+    "tag": ["イベント企画", "コミュニティ企画", "大会", "広報", "財務"],
     "imageSrc": "/member/Syun.png",
     "description": "World Scholar’s Cup運営, QFC-SP リサーチ7期生, PhysicsBowl Asia Gold Award, アジアサイエンスキャンプ, 数理の翼 など"
   },
